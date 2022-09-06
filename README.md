@@ -2,7 +2,7 @@
 <hr/>
 
 # Hi there 👋, I'm Anik Sarker Akash
-#### Computer Science undergrade @ MN-NIT
+#### Computer Science Undergraduate @ MN-NIT
 
 I am Anik Sarker Akash from Dhaka, BANGLADESH and I love to do development projects. I enjoy learning languages and frameworks like Django and React, as well as work on cross-platform-applications. 
 
