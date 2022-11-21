@@ -11,7 +11,7 @@ I am Anik Sarker Akash from Dhaka, BANGLADESH and I love to do development proje
 
 ***CS Core:*** DATA STRUCTURE / ALGORITHIM / DBMS / OS / OOP
 
-***Languages:*** C++ / PYTHON / JAVA
+***Languages:*** C / C++ / PYTHON / JAVA
 
 ***WEB / MOBILE / BACKEND:***
 * ⚛️ REACT
