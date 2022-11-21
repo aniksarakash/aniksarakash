@@ -23,6 +23,9 @@ I am Anik Sarker Akash from Dhaka, BANGLADESH and I love to do development proje
 ## 🤝 Connect with me
 
 &emsp; [<img src='https://cdn.jsdelivr.net/npm/simple-icons@3.0.1/icons/linkedin.svg' alt='linkedin' height='40'>](https://www.linkedin.com/in/aniksarkerakash/)
+&emsp; [<img src='https://cdn.jsdelivr.net/npm/simple-icons@3.0.1/icons/facebook.svg' alt='facebook' height='40'>](https://www.facebook.com/aniksarkerakash/)
+&emsp; [<img src='https://cdn.jsdelivr.net/npm/simple-icons@3.0.1/icons/webpack.svg' alt='website' height='40'>](https://www.aniksarkerakash.com/)
+
 
 &emsp; ✉️ aniksarakash16@gmail.com
 
