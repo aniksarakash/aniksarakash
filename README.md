@@ -2,16 +2,14 @@
 <hr/>
 
 # Hi there 👋, I'm Anik Sarker Akash
-#### Computer Science Undergraduate @ MN-NIT
 
-I am Anik Sarker Akash from Dhaka, BANGLADESH and I love to do development projects. I enjoy learning languages and frameworks like Django and React, as well as work on cross-platform-applications. 
+
+I am a dynamic and motivated Computer Science and Engineering (CSE) graduate passionate about leveraging technology to drive innovation and solve real-world challenges. With a solid foundation in theory and practical applications, I have honed my skills through various professional certifications from Google, including Project Management, IT Automation with Python, UX Design, Data Analytics, and IT Support.
 
 
 ## ⚙️ Skills and Experties
 
-***CS Core:*** DATA STRUCTURE / ALGORITHIM / DBMS / OS / OOP
-
-***Languages:*** C / C++ / PYTHON / JAVA
+IT Specialist with Google IT Certificates, Passion for UX Design, Data Analytics, and Project Management
 
 ***WEB / MOBILE / BACKEND:***
 * ⚛️ REACT
