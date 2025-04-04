@@ -35,11 +35,6 @@ I'm a System Engineer & AI Solution Developer specializing in rapid development 
 - **Complex Report Generation App** - Reduced development time from 1 month to 3 days (90% reduction)
 - **Bill Approval System** - Completed in 2 weeks vs. standard 1-month timeline (50% reduction)
 
-**Technical Projects:**
-- [Blockchain-Degree](https://github.com/aniksarakash/BlockchainDegree/) - System for issuing and verifying academic degrees using blockchain
-- [Advanced Tourist Guidance System](https://github.com/aniksarakash/Advanced-Tourist-Guide-System) - Django web app with integrated deep learning
-- [SteganoGAN](https://github.com/aniksarakash/steganoGANweb) - High-capacity image steganography using GANs
-
 ## 🤝 Connect with me
 
 <p align="center">
@@ -50,9 +45,24 @@ I'm a System Engineer & AI Solution Developer specializing in rapid development 
 
 ## 📊 GitHub Stats
 
-<p align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=anikakash&show_icons=true&theme=tokyonight&count_private=true" alt="Anik's GitHub Stats" />
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=anikakash&layout=compact&theme=tokyonight&langs_count=6" alt="Top Languages" />
-</p>
+<div align="center">
+  <img src="https://github-readme-stats.vercel.app/api?username=anikakash&show_icons=true&theme=tokyonight&count_private=true&card_width=400&include_all_commits=true&hide_rank=true&custom_title=Activity%20Overview&hide=contribs&line_height=30" alt="GitHub Stats" />
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=anikakash&layout=compact&theme=tokyonight&langs_count=6&card_width=400&hide=jupyter%20notebook" alt="Top Languages" />
+</div>
 
-<hr/>
+<table align="center">
+  <tr>
+    <td align="center"><b>Total Stars</b></td>
+    <td align="center"><b>Total Commits</b></td>
+    <td align="center"><b>Total PRs</b></td>
+    <td align="center"><b>Total Issues</b></td>
+    <td align="center"><b>Contributed to</b></td>
+  </tr>
+  <tr>
+    <td align="center">85</td>
+    <td align="center">176</td>
+    <td align="center">48</td>
+    <td align="center">49</td>
+    <td align="center">3</td>
+  </tr>
+</table>
