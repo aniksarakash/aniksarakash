@@ -11,6 +11,7 @@ I'm a System Engineer & AI Solution Developer specializing in rapid development 
 **AI & Automation:**
 - GPT-4o | Claude 3.7 | DeepSeek R1 | Qwen2.5 | Grok v3
 - Rapid Development | AI-Driven Solutions
+- MCP Integration | AI Agents | Workflow Automation
 
 **Development:**
 - Python | Django | PHP | JavaScript | PowerShell | SQL | Solidity
@@ -34,6 +35,25 @@ I'm a System Engineer & AI Solution Developer specializing in rapid development 
 - **Custom CRM Ticketing System** - Cut development time from 6+ months to 2 months (66% reduction)
 - **Complex Report Generation App** - Reduced development time from 1 month to 3 days (90% reduction)
 - **Bill Approval System** - Completed in 2 weeks vs. standard 1-month timeline (50% reduction)
+
+## 🤖 Advanced AI Integration
+
+**Model Context Protocol (MCP):**
+Expertise in implementing the Model Context Protocol (MCP) open standard to create seamless connections between LLM applications and external data sources/tools. This enables context-aware AI systems that leverage organizational knowledge bases and specialized tooling.
+
+**AI Agents & Automation:**
+- Design and deployment of autonomous AI agents that perform complex tasks with minimal supervision
+- Development of multi-agent systems that collaborate to solve complex business problems
+- Implementation of sophisticated automation workflows using LLMs for decision-making processes
+- Integration of retrieval-augmented generation (RAG) for knowledge-intensive applications
+
+**Responsible AI Development:**
+Committed to ethical AI implementation with focus on:
+- Transparency and explainability in AI decision-making
+- Bias mitigation and fairness in AI systems
+- Privacy-preserving techniques for sensitive data
+- Robust security measures to prevent misuse
+- Sustainable and efficient code practices to minimize environmental impact
 
 ## 🤝 Connect with me
 
