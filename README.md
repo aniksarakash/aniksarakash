@@ -16,6 +16,7 @@ I'm a System Engineer & AI Solution Developer specializing in rapid development 
 **Development:**
 - Python | Django | PHP | JavaScript | PowerShell | SQL | Solidity
 - Web/Mobile/Backend Solutions
+- Responsible Code Practices | Clean Architecture
 
 **IT Infrastructure:**
 - Windows Server | VMware ESXi | Microsoft Azure 
@@ -49,11 +50,13 @@ Expertise in implementing the Model Context Protocol (MCP) open standard to crea
 
 **Responsible AI Development:**
 Committed to ethical AI implementation with focus on:
+- Thoughtful code review and validation, not blindly accepting AI-generated solutions
+- Deep understanding of all implemented code, regardless of its source
+- Custom-tailored solutions adapted to specific contexts rather than generic outputs
 - Transparency and explainability in AI decision-making
 - Bias mitigation and fairness in AI systems
 - Privacy-preserving techniques for sensitive data
 - Robust security measures to prevent misuse
-- Sustainable and efficient code practices to minimize environmental impact
 
 ## 🤝 Connect with me
 
