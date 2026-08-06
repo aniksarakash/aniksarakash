@@ -16,7 +16,7 @@
 <br/>
 
 <a href="https://aniksarkerakash.com/">
-  <img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=600&size=21&pause=1200&color=06B6D4&center=true&vCenter=true&width=720&height=42&lines=Three+legacy+systems%2C+two+spreadsheets%2C+one+person+clicking.;I+replace+that+with+something+that+runs+itself.;Frontier+models+%2B+enterprise+IT+%2B+ruthless+code+review." alt="What I do" />
+  <img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=600&size=20&pause=1400&color=06B6D4&center=true&vCenter=true&width=880&height=40&lines=Three+legacy+systems%2C+two+spreadsheets%2C+one+person+clicking.;I+replace+that+with+something+that+runs+itself.;Frontier+models+%2B+enterprise+IT+%2B+ruthless+code+review." alt="What I do" />
 </a>
 
 <br/>
