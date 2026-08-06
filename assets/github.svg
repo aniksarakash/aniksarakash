@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1000" height="310" viewBox="0 0 1000 310" role="img"
-     aria-label="GitHub activity for aniksarakash: 389 contributions in the last 12 months, of which 100 percent are in private repositories; 71 public repositories, 57 pull requests, 44 stars, 19 followers, building since 2019. Languages by repository: JavaScript 19 percent, Python 17 percent, HTML 15 percent, C 10 percent, CSS 10 percent, PHP 6 percent.">
+     aria-label="GitHub activity for aniksarakash: 390 contributions in the last 12 months, of which 99 percent are in private repositories; 71 public repositories, 57 pull requests, 44 stars, 19 followers, building since 2019. Languages by repository: JavaScript 21 percent, Python 17 percent, HTML 15 percent, C 9 percent, CSS 9 percent, PHP 6 percent.">
   <title>GitHub activity for aniksarakash</title>
   <defs>
     <linearGradient id="surface" x1="0" y1="0" x2="1" y2="1">
@@ -14,14 +14,17 @@
     <style>
       .fs { font-family: 'Space Grotesk', 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; }
       .fm { font-family: 'JetBrains Mono', ui-monospace, 'Cascadia Mono', Consolas, monospace; }
-      /* Resting state is VISIBLE and the animation plays from hidden via
-         'backwards' (which applies the from-state during animation-delay).
-         The naive form — opacity:0 in the base rule, animated up to 1 —
-         renders a completely blank card anywhere the CSS is stripped or
-         animations are disabled. Degrading to "no animation" beats
-         degrading to "no content". */
+      /* The entrance staggers on transform ONLY, and never on opacity.
+         Two different consumers have to be satisfied at once:
+           · CSS stripped (some proxies, SVG→raster converters) — so the
+             resting state must be the final state, never opacity:0.
+           · CSS active but rasterized at t=0 (link previews, scrapers,
+             headless screenshots) — 'backwards' applies the from-state during
+             animation-delay, so a fade-in from 0 photographs as a blank card.
+         Sliding 9px with opacity pinned at 1 reads as a premium cascade live
+         and still yields a fully legible card in either fallback. */
       .rise { animation: rise .7s cubic-bezier(.22,.61,.36,1) backwards; }
-      @keyframes rise { from { opacity:0; transform: translateY(9px) } to { opacity:1; transform: translateY(0) } }
+      @keyframes rise { from { transform: translateY(9px) } to { transform: translateY(0) } }
       @media (prefers-reduced-motion: reduce) { .rise { animation: none } }
     </style>
   </defs>
@@ -36,7 +39,7 @@
   <g class="rise" style="animation-delay:0.08s">
     <rect x="34" y="96" width="148" height="78" rx="10" fill="#f3eee4" fill-opacity="0.04" stroke="#2a2a3a"/>
     <rect x="34" y="110" width="3" height="50" rx="1.5" fill="#4f69e8"/>
-    <text class="fs" x="52" y="134" font-size="25" font-weight="700" fill="#f3eee4">389</text>
+    <text class="fs" x="52" y="134" font-size="25" font-weight="700" fill="#f3eee4">390</text>
     <text class="fm" x="52" y="156" font-size="10" fill="#6f6a85">contributions, 12 mo</text>
   </g>
   <g class="rise" style="animation-delay:0.15s">
@@ -72,42 +75,45 @@
 
   <text class="fs" x="548" y="82" font-size="15" font-weight="600" fill="#f3eee4">Where the work happens</text>
   <rect x="548" y="96" width="418" height="12" rx="4" fill="#f3eee4" fill-opacity="0.05"/>
-  <rect x="548" y="96" width="418" height="12" rx="4" fill="#7c3aed">
-    <animate attributeName="width" from="0" to="418" dur="0.9s" begin="0.25s" calcMode="spline" keySplines="0.22 0.61 0.36 1" fill="freeze"/>
+  <rect x="548" y="96" width="414" height="12" rx="4" fill="#7c3aed">
+    <animate attributeName="width" from="0" to="414" dur="0.9s" begin="0.25s" calcMode="spline" keySplines="0.22 0.61 0.36 1" fill="freeze"/>
+  </rect>
+  <rect x="964" y="96" width="2" height="12" rx="4" fill="#10b981">
+    <animate attributeName="width" from="0" to="2" dur="0.9s" begin="0.32s" calcMode="spline" keySplines="0.22 0.61 0.36 1" fill="freeze"/>
   </rect>
   <g class="rise" style="animation-delay:.45s">
     <circle cx="553" cy="126" r="5" fill="#7c3aed"/>
     <text class="fm" x="566" y="130" font-size="11.5" fill="#a9a3bd">private repos</text>
-    <text class="fm" x="698" y="130" font-size="11.5" font-weight="700" fill="#f3eee4" text-anchor="end">100%</text>
+    <text class="fm" x="698" y="130" font-size="11.5" font-weight="700" fill="#f3eee4" text-anchor="end">99%</text>
     <circle cx="772" cy="126" r="5" fill="#10b981"/>
     <text class="fm" x="785" y="130" font-size="11.5" fill="#a9a3bd">public repos</text>
-    <text class="fm" x="966" y="130" font-size="11.5" font-weight="700" fill="#f3eee4" text-anchor="end">0%</text>
+    <text class="fm" x="966" y="130" font-size="11.5" font-weight="700" fill="#f3eee4" text-anchor="end">1%</text>
   </g>
 
   <text class="fs" x="548" y="176" font-size="15" font-weight="600" fill="#f3eee4">Languages by repository</text>
   <rect x="548" y="190" width="418" height="14" rx="4" fill="#f3eee4" fill-opacity="0.05"/>
-  <rect x="548.0" y="190" width="102.0" height="14" rx="4" fill="#f1e05a">
-    <animate attributeName="width" from="0" to="102.0" dur="0.9s" begin="0.40s" calcMode="spline" keySplines="0.22 0.61 0.36 1" fill="freeze"/>
+  <rect x="548.0" y="190" width="109.5" height="14" rx="4" fill="#f1e05a">
+    <animate attributeName="width" from="0" to="109.5" dur="0.9s" begin="0.40s" calcMode="spline" keySplines="0.22 0.61 0.36 1" fill="freeze"/>
   </rect>
-  <rect x="652.0" y="190" width="91.8" height="14" rx="4" fill="#3572A5">
-    <animate attributeName="width" from="0" to="91.8" dur="0.9s" begin="0.46s" calcMode="spline" keySplines="0.22 0.61 0.36 1" fill="freeze"/>
+  <rect x="659.5" y="190" width="89.6" height="14" rx="4" fill="#3572A5">
+    <animate attributeName="width" from="0" to="89.6" dur="0.9s" begin="0.46s" calcMode="spline" keySplines="0.22 0.61 0.36 1" fill="freeze"/>
   </rect>
-  <rect x="745.8" y="190" width="81.6" height="14" rx="4" fill="#e34c26">
-    <animate attributeName="width" from="0" to="81.6" dur="0.9s" begin="0.52s" calcMode="spline" keySplines="0.22 0.61 0.36 1" fill="freeze"/>
+  <rect x="751.0" y="190" width="79.6" height="14" rx="4" fill="#e34c26">
+    <animate attributeName="width" from="0" to="79.6" dur="0.9s" begin="0.52s" calcMode="spline" keySplines="0.22 0.61 0.36 1" fill="freeze"/>
   </rect>
-  <rect x="829.4" y="190" width="51.0" height="14" rx="4" fill="#555555">
-    <animate attributeName="width" from="0" to="51.0" dur="0.9s" begin="0.58s" calcMode="spline" keySplines="0.22 0.61 0.36 1" fill="freeze"/>
+  <rect x="832.6" y="190" width="49.8" height="14" rx="4" fill="#555555">
+    <animate attributeName="width" from="0" to="49.8" dur="0.9s" begin="0.58s" calcMode="spline" keySplines="0.22 0.61 0.36 1" fill="freeze"/>
   </rect>
-  <rect x="882.4" y="190" width="51.0" height="14" rx="4" fill="#663399">
-    <animate attributeName="width" from="0" to="51.0" dur="0.9s" begin="0.64s" calcMode="spline" keySplines="0.22 0.61 0.36 1" fill="freeze"/>
+  <rect x="884.4" y="190" width="49.8" height="14" rx="4" fill="#663399">
+    <animate attributeName="width" from="0" to="49.8" dur="0.9s" begin="0.64s" calcMode="spline" keySplines="0.22 0.61 0.36 1" fill="freeze"/>
   </rect>
-  <rect x="935.4" y="190" width="30.6" height="14" rx="4" fill="#4F5D95">
-    <animate attributeName="width" from="0" to="30.6" dur="0.9s" begin="0.70s" calcMode="spline" keySplines="0.22 0.61 0.36 1" fill="freeze"/>
+  <rect x="936.1" y="190" width="29.9" height="14" rx="4" fill="#4F5D95">
+    <animate attributeName="width" from="0" to="29.9" dur="0.9s" begin="0.70s" calcMode="spline" keySplines="0.22 0.61 0.36 1" fill="freeze"/>
   </rect>
   <g class="rise" style="animation-delay:0.55s">
     <circle cx="553" cy="222" r="5" fill="#f1e05a"/>
     <text class="fm" x="566" y="226" font-size="11" fill="#a9a3bd">JavaScript</text>
-    <text class="fm" x="744" y="226" font-size="11" font-weight="700" fill="#f3eee4" text-anchor="end">19%</text>
+    <text class="fm" x="744" y="226" font-size="11" font-weight="700" fill="#f3eee4" text-anchor="end">21%</text>
   </g>
   <g class="rise" style="animation-delay:0.60s">
     <circle cx="765" cy="222" r="5" fill="#3572A5"/>
@@ -122,12 +128,12 @@
   <g class="rise" style="animation-delay:0.70s">
     <circle cx="765" cy="244" r="5" fill="#555555"/>
     <text class="fm" x="778" y="248" font-size="11" fill="#a9a3bd">C</text>
-    <text class="fm" x="956" y="248" font-size="11" font-weight="700" fill="#f3eee4" text-anchor="end">10%</text>
+    <text class="fm" x="956" y="248" font-size="11" font-weight="700" fill="#f3eee4" text-anchor="end">9%</text>
   </g>
   <g class="rise" style="animation-delay:0.75s">
     <circle cx="553" cy="266" r="5" fill="#663399"/>
     <text class="fm" x="566" y="270" font-size="11" fill="#a9a3bd">CSS</text>
-    <text class="fm" x="744" y="270" font-size="11" font-weight="700" fill="#f3eee4" text-anchor="end">10%</text>
+    <text class="fm" x="744" y="270" font-size="11" font-weight="700" fill="#f3eee4" text-anchor="end">9%</text>
   </g>
   <g class="rise" style="animation-delay:0.80s">
     <circle cx="765" cy="266" r="5" fill="#4F5D95"/>
@@ -135,5 +141,5 @@
     <text class="fm" x="956" y="270" font-size="11" font-weight="700" fill="#f3eee4" text-anchor="end">6%</text>
   </g>
 
-  <text class="fm" x="34" y="294" font-size="10" fill="#6f6a85" opacity="0.8">100% of the last 12 months is private enterprise work · primary language per repo across 52 repositories</text>
+  <text class="fm" x="34" y="294" font-size="10" fill="#6f6a85" opacity="0.8">99% of the last 12 months is private enterprise work · primary language per repo across 53 repositories</text>
 </svg>
