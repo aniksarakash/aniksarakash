@@ -472,13 +472,7 @@ High-capacity image steganography using Generative Adversarial Networks, wrapped
 
 I write about AI-assisted development, debugging LLM output, and troubleshooting methodology at **[aniksarkerakash.com/blog](https://aniksarkerakash.com/blog/)**.
 
-<!-- BLOG-POST-LIST:START -->
-- [Did they nerf it? What actually happens when a model gets worse](https://aniksarkerakash.com/blog/did-they-nerf-it)
-- [The receipts: auditing the Claude Opus 5 optimization ecosystem](https://aniksarkerakash.com/blog/opus-5-ecosystem-audit)
-- [Quantum will not hand you AGI: the arrow points the other way](https://aniksarkerakash.com/blog/quantum-will-not-hand-you-agi)
-- [The microscope we built for the thing we grew](https://aniksarkerakash.com/blog/the-microscope-we-built-for-the-thing-we-grew)
-- [Prompt engineering inverted: the instructions that used to help now hurt](https://aniksarkerakash.com/blog/prompt-engineering-is-context-engineering)
-<!-- BLOG-POST-LIST:END -->
+<!-- BLOG-POST-LIST:START -->- [Quantum will not hand you AGI: the arrow points the other way](https://aniksarkerakash.com/blog/quantum-will-not-hand-you-agi)- [The microscope we built for the thing we grew: mechanistic interpretability at the halfway mark](https://aniksarkerakash.com/blog/the-microscope-we-built-for-the-thing-we-grew)- [We grew it, we didn&#39;t build it: Geoffrey Hinton and the machine nobody can read](https://aniksarkerakash.com/blog/we-grew-it-we-didnt-build-it)- [How do you debug what you can&#39;t understand?](https://aniksarkerakash.com/blog/debug-what-you-cannot-understand)- [Prompt engineering inverted: the instructions that used to help now hurt](https://aniksarkerakash.com/blog/prompt-engineering-is-context-engineering)<!-- BLOG-POST-LIST:END -->
 
 <div align="right"><a href="https://aniksarkerakash.com/blog/"><b>Read everything →</b></a></div>
 
