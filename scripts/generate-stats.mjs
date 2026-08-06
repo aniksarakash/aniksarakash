@@ -23,6 +23,15 @@
  *      last good value, mark it stale, and shout — rather than quietly
  *      publishing a wrong 0. STRICT=1 turns that into a build failure.
  *
+ * ── Viewer scope ───────────────────────────────────────────────────────────
+ * The card is a visitor's view, so every figure on it must be one a visitor
+ * can verify. GraphQL counts are filtered by whoever holds the token: run
+ * locally as the owner, `repositories.totalCount` includes private repos and
+ * the tile labelled "public repositories" reads high. Repos are therefore
+ * pinned to privacy:PUBLIC, and pullRequests — the one count with no privacy
+ * argument — defers to the last public-scoped reading. A local run previews;
+ * the scheduled third-party run is the source of truth.
+ *
  *   GITHUB_TOKEN=$(gh auth token) node scripts/generate-stats.mjs
  */
 
@@ -64,7 +73,7 @@ query($login:String!, $after:String) {
       restrictedContributionsCount
       contributionCalendar { totalContributions }
     }
-    repositories(first:100, after:$after, ownerAffiliations:OWNER, isFork:false) {
+    repositories(first:100, after:$after, ownerAffiliations:OWNER, isFork:false, privacy:PUBLIC) {
       totalCount
       pageInfo { hasNextPage endCursor }
       nodes { name stargazerCount primaryLanguage { name color } }
@@ -128,8 +137,8 @@ async function collect() {
 }
 
 /**
- * Decide whether this run's private-contribution visibility is trustworthy,
- * falling back to the last good reading rather than publishing a wrong zero.
+ * Decide whether this run's readings are trustworthy, falling back to the last
+ * good ones rather than publishing a wrong zero or an owner-inflated count.
  */
 async function reconcile(live) {
   let cache = null
@@ -146,22 +155,48 @@ async function reconcile(live) {
 
   const lostVisibility = Boolean(cacheTrusted && cache.restricted > 0 && live.restricted === 0)
 
+  // Viewer scope. Everything else on the card is scope-independent by
+  // construction — repositories are queried privacy:PUBLIC, stars and
+  // followers are public, and the contribution count is published by the
+  // profile toggle. pullRequests.totalCount is the exception: the API filters
+  // it per viewer and offers no privacy argument, so running this locally
+  // counts PRs in private repos and reads higher than anything a visitor
+  // could confirm. The last public-scoped reading wins; a local preview never
+  // overwrites it. Scope is derived from isOwner rather than stored
+  // separately — two fields that can disagree is worse than one.
+  const publicBaseline = cache && cache.isOwner === false ? cache : null
+  const prsInflated = Boolean(live.isOwner && publicBaseline && publicBaseline.prs < live.prs)
+
   const notes = []
-  if (!live.isOwner) {
-    notes.push(`viewer is @${live.viewer}, not @${LOGIN} — relying on public profile visibility`)
-  }
   if (lostVisibility) {
     notes.push(
       `private contributions went ${cache.restricted} → 0 in ${ageDays.toFixed(0)}d; ` +
         `"Include private contributions on my profile" is probably OFF — reusing last good reading`
     )
   }
+  if (prsInflated) {
+    notes.push(
+      `pull requests read ${live.prs} as @${live.viewer} but ${publicBaseline.prs} publicly ` +
+        `(${live.prs - publicBaseline.prs} are in private repos) — publishing the public figure`
+    )
+  }
 
-  const resolved = lostVisibility
-    ? { ...live, contributions: cache.contributions, restricted: cache.restricted, publicContribs: cache.publicContribs }
-    : live
+  const resolved = {
+    ...live,
+    ...(lostVisibility
+      ? { contributions: cache.contributions, restricted: cache.restricted, publicContribs: cache.publicContribs }
+      : {}),
+    ...(prsInflated ? { prs: publicBaseline.prs } : {}),
+  }
 
-  return { resolved, degraded: lostVisibility, notes, asOf: lostVisibility ? cache.generatedAt : new Date().toISOString() }
+  return {
+    resolved,
+    degraded: lostVisibility,
+    notes,
+    scope: live.isOwner ? 'owner' : 'public',
+    authoritativeBaseline: publicBaseline,
+    asOf: lostVisibility ? cache.generatedAt : new Date().toISOString(),
+  }
 }
 
 const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
@@ -265,14 +300,17 @@ function render(d, { degraded, asOf }) {
     <style>
       .fs { font-family: 'Space Grotesk', 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; }
       .fm { font-family: 'JetBrains Mono', ui-monospace, 'Cascadia Mono', Consolas, monospace; }
-      /* Resting state is VISIBLE and the animation plays from hidden via
-         'backwards' (which applies the from-state during animation-delay).
-         The naive form — opacity:0 in the base rule, animated up to 1 —
-         renders a completely blank card anywhere the CSS is stripped or
-         animations are disabled. Degrading to "no animation" beats
-         degrading to "no content". */
+      /* The entrance staggers on transform ONLY, and never on opacity.
+         Two different consumers have to be satisfied at once:
+           · CSS stripped (some proxies, SVG→raster converters) — so the
+             resting state must be the final state, never opacity:0.
+           · CSS active but rasterized at t=0 (link previews, scrapers,
+             headless screenshots) — 'backwards' applies the from-state during
+             animation-delay, so a fade-in from 0 photographs as a blank card.
+         Sliding 9px with opacity pinned at 1 reads as a premium cascade live
+         and still yields a fully legible card in either fallback. */
       .rise { animation: rise .7s cubic-bezier(.22,.61,.36,1) backwards; }
-      @keyframes rise { from { opacity:0; transform: translateY(9px) } to { opacity:1; transform: translateY(0) } }
+      @keyframes rise { from { transform: translateY(9px) } to { transform: translateY(0) } }
       @media (prefers-reduced-motion: reduce) { .rise { animation: none } }
     </style>
   </defs>
@@ -301,13 +339,19 @@ ${legend}
 
 // ── main ────────────────────────────────────────────────────────────────────
 const live = await collect()
-const { resolved, degraded, notes, asOf } = await reconcile(live)
+const { resolved, degraded, notes, scope, authoritativeBaseline, asOf } = await reconcile(live)
 
 await mkdir('assets', { recursive: true })
 await writeFile('assets/github.svg', render(resolved, { degraded, asOf }), 'utf8')
 
 // Provenance record — this is what the next run reconciles against.
-if (!degraded) {
+// viewerScope names whose view produced it. A local owner run is a preview:
+// it renders the card but leaves an existing authoritative baseline alone,
+// so previewing locally and committing can't publish owner-scoped numbers.
+const preview = scope === 'owner' && authoritativeBaseline
+if (degraded || preview) {
+  if (preview) console.log(`  baseline          preserved (public reading from ${authoritativeBaseline.generatedAt.slice(0, 10)})`)
+} else {
   await writeFile(
     CACHE,
     JSON.stringify(
@@ -315,12 +359,13 @@ if (!degraded) {
         generatedAt: new Date().toISOString(),
         viewer: live.viewer,
         isOwner: live.isOwner,
+        viewerScope: scope,
         contributions: live.contributions,
         publicContribs: live.publicContribs,
         restricted: live.restricted,
         stars: live.stars,
         repos: live.repos,
-        prs: live.prs,
+        prs: resolved.prs,
         followers: live.followers,
       },
       null,
@@ -332,7 +377,7 @@ if (!degraded) {
 
 const privatePct = resolved.contributions > 0 ? Math.round((resolved.restricted / resolved.contributions) * 100) : 0
 console.log(`assets/github.svg written`)
-console.log(`  viewer            @${live.viewer}${live.isOwner ? ' (owner)' : ' (third party)'}`)
+console.log(`  viewer            @${live.viewer} (${scope} scope${live.isOwner ? ', local preview' : ', authoritative'})`)
 console.log(`  contributions     ${resolved.contributions}  (public ${resolved.publicContribs} + private ${resolved.restricted} = ${privatePct}% private)`)
 console.log(`  repos/stars/prs   ${resolved.repos} / ${resolved.stars} / ${resolved.prs}`)
 console.log(`  languages         ${resolved.langs.slice(0, 6).map((l) => `${l.name}:${l.count}`).join(', ')}`)

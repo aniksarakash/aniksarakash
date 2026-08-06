@@ -69,15 +69,22 @@
       .fm { font-family: 'JetBrains Mono', ui-monospace, 'Cascadia Mono', Consolas, monospace; }
       .fe { font-family: 'Instrument Serif', Georgia, 'Times New Roman', serif; font-style: italic; }
 
-      <!-- Entrance animations rest in their FINAL state and play from hidden
-           via `backwards` (which applies the from-state during the delay).
-           Authoring `opacity:0` in the base rule and animating up to 1 leaves
-           the banner completely blank anywhere the CSS is dropped — some feed
-           readers, image proxies and SVG-to-raster converters do exactly that.
-           Degrade to "not animated", never to "not there". -->
+      <!-- The entrance staggers on transform ONLY, never on opacity, because
+           two consumers must both end up with a readable banner:
+             · CSS stripped entirely (feed readers, image proxies, some
+               SVG→raster converters) — so the resting state has to BE the
+               final state; `opacity:0` in the base rule leaves a blank banner.
+             · CSS active but rasterized at t=0 (link previews, scrapers,
+               headless screenshots) — `backwards` applies the from-state for
+               the whole animation-delay, so a fade-in from 0 photographs as a
+               blank banner too.
+           A 14px slide with opacity pinned at 1 reads as a premium cascade
+           live, and degrades to "not animated" in both cases — never to
+           "not there". Decorative marks (the gradient rule below) are free to
+           animate from hidden; content is not. -->
       .rise { animation: rise .9s cubic-bezier(.22,.61,.36,1) backwards; }
-      @keyframes rise { from { opacity: 0; transform: translateY(14px); }
-                        to   { opacity: 1; transform: translateY(0); } }
+      @keyframes rise { from { transform: translateY(14px); }
+                        to   { transform: translateY(0); } }
 
       .d1 { animation-delay: .10s } .d2 { animation-delay: .26s }
       .d3 { animation-delay: .42s } .d4 { animation-delay: .58s }
@@ -110,7 +117,12 @@
       .blink { animation: blink 1.05s steps(1) infinite; }
       @keyframes blink { 0%,49% { opacity: 1 } 50%,100% { opacity: 0 } }
 
-      <!-- Same principle: rest with the stroke drawn, animate in from hidden. -->
+      <!-- This one is decoration, so it keeps its draw-on. Note the tradeoff is
+           unavoidable rather than overlooked: "hidden when the animation
+           starts" and "visible at t=0" are the same instant, so a stroke that
+           draws itself on cannot also survive a t=0 raster. A rasterized
+           preview therefore loses this rule but keeps every word of the copy —
+           which is why the .rise rule above buys the opposite tradeoff. -->
       .dash { stroke-dasharray: 1180;
               animation: dash 1.5s .5s cubic-bezier(.22,.61,.36,1) backwards; }
       @keyframes dash { from { stroke-dashoffset: 1180 } to { stroke-dashoffset: 0 } }
