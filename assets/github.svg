@@ -1,0 +1,139 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="310" viewBox="0 0 1000 310" role="img"
+     aria-label="GitHub activity for aniksarakash: 388 contributions in the last 12 months, of which 100 percent are in private repositories; 112 public repositories, 62 pull requests, 44 stars, 19 followers, building since 2019. Languages by repository: PHP 20 percent, JavaScript 16 percent, Python 13 percent, HTML 13 percent, TypeScript 11 percent, C 6 percent.">
+  <title>GitHub activity for aniksarakash</title>
+  <defs>
+    <linearGradient id="surface" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#030014"/>
+      <stop offset="100%" stop-color="#12121a"/>
+    </linearGradient>
+    <linearGradient id="rule" gradientUnits="userSpaceOnUse" x1="34" y1="0" x2="966" y2="0">
+      <stop offset="0%" stop-color="#4f69e8"/>
+      <stop offset="50%" stop-color="#7c3aed"/>
+      <stop offset="100%" stop-color="#06b6d4"/>
+    </linearGradient>
+    <style>
+      .fs { font-family: 'Space Grotesk', 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; }
+      .fm { font-family: 'JetBrains Mono', ui-monospace, 'Cascadia Mono', Consolas, monospace; }
+      /* Resting state is VISIBLE and the animation plays from hidden via
+         'backwards' (which applies the from-state during animation-delay).
+         The naive form — opacity:0 in the base rule, animated up to 1 —
+         renders a completely blank card anywhere the CSS is stripped or
+         animations are disabled. Degrading to "no animation" beats
+         degrading to "no content". */
+      .rise { animation: rise .7s cubic-bezier(.22,.61,.36,1) backwards; }
+      @keyframes rise { from { opacity:0; transform: translateY(9px) } to { opacity:1; transform: translateY(0) } }
+      @media (prefers-reduced-motion: reduce) { .rise { animation: none } }
+    </style>
+  </defs>
+
+  <rect width="1000" height="310" rx="16" fill="url(#surface)"/>
+  <rect x="0.5" y="0.5" width="999" height="309" rx="16" fill="none" stroke="#f3eee4" stroke-opacity="0.10"/>
+
+  <text class="fs" x="34" y="44" font-size="19" font-weight="700" fill="#f3eee4">Activity overview</text>
+  <text class="fm" x="966" y="44" font-size="11" fill="#6f6a85" text-anchor="end">updated 2026-08-06 · @aniksarakash</text>
+  <path d="M34 62 H 966" stroke="url(#rule)" stroke-width="1.5" stroke-opacity="0.6"/>
+
+  <g class="rise" style="animation-delay:0.08s">
+    <rect x="34" y="96" width="148" height="78" rx="10" fill="#f3eee4" fill-opacity="0.04" stroke="#2a2a3a"/>
+    <rect x="34" y="110" width="3" height="50" rx="1.5" fill="#4f69e8"/>
+    <text class="fs" x="52" y="134" font-size="25" font-weight="700" fill="#f3eee4">388</text>
+    <text class="fm" x="52" y="156" font-size="10" fill="#6f6a85">contributions, 12 mo</text>
+  </g>
+  <g class="rise" style="animation-delay:0.15s">
+    <rect x="194" y="96" width="148" height="78" rx="10" fill="#f3eee4" fill-opacity="0.04" stroke="#2a2a3a"/>
+    <rect x="194" y="110" width="3" height="50" rx="1.5" fill="#06b6d4"/>
+    <text class="fs" x="212" y="134" font-size="25" font-weight="700" fill="#f3eee4">112</text>
+    <text class="fm" x="212" y="156" font-size="10" fill="#6f6a85">public repositories</text>
+  </g>
+  <g class="rise" style="animation-delay:0.22s">
+    <rect x="354" y="96" width="148" height="78" rx="10" fill="#f3eee4" fill-opacity="0.04" stroke="#2a2a3a"/>
+    <rect x="354" y="110" width="3" height="50" rx="1.5" fill="#7c3aed"/>
+    <text class="fs" x="372" y="134" font-size="25" font-weight="700" fill="#f3eee4">62</text>
+    <text class="fm" x="372" y="156" font-size="10" fill="#6f6a85">pull requests opened</text>
+  </g>
+  <g class="rise" style="animation-delay:0.29s">
+    <rect x="34" y="188" width="148" height="78" rx="10" fill="#f3eee4" fill-opacity="0.04" stroke="#2a2a3a"/>
+    <rect x="34" y="202" width="3" height="50" rx="1.5" fill="#f59e0b"/>
+    <text class="fs" x="52" y="226" font-size="25" font-weight="700" fill="#f3eee4">44</text>
+    <text class="fm" x="52" y="248" font-size="10" fill="#6f6a85">stars earned</text>
+  </g>
+  <g class="rise" style="animation-delay:0.36s">
+    <rect x="194" y="188" width="148" height="78" rx="10" fill="#f3eee4" fill-opacity="0.04" stroke="#2a2a3a"/>
+    <rect x="194" y="202" width="3" height="50" rx="1.5" fill="#ec4899"/>
+    <text class="fs" x="212" y="226" font-size="25" font-weight="700" fill="#f3eee4">19</text>
+    <text class="fm" x="212" y="248" font-size="10" fill="#6f6a85">followers</text>
+  </g>
+  <g class="rise" style="animation-delay:0.43s">
+    <rect x="354" y="188" width="148" height="78" rx="10" fill="#f3eee4" fill-opacity="0.04" stroke="#2a2a3a"/>
+    <rect x="354" y="202" width="3" height="50" rx="1.5" fill="#10b981"/>
+    <text class="fs" x="372" y="226" font-size="25" font-weight="700" fill="#f3eee4">6y</text>
+    <text class="fm" x="372" y="248" font-size="10" fill="#6f6a85">building since 2019</text>
+  </g>
+
+  <text class="fs" x="548" y="82" font-size="15" font-weight="600" fill="#f3eee4">Where the work happens</text>
+  <rect x="548" y="96" width="418" height="12" rx="4" fill="#f3eee4" fill-opacity="0.05"/>
+  <rect x="548" y="96" width="418" height="12" rx="4" fill="#7c3aed">
+    <animate attributeName="width" from="0" to="418" dur="0.9s" begin="0.25s" calcMode="spline" keySplines="0.22 0.61 0.36 1" fill="freeze"/>
+  </rect>
+  <g class="rise" style="animation-delay:.45s">
+    <circle cx="553" cy="126" r="5" fill="#7c3aed"/>
+    <text class="fm" x="566" y="130" font-size="11.5" fill="#a9a3bd">private repos</text>
+    <text class="fm" x="698" y="130" font-size="11.5" font-weight="700" fill="#f3eee4" text-anchor="end">100%</text>
+    <circle cx="772" cy="126" r="5" fill="#10b981"/>
+    <text class="fm" x="785" y="130" font-size="11.5" fill="#a9a3bd">public repos</text>
+    <text class="fm" x="966" y="130" font-size="11.5" font-weight="700" fill="#f3eee4" text-anchor="end">0%</text>
+  </g>
+
+  <text class="fs" x="548" y="176" font-size="15" font-weight="600" fill="#f3eee4">Languages by repository</text>
+  <rect x="548" y="190" width="418" height="14" rx="4" fill="#f3eee4" fill-opacity="0.05"/>
+  <rect x="548.0" y="190" width="106.4" height="14" rx="4" fill="#4F5D95">
+    <animate attributeName="width" from="0" to="106.4" dur="0.9s" begin="0.40s" calcMode="spline" keySplines="0.22 0.61 0.36 1" fill="freeze"/>
+  </rect>
+  <rect x="656.4" y="190" width="82.8" height="14" rx="4" fill="#f1e05a">
+    <animate attributeName="width" from="0" to="82.8" dur="0.9s" begin="0.46s" calcMode="spline" keySplines="0.22 0.61 0.36 1" fill="freeze"/>
+  </rect>
+  <rect x="741.2" y="190" width="65.0" height="14" rx="4" fill="#3572A5">
+    <animate attributeName="width" from="0" to="65.0" dur="0.9s" begin="0.52s" calcMode="spline" keySplines="0.22 0.61 0.36 1" fill="freeze"/>
+  </rect>
+  <rect x="808.3" y="190" width="65.0" height="14" rx="4" fill="#e34c26">
+    <animate attributeName="width" from="0" to="65.0" dur="0.9s" begin="0.58s" calcMode="spline" keySplines="0.22 0.61 0.36 1" fill="freeze"/>
+  </rect>
+  <rect x="875.3" y="190" width="59.1" height="14" rx="4" fill="#3178c6">
+    <animate attributeName="width" from="0" to="59.1" dur="0.9s" begin="0.64s" calcMode="spline" keySplines="0.22 0.61 0.36 1" fill="freeze"/>
+  </rect>
+  <rect x="936.4" y="190" width="29.6" height="14" rx="4" fill="#555555">
+    <animate attributeName="width" from="0" to="29.6" dur="0.9s" begin="0.70s" calcMode="spline" keySplines="0.22 0.61 0.36 1" fill="freeze"/>
+  </rect>
+  <g class="rise" style="animation-delay:0.55s">
+    <circle cx="553" cy="222" r="5" fill="#4F5D95"/>
+    <text class="fm" x="566" y="226" font-size="11" fill="#a9a3bd">PHP</text>
+    <text class="fm" x="744" y="226" font-size="11" font-weight="700" fill="#f3eee4" text-anchor="end">20%</text>
+  </g>
+  <g class="rise" style="animation-delay:0.60s">
+    <circle cx="765" cy="222" r="5" fill="#f1e05a"/>
+    <text class="fm" x="778" y="226" font-size="11" fill="#a9a3bd">JavaScript</text>
+    <text class="fm" x="956" y="226" font-size="11" font-weight="700" fill="#f3eee4" text-anchor="end">16%</text>
+  </g>
+  <g class="rise" style="animation-delay:0.65s">
+    <circle cx="553" cy="244" r="5" fill="#3572A5"/>
+    <text class="fm" x="566" y="248" font-size="11" fill="#a9a3bd">Python</text>
+    <text class="fm" x="744" y="248" font-size="11" font-weight="700" fill="#f3eee4" text-anchor="end">13%</text>
+  </g>
+  <g class="rise" style="animation-delay:0.70s">
+    <circle cx="765" cy="244" r="5" fill="#e34c26"/>
+    <text class="fm" x="778" y="248" font-size="11" fill="#a9a3bd">HTML</text>
+    <text class="fm" x="956" y="248" font-size="11" font-weight="700" fill="#f3eee4" text-anchor="end">13%</text>
+  </g>
+  <g class="rise" style="animation-delay:0.75s">
+    <circle cx="553" cy="266" r="5" fill="#3178c6"/>
+    <text class="fm" x="566" y="270" font-size="11" fill="#a9a3bd">TypeScript</text>
+    <text class="fm" x="744" y="270" font-size="11" font-weight="700" fill="#f3eee4" text-anchor="end">11%</text>
+  </g>
+  <g class="rise" style="animation-delay:0.80s">
+    <circle cx="765" cy="266" r="5" fill="#555555"/>
+    <text class="fm" x="778" y="270" font-size="11" fill="#a9a3bd">C</text>
+    <text class="fm" x="956" y="270" font-size="11" font-weight="700" fill="#f3eee4" text-anchor="end">6%</text>
+  </g>
+
+  <text class="fm" x="34" y="294" font-size="10" fill="#6f6a85" opacity="0.8">100% of the last 12 months is private enterprise work · primary language per repo across 88 repositories</text>
+</svg>

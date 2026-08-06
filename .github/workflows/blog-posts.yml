@@ -1,0 +1,25 @@
+name: Sync latest blog posts
+
+on:
+  schedule:
+    # Twice a day, deliberately off :00
+    - cron: "23 5,17 * * *"
+  workflow_dispatch:
+
+jobs:
+  update-readme:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      contents: write
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Pull the five most recent posts into the README
+        uses: gautamkrishnar/blog-post-workflow@v1
+        with:
+          feed_list: "https://aniksarkerakash.com/blog/feed.xml"
+          max_post_count: 5
+          template: "- [$title]($url)\n"
+          commit_message: "chore: sync latest blog posts"

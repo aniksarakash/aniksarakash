@@ -1,0 +1,64 @@
+name: Refresh stats card
+
+on:
+  schedule:
+    # Daily, deliberately off the :00 mark
+    - cron: "41 4 * * *"
+  workflow_dispatch:
+    inputs:
+      strict:
+        description: "Fail the run if private contributions are no longer visible"
+        type: boolean
+        default: false
+  push:
+    branches: [main]
+    paths:
+      - scripts/generate-stats.mjs
+      - .github/workflows/stats.yml
+
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      contents: write
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Render assets/github.svg
+        env:
+          # The headline number is ~100% restrictedContributionsCount (private
+          # enterprise repos). Third parties — including this workflow's
+          # GITHUB_TOKEN — can read that only while
+          #   Settings → Profile → "Include private contributions on my profile"
+          # is ON. It is ON today, so the default token is sufficient and no
+          # secret is required for this repo to work.
+          #
+          # STATS_TOKEN is the belt to that setting's braces: a PAT with
+          # read:user reads the count regardless of the profile toggle. It is
+          # entirely optional — `||` falls back, so a fork or a fresh clone
+          # with no secret configured still renders correctly.
+          GITHUB_TOKEN: ${{ secrets.STATS_TOKEN || secrets.GITHUB_TOKEN }}
+          GH_LOGIN: ${{ github.repository_owner }}
+          # If visibility is ever lost, the generator reuses the last good
+          # reading from assets/stats.json and warns. Set strict on a manual
+          # run to turn that warning into a hard failure instead.
+          STRICT: ${{ inputs.strict && '1' || '0' }}
+        run: node scripts/generate-stats.mjs
+
+      - name: Commit if it changed
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          # stats.json is the provenance record the next run reconciles
+          # against — it has to be committed alongside the card, or the
+          # regression guard has no baseline and every run looks like a
+          # first run.
+          git add assets/github.svg assets/stats.json
+          git diff --staged --quiet || git commit -m "chore: refresh stats card"
+          git push

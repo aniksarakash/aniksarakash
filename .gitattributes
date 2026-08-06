@@ -1,0 +1,9 @@
+# This repo is authored on Windows but every consumer is Linux or a browser:
+# the Actions runners execute the workflow YAML and the shell blocks inside it,
+# and GitHub renders the SVGs. Normalise to LF in the repository so a CRLF
+# checkout never leaks into a `run:` block or an SVG attribute.
+* text=auto eol=lf
+
+*.png binary
+*.jpg binary
+*.ico binary

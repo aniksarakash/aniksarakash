@@ -1,0 +1,228 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="340" viewBox="0 0 1200 340" role="img" aria-label="Anik Sarker Akash — System Engineer and AI Solution Developer">
+  <title>Anik Sarker Akash — System Engineer &amp; AI Solution Developer</title>
+
+  <defs>
+    <!-- Surface: ink, straight from the portfolio token set -->
+    <linearGradient id="ink" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#030014"/>
+      <stop offset="55%" stop-color="#0a0a0f"/>
+      <stop offset="100%" stop-color="#12121a"/>
+    </linearGradient>
+
+    <radialGradient id="auroraA" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#4f69e8" stop-opacity="0.85"/>
+      <stop offset="100%" stop-color="#4f69e8" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="auroraB" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#7c3aed" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#7c3aed" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="auroraC" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#06b6d4" stop-opacity="0.7"/>
+      <stop offset="100%" stop-color="#06b6d4" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Shimmer that travels across the wordmark -->
+    <linearGradient id="shine" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%"   stop-color="#e9e0cb"/>
+      <stop offset="42%"  stop-color="#f3eee4"/>
+      <stop offset="50%"  stop-color="#ffffff"/>
+      <stop offset="58%"  stop-color="#f3eee4"/>
+      <stop offset="100%" stop-color="#e9e0cb"/>
+      <animateTransform attributeName="gradientTransform" type="translate"
+                        values="-1 0; 1 0" dur="6s" repeatCount="indefinite"/>
+    </linearGradient>
+
+    <!-- userSpaceOnUse: the rule is a horizontal line, so its objectBoundingBox
+         has zero height and an bbox-relative gradient never resolves. -->
+    <linearGradient id="rule" gradientUnits="userSpaceOnUse" x1="80" y1="0" x2="740" y2="0">
+      <stop offset="0%"   stop-color="#4f69e8"/>
+      <stop offset="30%"  stop-color="#7c3aed"/>
+      <stop offset="60%"  stop-color="#06b6d4"/>
+      <stop offset="85%"  stop-color="#f59e0b"/>
+      <stop offset="100%" stop-color="#ec4899"/>
+    </linearGradient>
+
+    <linearGradient id="sweep" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%"   stop-color="#ffffff" stop-opacity="0"/>
+      <stop offset="50%"  stop-color="#ffffff" stop-opacity="0.07"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+    </linearGradient>
+
+    <pattern id="grid" width="44" height="44" patternUnits="userSpaceOnUse">
+      <path d="M44 0H0V44" fill="none" stroke="#f3eee4" stroke-opacity="0.05" stroke-width="1"/>
+    </pattern>
+
+    <filter id="soften" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="52"/>
+    </filter>
+
+    <filter id="grain" x="0" y="0" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="3" seed="7"/>
+      <feColorMatrix type="saturate" values="0"/>
+    </filter>
+
+    <clipPath id="frame"><rect width="1200" height="340" rx="18"/></clipPath>
+
+    <style>
+      .fs { font-family: 'Space Grotesk', 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; }
+      .fm { font-family: 'JetBrains Mono', ui-monospace, 'Cascadia Mono', Consolas, monospace; }
+      .fe { font-family: 'Instrument Serif', Georgia, 'Times New Roman', serif; font-style: italic; }
+
+      <!-- Entrance animations rest in their FINAL state and play from hidden
+           via `backwards` (which applies the from-state during the delay).
+           Authoring `opacity:0` in the base rule and animating up to 1 leaves
+           the banner completely blank anywhere the CSS is dropped — some feed
+           readers, image proxies and SVG-to-raster converters do exactly that.
+           Degrade to "not animated", never to "not there". -->
+      .rise { animation: rise .9s cubic-bezier(.22,.61,.36,1) backwards; }
+      @keyframes rise { from { opacity: 0; transform: translateY(14px); }
+                        to   { opacity: 1; transform: translateY(0); } }
+
+      .d1 { animation-delay: .10s } .d2 { animation-delay: .26s }
+      .d3 { animation-delay: .42s } .d4 { animation-delay: .58s }
+      .d5 { animation-delay: .74s } .d6 { animation-delay: .86s }
+      .d7 { animation-delay: .98s } .d8 { animation-delay: 1.10s }
+
+      .drift-a { animation: drift-a 17s ease-in-out infinite alternate; }
+      .drift-b { animation: drift-b 21s ease-in-out infinite alternate; }
+      .drift-c { animation: drift-c 14s ease-in-out infinite alternate; }
+      @keyframes drift-a { from { transform: translate(0,0)      scale(1);   }
+                           to   { transform: translate(90px,26px) scale(1.18); } }
+      @keyframes drift-b { from { transform: translate(0,0)       scale(1.1); }
+                           to   { transform: translate(-70px,-30px) scale(.9);  } }
+      @keyframes drift-c { from { transform: translate(0,0)       scale(.95); }
+                           to   { transform: translate(46px,-34px) scale(1.2); } }
+
+      .pan  { animation: pan 26s linear infinite; }
+      @keyframes pan { from { transform: translate(0,0) } to { transform: translate(44px,44px) } }
+
+      .glide { animation: glide 7s ease-in-out infinite; }
+      @keyframes glide { 0%,100% { transform: translateX(-460px) } 50% { transform: translateX(1320px) } }
+
+      .spin-cw  { animation: spin 34s linear infinite;         transform-origin: 1044px 170px; }
+      .spin-ccw { animation: spin 26s linear infinite reverse; transform-origin: 1044px 170px; }
+      @keyframes spin { to { transform: rotate(360deg) } }
+
+      .pulse { animation: pulse 2.6s ease-in-out infinite; }
+      @keyframes pulse { 0%,100% { opacity: .35; r: 4 } 50% { opacity: 1; r: 6 } }
+
+      .blink { animation: blink 1.05s steps(1) infinite; }
+      @keyframes blink { 0%,49% { opacity: 1 } 50%,100% { opacity: 0 } }
+
+      <!-- Same principle: rest with the stroke drawn, animate in from hidden. -->
+      .dash { stroke-dasharray: 1180;
+              animation: dash 1.5s .5s cubic-bezier(.22,.61,.36,1) backwards; }
+      @keyframes dash { from { stroke-dashoffset: 1180 } to { stroke-dashoffset: 0 } }
+
+      @media (prefers-reduced-motion: reduce) {
+        .rise, .drift-a, .drift-b, .drift-c, .pan, .glide,
+        .spin-cw, .spin-ccw, .pulse, .blink, .dash { animation: none }
+      }
+    </style>
+  </defs>
+
+  <g clip-path="url(#frame)">
+    <rect width="1200" height="340" fill="url(#ink)"/>
+
+    <!-- Blueprint grid, slowly panning -->
+    <g class="pan" opacity="0.9">
+      <rect x="-44" y="-44" width="1288" height="428" fill="url(#grid)"/>
+    </g>
+
+    <!-- Atmosphere: the chapter tints pooled behind the stage -->
+    <g filter="url(#soften)" opacity="0.55">
+      <ellipse class="drift-a" cx="235" cy="120" rx="215" ry="130" fill="url(#auroraA)"/>
+      <ellipse class="drift-b" cx="700" cy="290" rx="245" ry="145" fill="url(#auroraB)"/>
+      <ellipse class="drift-c" cx="1015" cy="95"  rx="195" ry="125" fill="url(#auroraC)"/>
+    </g>
+
+    <!-- Light sweep -->
+    <g class="glide" opacity="0.9">
+      <rect x="0" y="-60" width="230" height="460" fill="url(#sweep)" transform="skewX(-18)"/>
+    </g>
+
+    <!-- Orbit system, right-hand side -->
+    <g opacity="0.95">
+      <circle cx="1044" cy="170" r="106" fill="none" stroke="#4f69e8" stroke-opacity="0.22" stroke-width="1"/>
+      <circle cx="1044" cy="170" r="74"  fill="none" stroke="#06b6d4" stroke-opacity="0.20" stroke-width="1"/>
+      <circle cx="1044" cy="170" r="42"  fill="none" stroke="#ec4899" stroke-opacity="0.20" stroke-width="1"/>
+
+      <g class="spin-cw">
+        <circle class="pulse" cx="1150" cy="170" r="5" fill="#4f69e8"/>
+        <circle cx="1044" cy="64" r="3" fill="#f3eee4" opacity="0.55"/>
+      </g>
+      <g class="spin-ccw">
+        <circle class="pulse" cx="1118" cy="170" r="5" fill="#06b6d4" style="animation-delay:.7s"/>
+        <circle cx="970"  cy="170" r="3" fill="#f3eee4" opacity="0.45"/>
+      </g>
+      <g class="spin-cw" style="animation-duration:18s">
+        <circle class="pulse" cx="1086" cy="170" r="4" fill="#ec4899" style="animation-delay:1.3s"/>
+      </g>
+
+      <circle cx="1044" cy="170" r="15" fill="#030014" stroke="#f3eee4" stroke-opacity="0.30"/>
+      <circle class="pulse" cx="1044" cy="170" r="5" fill="#7c3aed" style="animation-delay:.35s"/>
+    </g>
+
+    <!-- ── Copy ─────────────────────────────────────────────── -->
+    <g transform="translate(78, 0)">
+      <g class="rise d1">
+        <circle cx="6" cy="76" r="4" fill="#10b981"/>
+        <circle cx="6" cy="76" r="4" fill="#10b981" opacity="0.4">
+          <animate attributeName="r" values="4;11;4" dur="2.4s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.4;0;0.4" dur="2.4s" repeatCount="indefinite"/>
+        </circle>
+        <text class="fm" x="22" y="81" font-size="12.5" letter-spacing="3.1" fill="#8f8aa8">
+          DHAKA, BD  ·  OPEN TO WORK
+        </text>
+      </g>
+
+      <text class="fs rise d3" x="0" y="152" font-size="57" font-weight="700"
+            letter-spacing="-1.2" fill="url(#shine)">ANIK SARKER AKASH</text>
+
+      <path class="dash" d="M2 172 H 660" stroke="url(#rule)" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+
+      <!-- One <text> with tspans so the browser flows the runs itself; textLength
+           pins the total width so the terminal cursor lands correctly whichever
+           mono fallback the viewer actually has installed. -->
+      <g class="rise d4">
+        <text class="fm" x="0" y="205" font-size="15.5" textLength="440" lengthAdjust="spacing"><tspan fill="#06b6d4">System Engineer</tspan><tspan fill="#4a4a5e">  //  </tspan><tspan fill="#7c3aed">AI Solution Developer</tspan></text>
+        <rect class="blink" x="450" y="192" width="9" height="17" fill="#f59e0b"/>
+      </g>
+
+      <text class="fe rise d5" x="0" y="243" font-size="24" fill="#b9b3c9">
+        I ship AI-assisted software in <tspan fill="#f3eee4">weeks</tspan>, not months.
+      </text>
+
+      <!-- Proof chips.
+           Positioning lives on the OUTER <g> and the animation on the inner one:
+           a CSS `transform` in @keyframes overrides the SVG transform attribute
+           on the same element, which would stack all three chips at the origin. -->
+      <g transform="translate(0, 268)">
+        <g class="rise d6">
+          <rect x="0" y="0" width="150" height="34" rx="17" fill="#f3eee4" fill-opacity="0.05" stroke="#4f69e8" stroke-opacity="0.42"/>
+          <text class="fm" x="16" y="22" font-size="12.5" fill="#f3eee4" font-weight="700">90%</text>
+          <text class="fm" x="50" y="22" font-size="11.5" fill="#8f8aa8">time saved</text>
+        </g>
+      </g>
+      <g transform="translate(160, 268)">
+        <g class="rise d7">
+          <rect x="0" y="0" width="152" height="34" rx="17" fill="#f3eee4" fill-opacity="0.05" stroke="#06b6d4" stroke-opacity="0.42"/>
+          <text class="fm" x="16" y="22" font-size="12.5" fill="#f3eee4" font-weight="700">86%</text>
+          <text class="fm" x="50" y="22" font-size="11.5" fill="#8f8aa8">SLA on cover</text>
+        </g>
+      </g>
+      <g transform="translate(322, 268)">
+        <g class="rise d8">
+          <rect x="0" y="0" width="196" height="34" rx="17" fill="#f3eee4" fill-opacity="0.05" stroke="#f59e0b" stroke-opacity="0.42"/>
+          <text class="fm" x="16" y="22" font-size="12.5" fill="#f3eee4" font-weight="700">5+</text>
+          <text class="fm" x="42" y="22" font-size="11.5" fill="#8f8aa8">systems in production</text>
+        </g>
+      </g>
+    </g>
+
+    <!-- Film grain, borrowed from the site -->
+    <rect width="1200" height="340" filter="url(#grain)" opacity="0.055" style="mix-blend-mode:overlay"/>
+    <rect width="1198" height="338" x="1" y="1" rx="17" fill="none" stroke="#f3eee4" stroke-opacity="0.10"/>
+  </g>
+</svg>
