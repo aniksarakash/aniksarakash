@@ -1,0 +1,101 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="344" viewBox="0 0 1000 344" role="img"
+     fill="#f3eee4"
+     aria-label="Support coverage by domain, remote first and on site when the problem needs hands. Endpoint and security: Defender XDR, EDR and AV, patching, imaging, device compliance — remote and on-site. Identity and Microsoft 365: Entra ID, Exchange Online, Teams, SharePoint, licensing — remote. Virtualisation and servers: VMware ESXi, Hyper-V, Windows Server, backup and restore — remote and on-site. Network: DNS, DHCP, VLAN, firewall rules, VPN, link and latency faults — on-site. Print fleet: Ysoft SafeQ, MyQ X, PaperCut, Ricoh RSI, secure release — on-site. Triaged in ServiceNow against ITIL, 86 percent SLA compliance across Reckitt Bangladesh cover.">
+  <title>Where I get called in — support coverage by domain and response mode</title>
+
+  <!-- The root fill is the inherited fallback for text. The .ink-* classes carry
+       the real hierarchy and override it (CSS beats inheritance), but if the
+       stylesheet is ever dropped the labels degrade to readable bone rather than
+       to the SVG default of black, which is invisible on this surface. -->
+
+  <defs>
+    <linearGradient id="surface" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#030014"/>
+      <stop offset="100%" stop-color="#12121a"/>
+    </linearGradient>
+
+    <!-- userSpaceOnUse: the rule is a horizontal line, so its objectBoundingBox
+         has zero height and a bbox-relative gradient would never resolve. -->
+    <linearGradient id="srule" gradientUnits="userSpaceOnUse" x1="34" y1="0" x2="966" y2="0">
+      <stop offset="0%" stop-color="#ec4899"/>
+      <stop offset="50%" stop-color="#4f69e8"/>
+      <stop offset="100%" stop-color="#06b6d4"/>
+    </linearGradient>
+
+    <style>
+      .fs { font-family: 'Space Grotesk', 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; }
+      .fm { font-family: 'JetBrains Mono', ui-monospace, 'Cascadia Mono', Consolas, monospace; }
+      .ink-1 { fill: #f3eee4 }   /* primary text   */
+      .ink-2 { fill: #a9a3bd }   /* secondary text */
+      .ink-3 { fill: #6f6a85 }   /* muted text     */
+
+      /* The entrance staggers on transform ONLY, never on opacity — the same
+         rule the hero and the stats card follow. A fade from opacity:0 under
+         'backwards' photographs as a blank card in anything that rasterizes at
+         t=0 (link previews, scrapers, headless screenshots), and an opacity:0
+         base rule blanks it wherever the CSS is stripped. Sliding 9px with
+         opacity pinned at 1 survives both. */
+      .rise { animation: rise .7s cubic-bezier(.22,.61,.36,1) backwards; }
+      @keyframes rise { from { transform: translateY(9px) } to { transform: translateY(0) } }
+      @media (prefers-reduced-motion: reduce) { .rise { animation: none } }
+    </style>
+  </defs>
+
+  <rect width="1000" height="344" rx="16" fill="url(#surface)"/>
+  <rect x="0.5" y="0.5" width="999" height="343" rx="16" fill="none" stroke="#f3eee4" stroke-opacity="0.10"/>
+
+  <!-- Title block -->
+  <text class="fs ink-1" x="34" y="42" font-size="19" font-weight="700">Where I get called in</text>
+  <text class="fm ink-3" x="966" y="42" font-size="11" text-anchor="end">L2 / L3 · enterprise sites</text>
+  <text class="fm ink-3" x="34" y="64" font-size="11.5">Remote first. On site when the problem needs hands on the hardware.</text>
+  <path d="M34 78 H 966" stroke="url(#srule)" stroke-width="1.5" stroke-opacity="0.6"/>
+
+  <!-- ── Endpoint &amp; security ─────────────────────────────────────────── -->
+  <g class="rise" style="animation-delay:.08s">
+    <rect x="34" y="97" width="3" height="21" rx="1.5" fill="#ec4899"/>
+    <text class="fs ink-1" x="48"  y="112" font-size="13.5" font-weight="600">Endpoint &amp; security</text>
+    <text class="fm ink-2" x="250" y="112" font-size="11.5">Defender XDR · EDR / AV · patching · imaging · device compliance</text>
+    <rect x="830" y="97" width="136" height="22" rx="11" fill="#f3eee4" fill-opacity="0.05" stroke="#2a2a3a"/>
+    <text class="fm ink-3" x="898" y="111" font-size="9" letter-spacing="0.9" text-anchor="middle">REMOTE + ON-SITE</text>
+  </g>
+
+  <!-- ── Identity &amp; Microsoft 365 ─────────────────────────────────────── -->
+  <g class="rise" style="animation-delay:.15s">
+    <rect x="34" y="141" width="3" height="21" rx="1.5" fill="#4f69e8"/>
+    <text class="fs ink-1" x="48"  y="156" font-size="13.5" font-weight="600">Identity &amp; Microsoft 365</text>
+    <text class="fm ink-2" x="250" y="156" font-size="11.5">Entra ID · Exchange Online · Teams · SharePoint · licensing</text>
+    <rect x="830" y="141" width="136" height="22" rx="11" fill="#f3eee4" fill-opacity="0.05" stroke="#2a2a3a"/>
+    <text class="fm ink-3" x="898" y="155" font-size="9" letter-spacing="0.9" text-anchor="middle">REMOTE</text>
+  </g>
+
+  <!-- ── Virtualisation &amp; servers ─────────────────────────────────────── -->
+  <g class="rise" style="animation-delay:.22s">
+    <rect x="34" y="185" width="3" height="21" rx="1.5" fill="#f59e0b"/>
+    <text class="fs ink-1" x="48"  y="200" font-size="13.5" font-weight="600">Virtualisation &amp; servers</text>
+    <text class="fm ink-2" x="250" y="200" font-size="11.5">VMware ESXi · Hyper-V · Windows Server · backup and restore</text>
+    <rect x="830" y="185" width="136" height="22" rx="11" fill="#f3eee4" fill-opacity="0.05" stroke="#2a2a3a"/>
+    <text class="fm ink-3" x="898" y="199" font-size="9" letter-spacing="0.9" text-anchor="middle">REMOTE + ON-SITE</text>
+  </g>
+
+  <!-- ── Network ────────────────────────────────────────────────────────── -->
+  <g class="rise" style="animation-delay:.29s">
+    <rect x="34" y="229" width="3" height="21" rx="1.5" fill="#06b6d4"/>
+    <text class="fs ink-1" x="48"  y="244" font-size="13.5" font-weight="600">Network</text>
+    <text class="fm ink-2" x="250" y="244" font-size="11.5">DNS · DHCP · VLAN · firewall rules · VPN · link and latency faults</text>
+    <rect x="830" y="229" width="136" height="22" rx="11" fill="#f3eee4" fill-opacity="0.05" stroke="#2a2a3a"/>
+    <text class="fm ink-3" x="898" y="243" font-size="9" letter-spacing="0.9" text-anchor="middle">ON-SITE</text>
+  </g>
+
+  <!-- ── Print fleet ────────────────────────────────────────────────────── -->
+  <g class="rise" style="animation-delay:.36s">
+    <rect x="34" y="273" width="3" height="21" rx="1.5" fill="#7c3aed"/>
+    <text class="fs ink-1" x="48"  y="288" font-size="13.5" font-weight="600">Print fleet</text>
+    <text class="fm ink-2" x="250" y="288" font-size="11.5">Ysoft SafeQ · MyQ X · PaperCut · Ricoh RSI · secure release</text>
+    <rect x="830" y="273" width="136" height="22" rx="11" fill="#f3eee4" fill-opacity="0.05" stroke="#2a2a3a"/>
+    <text class="fm ink-3" x="898" y="287" font-size="9" letter-spacing="0.9" text-anchor="middle">ON-SITE</text>
+  </g>
+
+  <text class="fm ink-3" x="34" y="326" font-size="10.5" opacity="0.8">
+    Triaged in ServiceNow against ITIL · 86% SLA compliance across Reckitt Bangladesh cover
+  </text>
+</svg>

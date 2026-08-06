@@ -48,12 +48,14 @@ By night it means shipping AI-powered tools that compress months of grunt work i
 **📍 Based in** &nbsp;Badda, Dhaka, Bangladesh
 **🛠️ Currently** &nbsp;System Engineer @ Smart Printing Solutions
 **🔁 Also** &nbsp;L2 Backup DSS @ Reckitt Bangladesh
+**🚗 On the ground** &nbsp;client site visits + remote support
 **🎓 Foundation** &nbsp;B.Sc. Computer Science & Engineering
 
 </td>
 <td width="50%" valign="top">
 
 **🎯 Focused on** &nbsp;MCP · AI agents · RAG · Python automation
+**🛡️ Also hands-on** &nbsp;VM · Windows · M365 · XDR/EDR · network
 **✍️ Writing about** &nbsp;LLM debugging, context engineering, ITSM
 **📬 Reach me** &nbsp;`info@aniksarkerakash.com`
 **💬 Ask me about** &nbsp;shipping AI code you can actually defend
@@ -208,6 +210,106 @@ flowchart TB
 
 <img src="./assets/divider.svg" width="100%" alt="" />
 
+## 🛡️ &nbsp;The other half of the job
+
+Building the applications is one side. The other is keeping enterprise estates running — **remote support daily, on client sites when the fault needs hands on the hardware.** Most weeks contain both.
+
+<div align="center">
+  <img src="./assets/support.svg" alt="Support coverage by domain: endpoint and security (Defender XDR, EDR/AV, patching, imaging, device compliance) remote and on-site; identity and Microsoft 365 (Entra ID, Exchange Online, Teams, SharePoint, licensing) remote; virtualisation and servers (VMware ESXi, Hyper-V, Windows Server, backup and restore) remote and on-site; network (DNS, DHCP, VLAN, firewall rules, VPN, link and latency faults) on-site; print fleet (Ysoft SafeQ, MyQ X, PaperCut, Ricoh RSI, secure release) on-site" width="100%" />
+</div>
+
+<table>
+<tr>
+<td width="50%" valign="top">
+
+#### 🖥️ &nbsp;Endpoint, identity & security
+
+**Defender XDR / EDR** &nbsp;alert triage, isolation, exclusions
+**Antivirus** &nbsp;policy, exceptions, false-positive analysis
+**Windows admin** &nbsp;GPO, imaging, patching, device compliance
+**Microsoft 365** &nbsp;Entra ID, Exchange Online, Teams, SharePoint
+**Licensing** &nbsp;assignment, tenant hygiene, access reviews
+
+</td>
+<td width="50%" valign="top">
+
+#### 🌐 &nbsp;Infrastructure & network
+
+**Virtualisation** &nbsp;VMware ESXi, Hyper-V, snapshots, resource contention
+**Windows Server** &nbsp;AD, DNS, DHCP, file services, backup and restore
+**Network faults** &nbsp;VLAN, firewall rules, VPN, routing, latency
+**Diagnosis** &nbsp;packet capture, log correlation, root-cause writeups
+**Remote support** &nbsp;fast triage before anyone drives anywhere
+
+</td>
+</tr>
+</table>
+
+> **On-site is a diagnostic tool, not a fallback.** Plenty of faults only reveal themselves in front of the rack — a link that renegotiates when the room warms up, a finisher that jams on one paper weight. I go when the evidence is physical, and solve it remotely when it isn't.
+
+<img src="./assets/divider.svg" width="100%" alt="" />
+
+## 🖨️ &nbsp;Print management, built to the customer's rules
+
+Print deployments fail when a product's defaults get imposed on an organisation that works differently. So the sequence is **audit → design → pilot → rollout → measure** — and the custom application work exists because the last mile is almost never in the box.
+
+```mermaid
+%%{init: {'theme':'base','themeVariables':{
+  'primaryColor':'#12121a','primaryTextColor':'#f3eee4','primaryBorderColor':'#4f69e8',
+  'lineColor':'#7c3aed','secondaryColor':'#0a0a0f','tertiaryColor':'#030014',
+  'clusterBkg':'#0a0a0f','clusterBorder':'#2a2a3a','fontFamily':'JetBrains Mono, monospace','fontSize':'13px'}}}%%
+flowchart LR
+    A["🔎 Fleet audit<br/><i>volumes · devices · who prints what</i>"] --> B["📐 Solution design<br/><i>SafeQ · MyQ X · PaperCut · RSI</i>"]
+    B --> C["🔌 Integration<br/><i>AD/Entra · cost centres · ERP</i>"]
+    C --> D{"🧪 Pilot on one<br/>department"}
+    D -->|"needs rework"| B
+    D -->|"signed off"| E["🚀 Fleet rollout<br/><i>secure release · scan flows</i>"]
+    E --> F["🧩 Custom application<br/><i>the gap the product left</i>"]
+    F --> G["📊 Measure<br/><i>cost recovery · waste · uptime</i>"]
+    G -.->|"tunes the next site"| A
+
+    style A fill:#0a0a0f,stroke:#ec4899,stroke-width:2px,color:#f3eee4
+    style B fill:#0a0a0f,stroke:#4f69e8,stroke-width:2px,color:#f3eee4
+    style C fill:#0a0a0f,stroke:#f59e0b,stroke-width:2px,color:#f3eee4
+    style D fill:#12121a,stroke:#f59e0b,stroke-width:3px,color:#f59e0b
+    style E fill:#0a0a0f,stroke:#06b6d4,stroke-width:2px,color:#f3eee4
+    style F fill:#0a0a0f,stroke:#7c3aed,stroke-width:2px,color:#f3eee4
+    style G fill:#0a0a0f,stroke:#10b981,stroke-width:2px,color:#f3eee4
+```
+
+<table>
+<tr>
+<td width="50%" valign="top">
+
+#### 🧭 &nbsp;Deployment & integration
+
+**Platforms** &nbsp;`Ysoft SafeQ` `MyQ X` `PaperCut` `Ricoh RSI`
+**Secure release** &nbsp;badge / PIN pull printing, follow-me
+**Identity** &nbsp;AD & Entra ID sync, department mapping
+**Accounting** &nbsp;cost centres, quotas, chargeback reporting
+**Scan flows** &nbsp;scan-to-folder, email, and downstream systems
+
+</td>
+<td width="50%" valign="top">
+
+#### 🧩 &nbsp;Where custom code comes in
+
+**Bespoke reports** &nbsp;the breakdown finance asked for, not the built-in one
+**System bridges** &nbsp;pushing usage into ERP, billing and approval flows
+**Workflow glue** &nbsp;approval rules the platform can't express natively
+**Provisioning** &nbsp;scripted onboarding across a mixed device fleet
+**Dashboards** &nbsp;fleet health and consumables, ahead of the callout
+
+</td>
+</tr>
+</table>
+
+<blockquote>
+Every one of those custom pieces started as the same sentence in a requirements meeting — <i>"can it also do…"</i>. The honest answer is usually <b>not out of the box</b>, and that gap is exactly where a small, well-scoped application earns its keep.
+</blockquote>
+
+<img src="./assets/divider.svg" width="100%" alt="" />
+
 ## 🧰 &nbsp;Toolkit
 
 <div align="center">
@@ -241,11 +343,11 @@ Clean architecture · Defensible code
 <td width="33%" valign="top">
 
 #### 🏗️ &nbsp;IT Infrastructure
-`Windows Server` `VMware ESXi`
-`Microsoft Azure` `Active Directory`
+`Windows Server` `VMware ESXi` `Hyper-V`
+`Microsoft Azure` `Active Directory` `Entra ID`
 
-ServiceNow · ITIL framework
-Enterprise security · Risk management
+ServiceNow · ITIL · Defender XDR / EDR
+DNS · DHCP · VLAN · VPN · firewalls
 
 </td>
 </tr>
