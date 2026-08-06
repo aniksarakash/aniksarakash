@@ -1,0 +1,111 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="312" viewBox="0 0 1000 312" role="img"
+     fill="#f3eee4"
+     aria-label="How I build: Discovery, then context engineering, then AI-assisted scaffold, then a human review gate. Work that reads wrong goes back to context engineering. Work that is defensible goes on to test and harden, then ship, then measure. Measurement feeds the next build.">
+  <title>The build loop, from discovery to measurement</title>
+
+  <!-- The root fill is the inherited fallback for text. The .ink-* classes carry the
+       real hierarchy and override it, but if the stylesheet is ever dropped the labels
+       degrade to readable bone rather than to black, which is invisible on this surface. -->
+
+  <defs>
+    <linearGradient id="bl-surface" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0a0a0f"/>
+      <stop offset="100%" stop-color="#12121a"/>
+    </linearGradient>
+    <linearGradient id="bl-rail" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#ec4899"/>
+      <stop offset="35%" stop-color="#7c3aed"/>
+      <stop offset="70%" stop-color="#06b6d4"/>
+      <stop offset="100%" stop-color="#10b981"/>
+    </linearGradient>
+    <marker id="bl-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#7c3aed"/>
+    </marker>
+    <style>
+      .fs { font-family: 'Space Grotesk', 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; }
+      .fm { font-family: 'JetBrains Mono', ui-monospace, 'Cascadia Mono', Consolas, monospace; }
+      .ink-1 { fill: #f3eee4 }
+      .ink-2 { fill: #a9a3bd }
+      .ink-3 { fill: #6f6a85 }
+      .t-title { font-size: 12.5px; font-weight: 600; letter-spacing: .1px }
+      .t-sub   { font-size: 9.5px }
+      .t-edge  { font-size: 9px; letter-spacing: .3px }
+      .t-num   { font-size: 10.5px; font-weight: 700 }
+
+      /* Decoration only. Every node, label and rail below is drawn in its resting
+         state, so a client that never starts the animation clock still sees the
+         finished diagram. */
+      @keyframes travel { from { transform: translateX(0) } to { transform: translateX(844px) } }
+      @keyframes breathe { 0%,100% { transform: scale(1) } 50% { transform: scale(1.09) } }
+      .spark { animation: travel 6s cubic-bezier(.65,0,.35,1) infinite }
+      .gate-halo { transform-origin: 500px 148px; animation: breathe 3.2s ease-in-out infinite }
+      @media (prefers-reduced-motion: reduce) {
+        .spark, .gate-halo { animation: none }
+      }
+    </style>
+  </defs>
+
+  <rect width="1000" height="312" rx="14" fill="#030014"/>
+  <rect x="1" y="1" width="998" height="310" rx="13" fill="url(#bl-surface)" stroke="#1c1c2b"/>
+
+  <!-- ── rail ───────────────────────────────────────────────────────────── -->
+  <line x1="78" y1="148" x2="922" y2="148" stroke="url(#bl-rail)" stroke-width="2.5" stroke-linecap="round"/>
+  <circle class="spark" cx="78" cy="148" r="3.5" fill="#f3eee4"/>
+
+  <!-- ── stops ──────────────────────────────────────────────────────────── -->
+  <!-- 1 · Discovery -->
+  <text class="fs t-title ink-1" x="78" y="98" text-anchor="middle">Discovery</text>
+  <text class="fm t-sub ink-2"   x="78" y="115" text-anchor="middle">where does the time go?</text>
+  <circle cx="78" cy="148" r="17" fill="#0a0a0f" stroke="#ec4899" stroke-width="2"/>
+  <text class="fm t-num" x="78" y="152" text-anchor="middle" fill="#ec4899">01</text>
+
+  <!-- 2 · Context engineering -->
+  <circle cx="219" cy="148" r="17" fill="#0a0a0f" stroke="#4f69e8" stroke-width="2"/>
+  <text class="fm t-num" x="219" y="152" text-anchor="middle" fill="#4f69e8">02</text>
+  <text class="fs t-title ink-1" x="219" y="192" text-anchor="middle">Context engineering</text>
+  <text class="fm t-sub ink-2"   x="219" y="209" text-anchor="middle">codebase, not snippets</text>
+
+  <!-- 3 · Scaffold -->
+  <text class="fs t-title ink-1" x="360" y="98" text-anchor="middle">AI-assisted scaffold</text>
+  <text class="fm t-sub ink-2"   x="360" y="115" text-anchor="middle">schema · services · UI</text>
+  <circle cx="360" cy="148" r="17" fill="#0a0a0f" stroke="#7c3aed" stroke-width="2"/>
+  <text class="fm t-num" x="360" y="152" text-anchor="middle" fill="#7c3aed">03</text>
+
+  <!-- 4 · The gate, deliberately the heaviest mark on the rail -->
+  <g class="gate-halo">
+    <rect x="478" y="126" width="44" height="44" rx="6" transform="rotate(45 500 148)"
+          fill="none" stroke="#f59e0b" stroke-width="1" opacity=".35"/>
+  </g>
+  <rect x="483" y="131" width="34" height="34" rx="5" transform="rotate(45 500 148)"
+        fill="#12121a" stroke="#f59e0b" stroke-width="2.5"/>
+  <text class="fm t-num" x="500" y="152" text-anchor="middle" fill="#f59e0b">04</text>
+  <text class="fs t-title" x="500" y="200" text-anchor="middle" fill="#f59e0b">Human review gate</text>
+  <text class="fm t-sub ink-2" x="500" y="217" text-anchor="middle">I read every line</text>
+  <text class="fm t-edge" x="500" y="233" text-anchor="middle" fill="#f59e0b">reads wrong, back to 02</text>
+
+  <!-- 5 · Test -->
+  <text class="fs t-title ink-1" x="641" y="98" text-anchor="middle">Test + harden</text>
+  <text class="fm t-sub ink-2"   x="641" y="115" text-anchor="middle">the failure paths</text>
+  <circle cx="641" cy="148" r="17" fill="#0a0a0f" stroke="#06b6d4" stroke-width="2"/>
+  <text class="fm t-num" x="641" y="152" text-anchor="middle" fill="#06b6d4">05</text>
+
+  <!-- 6 · Ship -->
+  <circle cx="782" cy="148" r="17" fill="#0a0a0f" stroke="#10b981" stroke-width="2"/>
+  <text class="fm t-num" x="782" y="152" text-anchor="middle" fill="#10b981">06</text>
+  <text class="fs t-title ink-1" x="782" y="192" text-anchor="middle">Ship</text>
+  <text class="fm t-sub ink-2"   x="782" y="209" text-anchor="middle">to a real user</text>
+
+  <!-- 7 · Measure -->
+  <text class="fs t-title ink-1" x="922" y="98" text-anchor="middle">Measure</text>
+  <text class="fm t-sub ink-2"   x="922" y="115" text-anchor="middle">SLA · cycle time</text>
+  <circle cx="922" cy="148" r="17" fill="#0a0a0f" stroke="#4f69e8" stroke-width="2"/>
+  <text class="fm t-num" x="922" y="152" text-anchor="middle" fill="#4f69e8">07</text>
+
+  <!-- ── feedback edge ──────────────────────────────────────────────────── -->
+  <!-- Only the outer loop is drawn. The gate's own reject path is stated in the
+       label under stop 04, because an arc back to 02 would cross three node
+       labels on the way and nothing about that reads clearly at this width. -->
+  <path d="M922 172 C 922 292, 78 292, 78 172" fill="none" stroke="#4f69e8" stroke-width="1.4"
+        stroke-dasharray="4 4" marker-end="url(#bl-arrow)" opacity=".75"/>
+  <text class="fm t-edge ink-3" x="500" y="288" text-anchor="middle">measurement feeds the next build</text>
+</svg>

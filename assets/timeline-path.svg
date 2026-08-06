@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="262" viewBox="0 0 1000 262" role="img"
+     fill="#f3eee4"
+     aria-label="Career path. Foundation: B.Sc. in Computer Science and Engineering, covering Python, databases and systems thinking. Certified: Google Professional Certificates in IT Support, IT Automation with Python, Data Analytics, UX Design and Project Management. August 2024: System Engineer at Smart Printing Solutions, building custom applications and Managed Print Services. January 2025: backup L2 IT and Desktop Support for Reckitt Bangladesh, working in ServiceNow against ITIL with 86 percent SLA compliance on cover. Now: MCP, agents and RAG in production.">
+  <title>From CSE fundamentals to AI-assisted delivery</title>
+
+  <!-- Root fill is the inherited fallback for text; .ink-* classes carry the hierarchy. -->
+
+  <defs>
+    <linearGradient id="tl-surface" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0a0a0f"/>
+      <stop offset="100%" stop-color="#12121a"/>
+    </linearGradient>
+    <linearGradient id="tl-rail" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%"   stop-color="#4f69e8"/>
+      <stop offset="28%"  stop-color="#7c3aed"/>
+      <stop offset="55%"  stop-color="#06b6d4"/>
+      <stop offset="80%"  stop-color="#f59e0b"/>
+      <stop offset="100%" stop-color="#10b981"/>
+    </linearGradient>
+    <style>
+      .fs { font-family: 'Space Grotesk', 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; }
+      .fm { font-family: 'JetBrains Mono', ui-monospace, 'Cascadia Mono', Consolas, monospace; }
+      .ink-1 { fill: #f3eee4 }
+      .ink-2 { fill: #a9a3bd }
+      .ink-3 { fill: #6f6a85 }
+      .hd { font-size: 13.5px; font-weight: 600 }
+      .nm { font-size: 12.5px; font-weight: 600 }
+      .sb { font-size: 9.5px }
+      .cp { font-size: 9.5px; font-weight: 700; letter-spacing: 1.1px }
+
+      /* Decoration only. Chips, labels and the rail sit in their resting state. */
+      @keyframes ring { 0% { transform: scale(1); opacity: .55 } 100% { transform: scale(2.1); opacity: 0 } }
+      .here { transform-origin: 930px 150px; animation: ring 2.4s ease-out infinite }
+      @media (prefers-reduced-motion: reduce) { .here { animation: none } }
+    </style>
+  </defs>
+
+  <rect width="1000" height="262" rx="14" fill="#030014"/>
+  <rect x="1" y="1" width="998" height="260" rx="13" fill="url(#tl-surface)" stroke="#1c1c2b"/>
+
+  <text class="fs hd" x="34" y="36" fill="#f3eee4">From CSE fundamentals to AI-assisted delivery</text>
+
+  <!-- The rail is drawn as four segments in the gaps between chips rather than one
+       line under them, so nothing depends on the chips' opaque fill to hide it. -->
+  <g stroke-width="2.5" stroke-linecap="round">
+    <line x1="126" y1="150" x2="229" y2="150" stroke="#4f69e8"/>
+    <line x1="341" y1="150" x2="444" y2="150" stroke="#7c3aed"/>
+    <line x1="556" y1="150" x2="659" y2="150" stroke="#06b6d4"/>
+    <line x1="771" y1="150" x2="874" y2="150" stroke="#f59e0b"/>
+  </g>
+
+  <!-- ── 1 · Foundation ─────────────────────────────────────────────────── -->
+  <text class="fs nm ink-1" x="70" y="112" text-anchor="middle">B.Sc. in CSE</text>
+  <rect x="18" y="137" width="104" height="26" rx="13" fill="#0a0a0f" stroke="#4f69e8" stroke-width="1.6"/>
+  <text class="fm cp" x="70" y="154" text-anchor="middle" fill="#4f69e8">FOUNDATION</text>
+  <text class="fm sb ink-2" x="70" y="192" text-anchor="middle">Python · databases</text>
+  <text class="fm sb ink-3" x="70" y="207" text-anchor="middle">systems thinking</text>
+
+  <!-- ── 2 · Certified ──────────────────────────────────────────────────── -->
+  <text class="fs nm ink-1" x="285" y="112" text-anchor="middle">Google Professional</text>
+  <rect x="233" y="137" width="104" height="26" rx="13" fill="#0a0a0f" stroke="#7c3aed" stroke-width="1.6"/>
+  <text class="fm cp" x="285" y="154" text-anchor="middle" fill="#7c3aed">CERTIFIED</text>
+  <text class="fm sb ink-2" x="285" y="192" text-anchor="middle">IT Support · IT Automation</text>
+  <text class="fm sb ink-3" x="285" y="207" text-anchor="middle">Data Analytics · UX · PM</text>
+
+  <!-- ── 3 · Smart Printing Solutions ───────────────────────────────────── -->
+  <text class="fs nm ink-1" x="500" y="112" text-anchor="middle">System Engineer</text>
+  <rect x="448" y="137" width="104" height="26" rx="13" fill="#0a0a0f" stroke="#06b6d4" stroke-width="1.6"/>
+  <text class="fm cp" x="500" y="154" text-anchor="middle" fill="#06b6d4">AUG 2024</text>
+  <text class="fm sb ink-2" x="500" y="192" text-anchor="middle">Smart Printing Solutions</text>
+  <text class="fm sb ink-3" x="500" y="207" text-anchor="middle">custom apps · MPS · enterprise</text>
+
+  <!-- ── 4 · Reckitt cover ──────────────────────────────────────────────── -->
+  <text class="fs nm ink-1" x="715" y="112" text-anchor="middle">L2 Backup IT / DSS</text>
+  <rect x="663" y="137" width="104" height="26" rx="13" fill="#0a0a0f" stroke="#f59e0b" stroke-width="1.6"/>
+  <text class="fm cp" x="715" y="154" text-anchor="middle" fill="#f59e0b">JAN 2025</text>
+  <text class="fm sb ink-2" x="715" y="192" text-anchor="middle">Reckitt Bangladesh</text>
+  <text class="fm sb ink-3" x="715" y="207" text-anchor="middle">ServiceNow · ITIL · 86% SLA</text>
+
+  <!-- ── 5 · Now ────────────────────────────────────────────────────────── -->
+  <text class="fs nm ink-1" x="930" y="112" text-anchor="middle">AI in production</text>
+  <circle class="here" cx="930" cy="150" r="15" fill="none" stroke="#10b981" stroke-width="1.5"/>
+  <rect x="878" y="137" width="104" height="26" rx="13" fill="#12121a" stroke="#10b981" stroke-width="2"/>
+  <text class="fm cp" x="930" y="154" text-anchor="middle" fill="#10b981">NOW</text>
+  <text class="fm sb ink-2" x="930" y="192" text-anchor="middle">MCP · agents · RAG</text>
+  <text class="fm sb ink-3" x="930" y="207" text-anchor="middle">and writing about it</text>
+
+  <text class="fm sb ink-3" x="500" y="240" text-anchor="middle">Two roles running in parallel since January 2025: build on one side, keep the estate up on the other.</text>
+</svg>

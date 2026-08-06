@@ -1,0 +1,108 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="330" viewBox="0 0 1000 330" role="img"
+     fill="#f3eee4"
+     aria-label="Print deployment sequence: fleet audit, solution design, integration, then a pilot on one department. A pilot that needs rework returns to solution design. A pilot that is signed off proceeds to fleet rollout, then the custom application that closes the gap the product left, then measurement. What is measured tunes the next site.">
+  <title>Print deployment, from fleet audit to the custom application</title>
+
+  <!-- Root fill is the inherited fallback for text; the .ink-* classes carry the real
+       hierarchy. If the stylesheet is dropped, labels degrade to readable bone. -->
+
+  <defs>
+    <linearGradient id="pr-surface" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0a0a0f"/>
+      <stop offset="100%" stop-color="#12121a"/>
+    </linearGradient>
+    <linearGradient id="pr-rail" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%"   stop-color="#ec4899"/>
+      <stop offset="30%"  stop-color="#4f69e8"/>
+      <stop offset="62%"  stop-color="#06b6d4"/>
+      <stop offset="82%"  stop-color="#7c3aed"/>
+      <stop offset="100%" stop-color="#10b981"/>
+    </linearGradient>
+    <marker id="pr-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#7c3aed"/>
+    </marker>
+    <style>
+      .fs { font-family: 'Space Grotesk', 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; }
+      .fm { font-family: 'JetBrains Mono', ui-monospace, 'Cascadia Mono', Consolas, monospace; }
+      .ink-1 { fill: #f3eee4 }
+      .ink-2 { fill: #a9a3bd }
+      .ink-3 { fill: #6f6a85 }
+      .t-title { font-size: 12.5px; font-weight: 600 }
+      .t-sub   { font-size: 9.5px }
+      .t-edge  { font-size: 9px; letter-spacing: .3px }
+      .t-num   { font-size: 10.5px; font-weight: 700 }
+
+      /* Decoration only. Nodes and labels are drawn in their resting state. */
+      @keyframes travel { from { transform: translateX(0) } to { transform: translateX(844px) } }
+      @keyframes breathe { 0%,100% { transform: scale(1) } 50% { transform: scale(1.09) } }
+      .spark { animation: travel 6.5s cubic-bezier(.65,0,.35,1) infinite }
+      .pilot-halo { transform-origin: 500px 158px; animation: breathe 3.2s ease-in-out infinite }
+      @media (prefers-reduced-motion: reduce) { .spark, .pilot-halo { animation: none } }
+    </style>
+  </defs>
+
+  <rect width="1000" height="330" rx="14" fill="#030014"/>
+  <rect x="1" y="1" width="998" height="328" rx="13" fill="url(#pr-surface)" stroke="#1c1c2b"/>
+
+  <text class="fs" x="34" y="38" font-size="13.5" font-weight="600" fill="#f3eee4">The sequence that keeps a rollout honest</text>
+  <text class="fm t-sub ink-3" x="34" y="55">no fleet-wide change ships without a signed-off pilot</text>
+
+  <!-- ── rail ───────────────────────────────────────────────────────────── -->
+  <line x1="78" y1="158" x2="922" y2="158" stroke="url(#pr-rail)" stroke-width="2.5" stroke-linecap="round"/>
+  <circle class="spark" cx="78" cy="158" r="3.5" fill="#f3eee4"/>
+
+  <!-- 1 · Fleet audit -->
+  <text class="fs t-title ink-1" x="78" y="108" text-anchor="middle">Fleet audit</text>
+  <text class="fm t-sub ink-2"   x="78" y="125" text-anchor="middle">who prints what</text>
+  <circle cx="78" cy="158" r="17" fill="#0a0a0f" stroke="#ec4899" stroke-width="2"/>
+  <text class="fm t-num" x="78" y="162" text-anchor="middle" fill="#ec4899">01</text>
+
+  <!-- 2 · Solution design -->
+  <circle cx="219" cy="158" r="17" fill="#0a0a0f" stroke="#4f69e8" stroke-width="2"/>
+  <text class="fm t-num" x="219" y="162" text-anchor="middle" fill="#4f69e8">02</text>
+  <text class="fs t-title ink-1" x="219" y="202" text-anchor="middle">Solution design</text>
+  <text class="fm t-sub ink-2"   x="219" y="219" text-anchor="middle">SafeQ · MyQ X · PaperCut</text>
+
+  <!-- 3 · Integration -->
+  <text class="fs t-title ink-1" x="360" y="108" text-anchor="middle">Integration</text>
+  <text class="fm t-sub ink-2"   x="360" y="125" text-anchor="middle">AD / Entra · cost centres</text>
+  <circle cx="360" cy="158" r="17" fill="#0a0a0f" stroke="#f59e0b" stroke-width="2"/>
+  <text class="fm t-num" x="360" y="162" text-anchor="middle" fill="#f59e0b">03</text>
+
+  <!-- 4 · The pilot gate -->
+  <g class="pilot-halo">
+    <rect x="478" y="136" width="44" height="44" rx="6" transform="rotate(45 500 158)"
+          fill="none" stroke="#f59e0b" stroke-width="1" opacity=".35"/>
+  </g>
+  <rect x="483" y="141" width="34" height="34" rx="5" transform="rotate(45 500 158)"
+        fill="#12121a" stroke="#f59e0b" stroke-width="2.5"/>
+  <text class="fm t-num" x="500" y="162" text-anchor="middle" fill="#f59e0b">04</text>
+  <text class="fs t-title" x="500" y="210" text-anchor="middle" fill="#f59e0b">Pilot, one department</text>
+  <text class="fm t-sub ink-2" x="500" y="227" text-anchor="middle">before anyone else notices</text>
+  <text class="fm t-edge" x="500" y="243" text-anchor="middle" fill="#f59e0b">needs rework, back to 02</text>
+
+  <!-- 5 · Rollout -->
+  <text class="fs t-title ink-1" x="641" y="108" text-anchor="middle">Fleet rollout</text>
+  <text class="fm t-sub ink-2"   x="641" y="125" text-anchor="middle">secure release · scan flows</text>
+  <circle cx="641" cy="158" r="17" fill="#0a0a0f" stroke="#06b6d4" stroke-width="2"/>
+  <text class="fm t-num" x="641" y="162" text-anchor="middle" fill="#06b6d4">05</text>
+
+  <!-- 6 · Custom application -->
+  <circle cx="782" cy="158" r="17" fill="#0a0a0f" stroke="#7c3aed" stroke-width="2"/>
+  <text class="fm t-num" x="782" y="162" text-anchor="middle" fill="#7c3aed">06</text>
+  <text class="fs t-title ink-1" x="782" y="202" text-anchor="middle">Custom application</text>
+  <text class="fm t-sub ink-2"   x="782" y="219" text-anchor="middle">the gap the product left</text>
+
+  <!-- 7 · Measure -->
+  <text class="fs t-title ink-1" x="922" y="108" text-anchor="middle">Measure</text>
+  <text class="fm t-sub ink-2"   x="922" y="125" text-anchor="middle">cost recovery · uptime</text>
+  <circle cx="922" cy="158" r="17" fill="#0a0a0f" stroke="#10b981" stroke-width="2"/>
+  <text class="fm t-num" x="922" y="162" text-anchor="middle" fill="#10b981">07</text>
+
+  <!-- ── feedback edge ──────────────────────────────────────────────────── -->
+  <!-- Only the outer loop is drawn; the pilot's reject path is stated as a label
+       under stop 04, since an arc back to 02 would cross the node labels between. -->
+  <path d="M922 182 C 922 308, 78 308, 78 182" fill="none" stroke="#10b981" stroke-width="1.4"
+        stroke-dasharray="4 4" marker-end="url(#pr-arrow)" opacity=".7"/>
+  <text class="fm t-edge ink-3" x="500" y="304" text-anchor="middle">what the numbers say tunes the next site</text>
+</svg>

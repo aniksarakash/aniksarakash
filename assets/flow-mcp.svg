@@ -1,0 +1,122 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="432" viewBox="0 0 1000 432" role="img"
+     fill="#f3eee4"
+     aria-label="Model Context Protocol architecture in four layers. Client surface: the engineer or requester. Orchestration: an agent loop that plans, acts and verifies, driven by a frontier model. MCP servers: ServiceNow tickets and CMDB, a SQL warehouse of operational data, a filesystem of SOPs and runbooks, and internal approval and billing APIs. Guardrails: grounded cited retrieval, plus validation and an audit log. The guardrail layer returns its verdict to the agent loop before anything reaches the requester.">
+  <title>How I wire an LLM into systems that already exist</title>
+
+  <!-- Root fill is the inherited fallback for text; .ink-* classes carry the hierarchy. -->
+
+  <defs>
+    <linearGradient id="mc-surface" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0a0a0f"/>
+      <stop offset="100%" stop-color="#12121a"/>
+    </linearGradient>
+    <marker id="mc-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5.5" markerHeight="5.5" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#7c3aed"/>
+    </marker>
+    <marker id="mc-arrow-g" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5.5" markerHeight="5.5" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#10b981"/>
+    </marker>
+    <style>
+      .fs { font-family: 'Space Grotesk', 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; }
+      .fm { font-family: 'JetBrains Mono', ui-monospace, 'Cascadia Mono', Consolas, monospace; }
+      .ink-1 { fill: #f3eee4 }
+      .ink-2 { fill: #a9a3bd }
+      .ink-3 { fill: #6f6a85 }
+      .lyr   { font-size: 10px; font-weight: 700; letter-spacing: 1.1px }
+      .nm    { font-size: 12px; font-weight: 600 }
+      .sb    { font-size: 9.5px }
+      .eg    { font-size: 8.5px; letter-spacing: .3px }
+
+      /* Decoration only. Every box and label is drawn in its resting state. */
+      @keyframes pulse { 0%,100% { transform: scale(1) } 50% { transform: scale(1.5) } }
+      .beat { animation: pulse 2.6s ease-in-out infinite }
+      .b2 { animation-delay: .5s } .b3 { animation-delay: 1s } .b4 { animation-delay: 1.5s }
+      @media (prefers-reduced-motion: reduce) { .beat { animation: none } }
+    </style>
+  </defs>
+
+  <rect width="1000" height="432" rx="14" fill="#030014"/>
+  <rect x="1" y="1" width="998" height="430" rx="13" fill="url(#mc-surface)" stroke="#1c1c2b"/>
+
+  <text class="fs" x="34" y="38" font-size="13.5" font-weight="600" fill="#f3eee4">One agent loop, four MCP servers, nothing pasted into a prompt</text>
+
+  <!-- ── layer 1 · client ───────────────────────────────────────────────── -->
+  <rect x="30" y="66" width="3" height="40" rx="1.5" fill="#4f69e8"/>
+  <text class="fm lyr" x="44" y="83" fill="#4f69e8">CLIENT</text>
+  <text class="fm sb ink-3" x="44" y="98">surface</text>
+
+  <rect x="170" y="66" width="800" height="40" rx="9" fill="#0a0a0f" stroke="#4f69e8" stroke-width="1.6"/>
+  <text class="fs nm ink-1" x="570" y="83" text-anchor="middle">Engineer or requester</text>
+  <text class="fm sb ink-2" x="570" y="98" text-anchor="middle">asks in plain language, never touches a connection string</text>
+
+  <path d="M570 108 L570 134" stroke="#7c3aed" stroke-width="1.5" marker-end="url(#mc-arrow)"/>
+
+  <!-- ── layer 2 · orchestration ────────────────────────────────────────── -->
+  <rect x="30" y="140" width="3" height="54" rx="1.5" fill="#7c3aed"/>
+  <text class="fm lyr" x="44" y="157" fill="#7c3aed">ORCHESTRATION</text>
+  <text class="fm sb ink-3" x="44" y="172">plan · act</text>
+  <text class="fm sb ink-3" x="44" y="185">· verify</text>
+
+  <rect x="170" y="140" width="380" height="54" rx="9" fill="#12121a" stroke="#7c3aed" stroke-width="2.2"/>
+  <circle class="beat" cx="188" cy="158" r="3" fill="#7c3aed" style="transform-origin:188px 158px"/>
+  <text class="fs nm ink-1" x="202" y="162">Agent loop</text>
+  <text class="fm sb ink-2" x="202" y="180">decides which tool, then checks its own work</text>
+
+  <rect x="590" y="140" width="380" height="54" rx="9" fill="#0a0a0f" stroke="#7c3aed" stroke-width="1.6"/>
+  <text class="fs nm ink-1" x="606" y="162">Frontier model</text>
+  <text class="fm sb ink-2" x="606" y="180">Claude · GPT · Gemini</text>
+  <path d="M550 167 L586 167" stroke="#7c3aed" stroke-width="1.5" marker-start="url(#mc-arrow)" marker-end="url(#mc-arrow)"/>
+
+  <path d="M360 196 L360 220" stroke="#7c3aed" stroke-width="1.5" marker-end="url(#mc-arrow)"/>
+
+  <!-- ── layer 3 · MCP servers ──────────────────────────────────────────── -->
+  <rect x="30" y="226" width="3" height="62" rx="1.5" fill="#06b6d4"/>
+  <text class="fm lyr" x="44" y="243" fill="#06b6d4">MCP SERVERS</text>
+  <text class="fm sb ink-3" x="44" y="258">one per</text>
+  <text class="fm sb ink-3" x="44" y="271">system of</text>
+  <text class="fm sb ink-3" x="44" y="284">record</text>
+
+  <g>
+    <rect x="170" y="226" width="185" height="62" rx="9" fill="#0a0a0f" stroke="#06b6d4" stroke-width="1.6"/>
+    <text class="fs nm ink-1" x="262" y="250" text-anchor="middle">ServiceNow</text>
+    <text class="fm sb ink-2" x="262" y="267" text-anchor="middle">tickets · CMDB</text>
+  </g>
+  <g>
+    <rect x="375" y="226" width="185" height="62" rx="9" fill="#0a0a0f" stroke="#06b6d4" stroke-width="1.6"/>
+    <text class="fs nm ink-1" x="467" y="250" text-anchor="middle">SQL warehouse</text>
+    <text class="fm sb ink-2" x="467" y="267" text-anchor="middle">operational data</text>
+  </g>
+  <g>
+    <rect x="580" y="226" width="185" height="62" rx="9" fill="#0a0a0f" stroke="#06b6d4" stroke-width="1.6"/>
+    <text class="fs nm ink-1" x="672" y="250" text-anchor="middle">Filesystem</text>
+    <text class="fm sb ink-2" x="672" y="267" text-anchor="middle">SOPs · runbooks</text>
+  </g>
+  <g>
+    <rect x="785" y="226" width="185" height="62" rx="9" fill="#0a0a0f" stroke="#06b6d4" stroke-width="1.6"/>
+    <text class="fs nm ink-1" x="877" y="250" text-anchor="middle">Internal APIs</text>
+    <text class="fm sb ink-2" x="877" y="267" text-anchor="middle">approvals · billing</text>
+  </g>
+
+  <path d="M360 290 L360 314" stroke="#7c3aed" stroke-width="1.5" marker-end="url(#mc-arrow)"/>
+  <path d="M672 290 L672 314" stroke="#7c3aed" stroke-width="1.5" marker-end="url(#mc-arrow)"/>
+
+  <!-- ── layer 4 · guardrails ───────────────────────────────────────────── -->
+  <rect x="30" y="320" width="3" height="54" rx="1.5" fill="#10b981"/>
+  <text class="fm lyr" x="44" y="337" fill="#10b981">GUARDRAILS</text>
+  <text class="fm sb ink-3" x="44" y="352">nothing</text>
+  <text class="fm sb ink-3" x="44" y="365">unchecked</text>
+
+  <rect x="170" y="320" width="380" height="54" rx="9" fill="#0a0a0f" stroke="#10b981" stroke-width="1.6"/>
+  <text class="fs nm ink-1" x="186" y="342">Grounded retrieval</text>
+  <text class="fm sb ink-2" x="186" y="360">every claim carries the record it came from</text>
+
+  <rect x="590" y="320" width="380" height="54" rx="9" fill="#0a0a0f" stroke="#f59e0b" stroke-width="1.6"/>
+  <text class="fs nm ink-1" x="606" y="342">Validation + audit log</text>
+  <text class="fm sb ink-2" x="606" y="360">who asked, what ran, what came back</text>
+
+  <!-- verdict returns to the loop before the requester ever sees an answer -->
+  <path d="M970 347 C 992 347, 992 167, 976 167" fill="none" stroke="#10b981" stroke-width="1.5"
+        stroke-dasharray="4 4" marker-end="url(#mc-arrow-g)"/>
+  <text class="fm eg" x="500" y="400" text-anchor="middle" fill="#10b981">the verdict goes back to the loop before the requester sees an answer</text>
+  <text class="fm eg ink-3" x="500" y="416" text-anchor="middle">if a claim cannot be sourced, the loop says so instead of guessing</text>
+</svg>

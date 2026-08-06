@@ -1,7 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1000" height="344" viewBox="0 0 1000 344" role="img"
      fill="#f3eee4"
-     aria-label="Support coverage by domain, remote first and on site when the problem needs hands. Endpoint and security: Defender XDR, EDR and AV, patching, imaging, device compliance — remote and on-site. Identity and Microsoft 365: Entra ID, Exchange Online, Teams, SharePoint, licensing — remote. Virtualisation and servers: VMware ESXi, Hyper-V, Windows Server, backup and restore — remote and on-site. Network: DNS, DHCP, VLAN, firewall rules, VPN, link and latency faults — on-site. Print fleet: Ysoft SafeQ, MyQ X, PaperCut, Ricoh RSI, secure release — on-site. Triaged in ServiceNow against ITIL, 86 percent SLA compliance across Reckitt Bangladesh cover.">
-  <title>Where I get called in — support coverage by domain and response mode</title>
+     aria-label="Support coverage by domain, remote first and on site when the problem needs hands. Endpoint and security: Defender XDR, EDR and AV, patching, imaging, device compliance, remote and on-site. Identity and Microsoft 365: Entra ID, Exchange Online, Teams, SharePoint, licensing, remote. Virtualisation and servers: VMware ESXi, Hyper-V, Windows Server, backup and restore, remote and on-site. Network: DNS, DHCP, VLAN, firewall rules, VPN, link and latency faults, on-site. Print fleet: Ysoft SafeQ, MyQ X, PaperCut, Ricoh RSI, secure release, on-site. Triaged in ServiceNow against ITIL, 86 percent SLA compliance across Reckitt Bangladesh cover.">
+  <title>Where I get called in: support coverage by domain and response mode</title>
 
   <!-- The root fill is the inherited fallback for text. The .ink-* classes carry
        the real hierarchy and override it (CSS beats inheritance), but if the

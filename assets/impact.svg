@@ -1,7 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1000" height="330" viewBox="0 0 1000 330" role="img"
      fill="#f3eee4"
      aria-label="Delivery time before and after AI-assisted development. CRM ticketing system: 6 months down to 2 months, 67 percent faster. Report generation app: 30 days down to 3 days, 90 percent faster. Bill approval system: 4 weeks down to 2 weeks, 50 percent faster.">
-  <title>Delivery time — original estimate vs. AI-assisted build</title>
+  <title>Delivery time: original estimate vs. AI-assisted build</title>
 
   <!-- The root fill is the inherited fallback for text. The .ink-* classes below
        carry the real hierarchy and override it (CSS beats inheritance), but if
