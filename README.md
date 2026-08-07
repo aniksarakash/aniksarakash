@@ -89,9 +89,9 @@ By night it means shipping AI-powered tools that compress months of grunt work i
 
 <div align="center">
 
-| `86%` | `90%` | `66%` | `15+` |
-| :---: | :---: | :---: | :---: |
-| SLA compliance<br/>on Reckitt cover | fastest single<br/>time reduction | faster project<br/>delivery, average | colleagues mentored<br/>on AI tooling |
+| `96%` | `86%` | `90%` | `66%` | `15+` |
+| :---: | :---: | :---: | :---: | :---: |
+| success rate, remote<br/>and on-site support | SLA compliance<br/>on Reckitt cover | fastest single<br/>time reduction | faster project<br/>delivery, average | colleagues mentored<br/>on AI tooling |
 
 </div>
 
@@ -147,6 +147,8 @@ MCP is an open standard for connecting LLM applications to external data and too
 ## 🛡️ &nbsp;The other half of the job
 
 Building the applications is one side. The other is keeping enterprise estates running: **remote support daily, on client sites when the fault needs hands on the hardware.** Most weeks contain both.
+
+Across that queue I close **96%** of what comes in, whether it starts as a remote session or a drive to site. The 4% that does not is the genuinely escalated tail: vendor firmware, a hardware RMA, a change that needs an owner who is not me.
 
 <div align="center">
   <img src="./assets/support.svg" alt="Support coverage by domain: endpoint and security (Defender XDR, EDR/AV, patching, imaging, device compliance) remote and on-site; identity and Microsoft 365 (Entra ID, Exchange Online, Teams, SharePoint, licensing) remote; virtualisation and servers (VMware ESXi, Hyper-V, Windows Server, backup and restore) remote and on-site; network (DNS, DHCP, VLAN, firewall rules, VPN, link and latency faults) on-site; print fleet (Ysoft SafeQ, MyQ X, PaperCut, Ricoh RSI, secure release) on-site" width="100%" />
