@@ -462,6 +462,109 @@ High-capacity image steganography using Generative Adversarial Networks, wrapped
 
 <img src="./assets/divider.svg" width="100%" alt="" />
 
+## 🎬 &nbsp;One domain, four builds
+
+The site at **[aniksarkerakash.com](https://aniksarkerakash.com/)** ships as one repository with four Vite entries. They share design tokens and almost nothing else: a scroll-driven portfolio, the engine that renders the writing, the CMS that publishes it, and a lab for the things that fit nowhere else. Each one is its own build, its own chunk, and its own set of rules about what it is allowed to load.
+
+<img src="./assets/site-stack.svg" width="100%" alt="One repository, four builds. Portfolio at the site root: six sticky SVG stages scrubbed to scroll position, no canvas or WebGL, built with React 19, anime.js 4, GSAP, Lenis and Zustand, with zero React re-renders while scrolling. Writing engine at /blog/: first-party markdown, diagram and chart renderers with no runtime chart library, covering flowcharts, nine chart block languages and seeded generative covers. Publishing at /blog/admin: one dependency-free PHP file that deploys inside dist like any other asset, with drafts, scheduling, uploads and server-side feed regeneration, needing no database and no install. Lab at /lab/chimes: wind chimes that ring from pendulum physics rather than a schedule, using modal synthesis, a WebGL2 shader and seeded permalinks. The blog entry never loads GSAP, anime.js or Lenis." />
+
+<table>
+<tr>
+<td width="50%" valign="top">
+
+### 🎞️ &nbsp;Scroll-driven portfolio
+<img src="https://img.shields.io/badge/React_19-4F69E8?style=flat-square&labelColor=030014" /> <img src="https://img.shields.io/badge/~157KB_gzip-10B981?style=flat-square&labelColor=030014" /> <img src="https://img.shields.io/badge/60fps_desktop-06B6D4?style=flat-square&labelColor=030014" />
+
+Six sticky sections. A hand-built SVG stage pins to the right half of the viewport while the narrative scrolls past on the left, and every timeline is scrubbed, so the animation position *is* the scroll position rather than a duration playing out on its own clock.
+
+- 🚫 Zero React re-renders while scrolling. Store subscriptions write `transform`, `d` and `opacity` straight to the DOM, and React only renders when the section changes
+- 🎨 The theme flips mid-scroll. Experience goes light and Projects goes back to dark by swapping one attribute on `<html>`, so every token turns over in a single frame
+- 📱 Mobile is a different interaction, not a squeezed desktop. Nothing is scroll-jacked: Skills and Projects become native scroll-snap rails that autoplay, pause the moment you touch them, and stay still under reduced motion
+- ♿ `prefers-reduced-motion` drops Lenis entirely and sets every reveal to its final state, so the content is complete without a single frame of animation
+
+`React 19` `TypeScript` `anime.js 4` `GSAP` `Lenis` `Zustand`
+
+**[→ View live](https://aniksarkerakash.com/)** · **[→ Repository](https://github.com/aniksarakash/Portfolio_V2.0)**
+
+</td>
+<td width="50%" valign="top">
+
+### ✍️ &nbsp;Zero-dependency writing engine
+<img src="https://img.shields.io/badge/9_chart_languages-7C3AED?style=flat-square&labelColor=030014" /> <img src="https://img.shields.io/badge/No_chart_library-10B981?style=flat-square&labelColor=030014" /> <img src="https://img.shields.io/badge/Open_source-EC4899?style=flat-square&labelColor=030014" />
+
+`/blog/` is a second entry that shares the design tokens and the React chunk and loads none of the animation stack. Markdown, diagrams, charts and covers are all parsed and drawn first-party, with no `dangerouslySetInnerHTML` anywhere in it.
+
+- 📊 Nine fenced chart languages, each with its own line-based parser: `timeline`, `steps`, `compare`, `bars`, `ranked`, `gap`, `funnel`, `ledger`, `stack`. They render as HTML, so on a phone they reflow instead of scrolling sideways
+- 🧭 A flowchart parser over a small subset of Mermaid's grammar, laid out by hand, with three skins. On narrow screens the same graph re-lays into a vertical column, and rails route the branch and loop edges rather than shrinking the drawing
+- 🛑 Every parser refuses shapes it would draw misleadingly. A `gap` whose values never cross zero, or a `funnel` that widens, degrades to a plain code card instead of lying quietly
+- 🎨 Covers are generated, not shipped: a slug-seeded SVG motif tinted by the post's accent, so the index looks composed without one image byte
+
+`TypeScript` `SVG` `Custom parsers` `Markdown`
+
+**[→ Read the blog](https://aniksarkerakash.com/blog/)**
+
+</td>
+</tr>
+<tr>
+<td width="50%" valign="top">
+
+### 🗄️ &nbsp;Self-built CMS, no third-party software
+<img src="https://img.shields.io/badge/One_PHP_file-7C3AED?style=flat-square&labelColor=030014" /> <img src="https://img.shields.io/badge/No_database-F59E0B?style=flat-square&labelColor=030014" /> <img src="https://img.shields.io/badge/Instant_publish-10B981?style=flat-square&labelColor=030014" />
+
+`/blog/admin` is backed by a single dependency-free PHP file that deploys inside `dist/` like any other asset. cPanel runs PHP natively, so there is nothing to install and nothing extra to keep patched.
+
+- 🔐 First-run password setup, salted hash on the server, HMAC session tokens and login rate limiting. The admin chunk is lazy loaded, so readers never download it
+- ✍️ Split-pane markdown editor that previews with the site's exact renderer, not an approximation of it
+- 🚦 Publish, draft or schedule. A future date goes live on its own, and every save regenerates `feed.xml` and `sitemap.xml` on the server
+- 🗂️ No database. Posts are JSON files on disk, so a backup is copying a folder, and publishing needs no rebuild, no upload and no git
+
+`PHP` `React` `HMAC sessions` `cPanel`
+
+</td>
+<td width="50%" valign="top">
+
+### 🎐 &nbsp;Lab: wind chimes that ring themselves
+<img src="https://img.shields.io/badge/Web_Audio-06B6D4?style=flat-square&labelColor=030014" /> <img src="https://img.shields.io/badge/WebGL2-7C3AED?style=flat-square&labelColor=030014" /> <img src="https://img.shields.io/badge/Seeded-F59E0B?style=flat-square&labelColor=030014" />
+
+A rack of tuned tubes hanging in wind you control. The clapper and the tubes are deliberately different pendulums, a light clapper on a long arm that lags and heavy tubes on short arms that follow, so strikes fall out of the phase difference between them rather than off a timer. Gentle wind reaches only the middle tubes. A gust reaches the whole rack.
+
+- 🔔 Modal synthesis, not samples. A cylindrical tube's transverse modes are inharmonic, roughly `1 : 2.76 : 5.40 : 8.93`, which is the entire reason it reads as struck metal and not as an organ, and the upper modes shed energy faster so it is bright at the attack and pure a second later
+- 🎲 Every seed is a different instrument: scale, material, tube count, tuning. The spec module is forbidden from reading the clock, the viewport or `Math.random`, and that is what makes a shared `?s=` permalink reproduce the exact same chime
+- 🖥️ Drawn by a WebGL2 fragment shader with the SVG kept as a fallback, and phones can tilt the rack through `deviceorientation`
+- 🔗 Its own HTML entry, so a shared seed unfurls with the experiment's own preview card rather than the lab index's
+
+`Web Audio` `WebGL2` `GLSL` `TypeScript`
+
+**[→ Ring it](https://aniksarkerakash.com/lab/chimes)** · **[→ Source](https://github.com/aniksarakash/Portfolio_V2.0/tree/main/src/lab)**
+
+</td>
+</tr>
+</table>
+
+<details>
+<summary><b>🔎 &nbsp;What the build does before any of it ships</b></summary>
+
+<br/>
+
+`npm run build` takes about nine seconds, and most of that is not Vite. The SEO work is a build step rather than a plugin, because every piece of it needed a decision that a default would have made badly.
+
+| Step | What it does, and why it exists |
+| :--- | :--- |
+| `prerender-posts.mjs` | Writes a static HTML file per post with a real `<title>`, canonical, Open Graph and Twitter cards and `BlogPosting` JSON-LD. `.htaccess` serves those to bots and the SPA to humans, so LinkedIn, X, Slack and Google unfurl each post without running any JS |
+| `og-posts.mjs` | Per-post preview cards, rendered by whichever Chrome or Edge is already installed via `--headless --screenshot` rather than pulling in puppeteer and its ~300 MB browser. Content-hashed, skipped when unchanged, and it soft-fails rather than break a build over a preview image |
+| `relatedness.mjs` | Related posts by IDF-weighted tag overlap. A raw shared-tag count would call almost everything a neighbour, because one tag covers most of the archive. Rare tags score high, common ones count for nearly nothing, hand-written body links outweigh the tag maths, and a second pass repairs orphans without creating new ones |
+| Topic clusters | `/blog/topics/<slug>` groups posts by tag sets instead of one page per tag, which would have produced a bloated duplicate of the index plus a dozen single-item stubs. Each hub leads with prose, because a page that is only a list of links ranks for nothing |
+| `csp.mjs` | Locks the Content-Security-Policy `script-src` to the exact hashes of the inline boot scripts, after the hashes are known |
+| `rss.mjs` | `feed.xml`, `sitemap.xml`, `llms.txt`, and the seed the PHP API initialises from on first deploy |
+
+</details>
+
+<blockquote>
+<b>The rule that shaped all four.</b> A reader pays for the page they opened, not the one next door. The blog never downloads GSAP, anime.js or Lenis. The admin panel sits behind a lazy chunk no reader touches. The chimes ship their shader and their audio graph only on the route that rings. Four builds in one repository is the cheap way to keep that honest.
+</blockquote>
+
+<img src="./assets/divider.svg" width="100%" alt="" />
+
 ## 🗓️ &nbsp;The path here
 
 <img src="./assets/timeline-path.svg" width="100%" alt="Career path. Foundation: B.Sc. in Computer Science and Engineering, covering Python, databases and systems thinking. Certified: Google Professional Certificates in IT Support, IT Automation with Python, Data Analytics, UX Design and Project Management. August 2024: System Engineer at Smart Printing Solutions, building custom applications and Managed Print Services. January 2025: backup L2 IT and Desktop Support for Reckitt Bangladesh, working in ServiceNow against ITIL with 86 percent SLA compliance on cover. Now: MCP, agents and RAG in production." />
@@ -470,9 +573,15 @@ High-capacity image steganography using Generative Adversarial Networks, wrapped
 
 ## ✍️ &nbsp;From the blog
 
-I write about AI-assisted development, debugging LLM output, and troubleshooting methodology at **[aniksarkerakash.com/blog](https://aniksarkerakash.com/blog/)**.
+I write about AI-assisted development, debugging LLM output, and troubleshooting methodology at **[aniksarkerakash.com/blog](https://aniksarkerakash.com/blog/)**, rendered and published by the two builds above.
 
-<!-- BLOG-POST-LIST:START -->- [Quantum will not hand you AGI: the arrow points the other way](https://aniksarkerakash.com/blog/quantum-will-not-hand-you-agi)- [The microscope we built for the thing we grew: mechanistic interpretability at the halfway mark](https://aniksarkerakash.com/blog/the-microscope-we-built-for-the-thing-we-grew)- [We grew it, we didn&#39;t build it: Geoffrey Hinton and the machine nobody can read](https://aniksarkerakash.com/blog/we-grew-it-we-didnt-build-it)- [How do you debug what you can&#39;t understand?](https://aniksarkerakash.com/blog/debug-what-you-cannot-understand)- [Prompt engineering inverted: the instructions that used to help now hurt](https://aniksarkerakash.com/blog/prompt-engineering-is-context-engineering)<!-- BLOG-POST-LIST:END -->
+<!-- BLOG-POST-LIST:START -->
+- [The bottleneck was never the model: what Anthropic's 21% to 95% actually measured](https://aniksarkerakash.com/blog/semantic-layer-was-the-bottleneck)
+- [Did they nerf it? What actually happens when a model gets worse](https://aniksarkerakash.com/blog/did-they-nerf-it)
+- [The receipts: auditing the Claude Opus 5 optimization ecosystem](https://aniksarkerakash.com/blog/opus-5-ecosystem-audit)
+- [Quantum will not hand you AGI: the arrow points the other way](https://aniksarkerakash.com/blog/quantum-will-not-hand-you-agi)
+- [The microscope we built for the thing we grew: mechanistic interpretability at the halfway mark](https://aniksarkerakash.com/blog/the-microscope-we-built-for-the-thing-we-grew)
+<!-- BLOG-POST-LIST:END -->
 
 <div align="right"><a href="https://aniksarkerakash.com/blog/"><b>Read everything →</b></a></div>
 
