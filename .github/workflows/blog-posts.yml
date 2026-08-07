@@ -21,5 +21,10 @@ jobs:
         with:
           feed_list: "https://aniksarkerakash.com/blog/feed.xml"
           max_post_count: 5
-          template: "- [$title]($url)\n"
+          # $newline is the action's own variable. A literal "\n" here is
+          # emitted verbatim, which is why every post used to land on one line.
+          template: "- [$title]($url)$newline"
+          # Without this, an apostrophe in a title ships as &#39; inside the
+          # link text, where markdown will not decode it.
+          disable_html_encoding: true
           commit_message: "chore: sync latest blog posts"
