@@ -577,8 +577,7 @@ A rack of tuned tubes hanging in wind you control. The clapper and the tubes are
 
 I write about AI-assisted development, debugging LLM output, and troubleshooting methodology at **[aniksarkerakash.com/blog](https://aniksarkerakash.com/blog/)**, rendered and published by the two builds above.
 
-<!-- BLOG-POST-LIST:START -->
-- [The bottleneck was never the model: what Anthropic's 21% to 95% actually measured](https://aniksarkerakash.com/blog/semantic-layer-was-the-bottleneck)
+<!-- BLOG-POST-LIST:START -->- [The bottleneck was never the model: what Anthropic's 21% to 95% actually measured](https://aniksarkerakash.com/blog/semantic-layer-was-the-bottleneck)
 - [Did they nerf it? What actually happens when a model gets worse](https://aniksarkerakash.com/blog/did-they-nerf-it)
 - [The receipts: auditing the Claude Opus 5 optimization ecosystem](https://aniksarkerakash.com/blog/opus-5-ecosystem-audit)
 - [Quantum will not hand you AGI: the arrow points the other way](https://aniksarkerakash.com/blog/quantum-will-not-hand-you-agi)
