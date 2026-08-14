@@ -583,6 +583,7 @@ I write about AI-assisted development, debugging LLM output, and troubleshooting
 - [The receipts: auditing the Claude Opus 5 optimization ecosystem](https://aniksarkerakash.com/blog/opus-5-ecosystem-audit)
 - [Quantum will not hand you AGI: the arrow points the other way](https://aniksarkerakash.com/blog/quantum-will-not-hand-you-agi)
 - [The microscope we built for the thing we grew: mechanistic interpretability at the halfway mark](https://aniksarkerakash.com/blog/the-microscope-we-built-for-the-thing-we-grew)
+
 <!-- BLOG-POST-LIST:END -->
 
 <div align="right"><a href="https://aniksarkerakash.com/blog/"><b>Read everything →</b></a></div>
