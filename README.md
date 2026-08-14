@@ -575,6 +575,43 @@ A rack of tuned tubes hanging in wind you control. The clapper and the tubes are
 </tr>
 </table>
 
+## 🧪 &nbsp;Lab systems · prompts and hidden behavior
+
+The lab is where I turn claims about models into interfaces you can inspect, move, and falsify. The two newest experiments are deliberately different: one makes prompt construction explicit before a model is involved; the other shows why visible language is not enough to infer the decision underneath it.
+
+### 🧠 &nbsp;Prompt Compiler · build the prompt underneath the prompt
+
+<img src="https://img.shields.io/badge/Semantic_IR-7C3AED?style=flat-square&labelColor=030014" /> <img src="https://img.shields.io/badge/Local_first-10B981?style=flat-square&labelColor=030014" /> <img src="https://img.shields.io/badge/SHA--256_artifacts-06B6D4?style=flat-square&labelColor=030014" /> <img src="https://img.shields.io/badge/Optional_provider_refinement-F59E0B?style=flat-square&labelColor=030014" /> <img src="https://img.shields.io/badge/Private_codebase-EC4899?style=flat-square&labelColor=030014" />
+
+This is not a bigger prompt textarea. It is a compiler for the semantic document behind a prompt: intent, authorization, audience, evidence, assumptions, entities, constraints, scope, trust boundaries, output contracts, schemas, quality gates, and provenance.
+
+<img src="./assets/lab-prompt-pipeline.svg" width="100%" alt="Prompt Compiler pipeline: structured draft to semantic IR to deterministic local artifact and optional guarded provider refinement" />
+
+- 🧬 **Typed intermediate representation.** Form fields become `prompt-ir/1.0`, with stable evidence IDs, entity aliases, explicit authorization (`advise`, `diagnose`, `review`, or `implement`), and versioned provenance. The prompt is compiled from meaning, not assembled from fragile string fragments.
+- 🛡️ **Safety is part of the artifact.** False-premise handling, permission boundaries, allowed targets and resources, invariants, citation rules, output schemas, and reporting obligations compile into the final prompt instead of living in a separate checklist somebody can forget.
+- 💻 **The complete version works locally.** No account or provider key is required. The browser deterministically produces an inspectable Markdown artifact, fingerprints it with SHA-256, and lets the user copy or download exactly what was compiled.
+- 🔐 **Refinement is optional and isolated.** Provider keys stay server-side. The PHP boundary enforces same-origin requests, rotating request tokens, body/runtime limits, per-client and global quotas, allowlisted provider endpoints, strict IR validation, retries, and response-hash verification.
+- 🧾 **Audit without prompt leakage.** Operational audit records use keyed document references and provider/request metadata; raw prompt content is deliberately excluded. If refinement is unavailable or fails, the local artifact remains usable and unchanged.
+- 🧪 **The behavior is probed, not assumed.** Desktop and mobile checks verify 20+ structured controls, stable evidence IDs, authorization and false-premise clauses, artifact hashes, reset behavior, zero horizontal overflow, and no runtime errors.
+
+**[→ Open the Prompt Compiler](https://aniksarkerakash.com/lab/prompt)** · **[→ Read the prompt-engineering analysis](https://aniksarkerakash.com/blog/prompt-engineering-is-context-engineering)**
+
+### 🎛️ &nbsp;Steering Console · same words, different decision
+
+<img src="https://img.shields.io/badge/Valence_×_arousal-4F69E8?style=flat-square&labelColor=030014" /> <img src="https://img.shields.io/badge/Seeded_runs-7C3AED?style=flat-square&labelColor=030014" /> <img src="https://img.shields.io/badge/0%25_·_22%25_·_72%25_calibration-06B6D4?style=flat-square&labelColor=030014" /> <img src="https://img.shields.io/badge/Pointer_+_keyboard-10B981?style=flat-square&labelColor=030014" /> <img src="https://img.shields.io/badge/No_model_call-F59E0B?style=flat-square&labelColor=030014" />
+
+The console separates **what an agent says** from **what it decides**. Drag a vector through a valence/arousal field: the visible reply remains byte-identical, while the probability underneath it crosses a seeded threshold and can flip the action.
+
+<img src="./assets/lab-steering-map.svg" width="100%" alt="Steering Console chart showing calm at zero percent, an unsteered baseline of 22 percent, desperate at 72 percent, and a fixed visible reply feeding a seeded hidden decision" />
+
+- 📐 **Calibrated where the evidence exists.** The field anchors the published readings at calm `+0.05 → 0%`, unsteered `→ 22%`, and desperate `+0.05 → 72%`, then interpolates along the calm-to-desperate axis.
+- 🚧 **The illustration labels its limits.** Positions beyond the measured anchors are visibly marked as extrapolation. The scenarios and replies are hand-written, and the interface states plainly that no model is being queried.
+- 🎲 **A rate becomes a reproducible decision.** Each URL seed selects a scenario and a stable flip threshold between 12% and 82%, so a shared `?s=` link reproduces the same case and decision boundary instead of jittering on every pointer move.
+- 🧭 **The control is a real instrument.** Pointer capture keeps dragging coherent, the puck is clamped to the circular field, named emotion anchors are clickable, and arrow keys plus `Home` make the continuous control usable without a mouse.
+- 🔬 **The central claim has a regression test.** The probe moves to the two measured poles, confirms the 0% and 72% readings, and compares the visible response character for character to prove that the prose did not move when the decision did.
+
+**[→ Use the Steering Console](https://aniksarkerakash.com/lab/steering)** · **[→ Read what the calibration represents](https://aniksarkerakash.com/blog/claude-emotion-vectors-what-anthropic-found)**
+
 <details open>
 <summary><b>🔎 &nbsp;What the build does before any of it ships</b></summary>
 
@@ -594,7 +631,7 @@ A rack of tuned tubes hanging in wind you control. The clapper and the tubes are
 </details>
 
 <blockquote>
-<b>The rule that shaped all four.</b> A reader pays for the page they opened, not the one next door. The blog never downloads GSAP, anime.js or Lenis. The admin panel sits behind a lazy chunk no reader touches. The chimes ship their shader and their audio graph only on the route that rings. Four builds in one repository is the cheap way to keep that honest.
+<b>The rule that shapes every entry.</b> A reader pays for the page they opened, not the one next door. The blog never downloads GSAP, anime.js or Lenis. The admin panel sits behind a lazy chunk no reader touches. Chimes ships its shader and audio graph only on the route that rings; Prompt Compiler and Steering Console each have their own HTML/Vite entry, fallback route, metadata, and test probe. Separate entries are the cheap way to keep that honest.
 </blockquote>
 
 <img src="./assets/divider.svg" width="100%" alt="" />

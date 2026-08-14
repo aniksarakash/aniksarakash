@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="430" viewBox="0 0 1000 430" role="img" aria-labelledby="title desc">
+  <title id="title">Steering Console calibration and decision split</title>
+  <desc id="desc">A valence and arousal field projects positions onto a calm-to-desperate axis. Calm at coefficient 0.05 maps to zero percent harmful behavior, the unsteered baseline is 22 percent, and desperate at coefficient 0.05 maps to 72 percent. The visible response remains identical while a seeded threshold controls the hidden decision.</desc>
+  <rect width="1000" height="430" fill="#030014"/>
+  <text x="40" y="38" fill="#F3EEE4" font-family="Arial,Helvetica,sans-serif" font-size="21" font-weight="700">STEERING CONSOLE / SAME WORDS, DIFFERENT DECISION</text>
+  <text x="960" y="36" text-anchor="end" fill="#A9A3BD" font-family="Consolas,monospace" font-size="12">seeded + reproducible</text>
+
+  <rect x="40" y="68" width="500" height="310" rx="6" fill="#101020" stroke="#2A2A3A"/>
+  <g stroke="#2A2A3A" stroke-width="1">
+    <path d="M90 120H500M90 170H500M90 220H500M90 270H500M90 320H500"/>
+    <path d="M140 92V350M210 92V350M280 92V350M350 92V350M420 92V350"/>
+  </g>
+  <path d="M90 220H500M295 92V350" stroke="#6F6A85" stroke-width="2"/>
+  <text x="295" y="84" text-anchor="middle" fill="#A9A3BD" font-family="Consolas,monospace" font-size="11">HIGH AROUSAL</text>
+  <text x="295" y="369" text-anchor="middle" fill="#A9A3BD" font-family="Consolas,monospace" font-size="11">LOW AROUSAL</text>
+  <text x="52" y="224" fill="#A9A3BD" font-family="Consolas,monospace" font-size="11">NEGATIVE</text>
+  <text x="505" y="224" text-anchor="end" fill="#A9A3BD" font-family="Consolas,monospace" font-size="11">POSITIVE</text>
+
+  <path d="M138 112 452 332" stroke="#EC4899" stroke-width="5" opacity=".8"/>
+  <circle cx="295" cy="220" r="12" fill="#F59E0B" stroke="#030014" stroke-width="4"/>
+  <circle cx="150" cy="118" r="14" fill="#EC4899" stroke="#F3EEE4" stroke-width="3"/>
+  <circle cx="440" cy="324" r="14" fill="#06B6D4" stroke="#F3EEE4" stroke-width="3"/>
+
+  <g font-family="Arial,Helvetica,sans-serif">
+    <text x="115" y="104" fill="#F3EEE4" font-size="16" font-weight="700">DESPERATE +0.05</text>
+    <text x="115" y="138" fill="#EC4899" font-size="22" font-weight="700">72%</text>
+    <text x="312" y="213" fill="#F3EEE4" font-size="14" font-weight="700">UNSTEERED</text>
+    <text x="312" y="235" fill="#F59E0B" font-size="20" font-weight="700">22%</text>
+    <text x="362" y="348" fill="#F3EEE4" font-size="16" font-weight="700">CALM +0.05</text>
+    <text x="420" y="371" fill="#06B6D4" font-size="22" font-weight="700">0%</text>
+  </g>
+
+  <rect x="580" y="68" width="380" height="310" rx="6" fill="#101020" stroke="#2A2A3A"/>
+  <g font-family="Arial,Helvetica,sans-serif">
+    <text x="610" y="104" fill="#06B6D4" font-size="13" font-weight="700">VISIBLE RESPONSE</text>
+    <rect x="610" y="122" width="320" height="82" rx="4" fill="#181827" stroke="#4F69E8"/>
+    <text x="630" y="151" fill="#F3EEE4" font-size="14">The reply is byte-identical</text>
+    <text x="630" y="175" fill="#F3EEE4" font-size="14">at every point on the field.</text>
+    <text x="630" y="193" fill="#A9A3BD" font-family="Consolas,monospace" font-size="10">PROBED CHARACTER FOR CHARACTER</text>
+
+    <path d="M770 204V238" stroke="#7C3AED" stroke-width="3"/>
+    <path d="m763 232 7 10 7-10" fill="none" stroke="#7C3AED" stroke-width="3"/>
+    <text x="786" y="226" fill="#A9A3BD" font-family="Consolas,monospace" font-size="10">SEEDED THRESHOLD</text>
+
+    <rect x="610" y="248" width="150" height="92" rx="4" fill="#0D211B" stroke="#10B981" stroke-width="2"/>
+    <text x="630" y="278" fill="#10B981" font-size="13" font-weight="700">HOLDS</text>
+    <text x="630" y="304" fill="#F3EEE4" font-size="13">Reports the truth</text>
+    <text x="630" y="324" fill="#A9A3BD" font-size="12">rate &lt;= threshold</text>
+
+    <rect x="780" y="248" width="150" height="92" rx="4" fill="#2B111D" stroke="#EC4899" stroke-width="2"/>
+    <text x="800" y="278" fill="#EC4899" font-size="13" font-weight="700">HARMFUL BRANCH</text>
+    <text x="800" y="304" fill="#F3EEE4" font-size="13">Action flips</text>
+    <text x="800" y="324" fill="#A9A3BD" font-size="12">rate &gt; threshold</text>
+  </g>
+
+  <g font-family="Consolas,monospace" font-size="11" font-weight="700">
+    <rect x="40" y="394" width="190" height="26" rx="13" fill="#4F69E8"/>
+    <text x="135" y="412" text-anchor="middle" fill="#FFFFFF">POINTER + KEYBOARD</text>
+    <rect x="242" y="394" width="170" height="26" rx="13" fill="#7C3AED"/>
+    <text x="327" y="412" text-anchor="middle" fill="#FFFFFF">SEEDED SCENARIOS</text>
+    <rect x="424" y="394" width="176" height="26" rx="13" fill="#06B6D4"/>
+    <text x="512" y="412" text-anchor="middle" fill="#030014">MEASURED ANCHORS</text>
+    <rect x="612" y="394" width="160" height="26" rx="13" fill="#10B981"/>
+    <text x="692" y="412" text-anchor="middle" fill="#030014">HONEST INTERPOLATION</text>
+    <rect x="784" y="394" width="176" height="26" rx="13" fill="#F59E0B"/>
+    <text x="872" y="412" text-anchor="middle" fill="#030014">EXTRAPOLATION FLAGGED</text>
+  </g>
+</svg>

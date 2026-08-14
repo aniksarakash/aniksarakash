@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="360" viewBox="0 0 1000 360" role="img" aria-labelledby="title desc">
+  <title id="title">Prompt Compiler architecture</title>
+  <desc id="desc">Structured intent and evidence compile into a typed semantic intermediate representation, then into a deterministic local prompt and hash. Optional server refinement is isolated behind validation, quotas, allowlisted providers, and hash verification.</desc>
+  <rect width="1000" height="360" fill="#030014"/>
+  <g stroke="#202035" stroke-width="1" opacity=".8">
+    <path d="M0 60H1000M0 120H1000M0 180H1000M0 240H1000M0 300H1000"/>
+    <path d="M100 0V360M200 0V360M300 0V360M400 0V360M500 0V360M600 0V360M700 0V360M800 0V360M900 0V360"/>
+  </g>
+
+  <text x="40" y="38" fill="#F3EEE4" font-family="Arial,Helvetica,sans-serif" font-size="21" font-weight="700">PROMPT COMPILER / ARTIFACT PIPELINE</text>
+  <text x="960" y="36" text-anchor="end" fill="#A9A3BD" font-family="Consolas,monospace" font-size="12">prompt-ir/1.0</text>
+
+  <g font-family="Arial,Helvetica,sans-serif">
+    <rect x="40" y="78" width="200" height="168" rx="6" fill="#101020" stroke="#4F69E8" stroke-width="2"/>
+    <circle cx="65" cy="104" r="12" fill="#4F69E8"/>
+    <text x="65" y="109" text-anchor="middle" fill="#FFFFFF" font-size="12" font-weight="700">1</text>
+    <text x="86" y="110" fill="#F3EEE4" font-size="17" font-weight="700">Structured draft</text>
+    <text x="60" y="140" fill="#A9A3BD" font-size="13">Intent + authorization</text>
+    <text x="60" y="164" fill="#A9A3BD" font-size="13">Evidence + assumptions</text>
+    <text x="60" y="188" fill="#A9A3BD" font-size="13">Scope + invariants</text>
+    <text x="60" y="212" fill="#A9A3BD" font-size="13">Output + quality contract</text>
+
+    <path d="M240 162H278" stroke="#4F69E8" stroke-width="3"/>
+    <path d="m272 155 10 7-10 7" fill="none" stroke="#4F69E8" stroke-width="3"/>
+
+    <rect x="282" y="78" width="200" height="168" rx="6" fill="#101020" stroke="#7C3AED" stroke-width="2"/>
+    <circle cx="307" cy="104" r="12" fill="#7C3AED"/>
+    <text x="307" y="109" text-anchor="middle" fill="#FFFFFF" font-size="12" font-weight="700">2</text>
+    <text x="328" y="110" fill="#F3EEE4" font-size="17" font-weight="700">Semantic IR</text>
+    <text x="302" y="140" fill="#A9A3BD" font-size="13">Stable evidence IDs</text>
+    <text x="302" y="164" fill="#A9A3BD" font-size="13">Named entities + aliases</text>
+    <text x="302" y="188" fill="#A9A3BD" font-size="13">Explicit trust boundaries</text>
+    <text x="302" y="212" fill="#A9A3BD" font-size="13">Versioned provenance</text>
+
+    <path d="M482 162H520" stroke="#7C3AED" stroke-width="3"/>
+    <path d="m514 155 10 7-10 7" fill="none" stroke="#7C3AED" stroke-width="3"/>
+
+    <rect x="524" y="78" width="200" height="168" rx="6" fill="#101020" stroke="#06B6D4" stroke-width="2"/>
+    <circle cx="549" cy="104" r="12" fill="#06B6D4"/>
+    <text x="549" y="109" text-anchor="middle" fill="#030014" font-size="12" font-weight="700">3</text>
+    <text x="570" y="110" fill="#F3EEE4" font-size="17" font-weight="700">Local artifact</text>
+    <text x="544" y="140" fill="#A9A3BD" font-size="13">Deterministic compile</text>
+    <text x="544" y="164" fill="#A9A3BD" font-size="13">Inspectable Markdown</text>
+    <text x="544" y="188" fill="#A9A3BD" font-size="13">SHA-256 fingerprint</text>
+    <text x="544" y="212" fill="#A9A3BD" font-size="13">Copy + download ready</text>
+
+    <path d="M724 162H762" stroke="#06B6D4" stroke-width="3"/>
+    <path d="m756 155 10 7-10 7" fill="none" stroke="#06B6D4" stroke-width="3"/>
+    <text x="744" y="145" text-anchor="middle" fill="#F59E0B" font-family="Consolas,monospace" font-size="10">OPTIONAL</text>
+
+    <rect x="766" y="78" width="194" height="168" rx="6" fill="#101020" stroke="#F59E0B" stroke-width="2"/>
+    <circle cx="791" cy="104" r="12" fill="#F59E0B"/>
+    <text x="791" y="109" text-anchor="middle" fill="#030014" font-size="12" font-weight="700">4</text>
+    <text x="812" y="110" fill="#F3EEE4" font-size="17" font-weight="700">Refinement gate</text>
+    <text x="786" y="140" fill="#A9A3BD" font-size="13">Same-origin token</text>
+    <text x="786" y="164" fill="#A9A3BD" font-size="13">Quota + size limits</text>
+    <text x="786" y="188" fill="#A9A3BD" font-size="13">Allowlisted adapters</text>
+    <text x="786" y="212" fill="#A9A3BD" font-size="13">Response hash verified</text>
+  </g>
+
+  <g font-family="Consolas,monospace" font-size="11" font-weight="700">
+    <rect x="40" y="282" width="176" height="38" rx="19" fill="#4F69E8"/>
+    <text x="128" y="306" text-anchor="middle" fill="#FFFFFF">LOCAL-FIRST</text>
+    <rect x="230" y="282" width="176" height="38" rx="19" fill="#7C3AED"/>
+    <text x="318" y="306" text-anchor="middle" fill="#FFFFFF">SEMANTIC, NOT STRINGLY</text>
+    <rect x="420" y="282" width="176" height="38" rx="19" fill="#06B6D4"/>
+    <text x="508" y="306" text-anchor="middle" fill="#030014">HASHED ARTIFACTS</text>
+    <rect x="610" y="282" width="176" height="38" rx="19" fill="#10B981"/>
+    <text x="698" y="306" text-anchor="middle" fill="#030014">RAW CONTENT NOT AUDITED</text>
+    <rect x="800" y="282" width="160" height="38" rx="19" fill="#F59E0B"/>
+    <text x="880" y="306" text-anchor="middle" fill="#030014">SERVER KEYS ONLY</text>
+  </g>
+</svg>
