@@ -342,12 +342,15 @@ Models are useful to me in three places: reading things faster than I can, writi
 
 <img src="./assets/ai-stack.svg" width="100%" alt="Four bands describing where models sit in this work. Model access: Gemini, OpenAI-compatible endpoints, Groq, Cerebras and OpenRouter, with server-side keys only, schema-constrained output, rate-limit failover and keys encrypted at rest. Retrieval: dense vectors and BM25 run in parallel and are fused with reciprocal rank fusion, and every answer deep-links to the quote it came from. Automation: scheduled PowerShell and PHP pipelines, log parsing and vendor job scripting, running twice daily, logged, and loud when a step fails. Promotion: once a model's output is verified it becomes a deterministic rule, so the next run costs nothing and AI stays out of the hot path." />
 
+> [!NOTE]
+> **Private codebases.** Architecture, safeguards, and outcomes are shown here; the source repositories are not publicly accessible.
+
 <table>
 <tr>
 <td width="50%" valign="top">
 
 ### 🔗 &nbsp;Linkora
-<img src="https://img.shields.io/badge/PHP_8.2-7C3AED?style=flat-square&labelColor=030014" /> <img src="https://img.shields.io/badge/1063_CI_assertions-10B981?style=flat-square&labelColor=030014" /> <img src="https://img.shields.io/badge/Open_source-EC4899?style=flat-square&labelColor=030014" />
+<img src="https://img.shields.io/badge/PHP_8.2-7C3AED?style=flat-square&labelColor=030014" /> <img src="https://img.shields.io/badge/1063_CI_assertions-10B981?style=flat-square&labelColor=030014" /> <img src="https://img.shields.io/badge/Private_product-F59E0B?style=flat-square&labelColor=030014" />
 
 Self-hosted PWA that turns saved links into something you can actually ask questions of. Grounded answers over hybrid retrieval, dense vectors and BM25 fused with reciprocal rank fusion, with citations that deep-link back to the sentence they came from.
 
@@ -358,13 +361,11 @@ Self-hosted PWA that turns saved links into something you can actually ask quest
 
 `PHP` `HTMX` `Alpine` `MariaDB` `RAG` `PWA`
 
-**[→ View repository](https://github.com/aniksarakash/Linkora)**
-
 </td>
 <td width="50%" valign="top">
 
 ### 🕷️ &nbsp;SCRAPLY
-<img src="https://img.shields.io/badge/Python_3.12-06B6D4?style=flat-square&labelColor=030014" /> <img src="https://img.shields.io/badge/98%25_extractor_coverage-10B981?style=flat-square&labelColor=030014" /> <img src="https://img.shields.io/badge/Open_source-EC4899?style=flat-square&labelColor=030014" />
+<img src="https://img.shields.io/badge/Python_3.12-06B6D4?style=flat-square&labelColor=030014" /> <img src="https://img.shields.io/badge/98%25_extractor_coverage-10B981?style=flat-square&labelColor=030014" /> <img src="https://img.shields.io/badge/Private_product-F59E0B?style=flat-square&labelColor=030014" />
 
 Extraction platform where every domain earns a recipe: the tier that worked, the fingerprint, the selectors, the escalation ladder. When a site redesigns, the recipe repairs itself, and a brand new site inherits from its nearest neighbour in pgvector space.
 
@@ -375,15 +376,13 @@ Extraction platform where every domain earns a recipe: the tier that worked, the
 
 `Python` `FastAPI` `React` `Postgres` `pgvector` `Playwright`
 
-**[→ View repository](https://github.com/aniksarakash/SCRAPLY)**
-
 </td>
 </tr>
 <tr>
 <td width="50%" valign="top">
 
 ### 💾 &nbsp;SPSL Backup Automation
-<img src="https://img.shields.io/badge/PowerShell_+_PHP-4F69E8?style=flat-square&labelColor=030014" /> <img src="https://img.shields.io/badge/Runs_twice_daily-F59E0B?style=flat-square&labelColor=030014" /> <img src="https://img.shields.io/badge/Open_source-EC4899?style=flat-square&labelColor=030014" />
+<img src="https://img.shields.io/badge/PowerShell_+_PHP-4F69E8?style=flat-square&labelColor=030014" /> <img src="https://img.shields.io/badge/Runs_twice_daily-10B981?style=flat-square&labelColor=030014" /> <img src="https://img.shields.io/badge/Private_internal_automation-F59E0B?style=flat-square&labelColor=030014" />
 
 Seven-step backup pipeline that runs at 9AM and 7PM under Task Scheduler and needs nobody watching it. A PHP linked-server engine streams attendance tables off a remote SQL instance, then SQL backups, drive mirrors, SFTP pulls and disk cleanup run in order.
 
@@ -394,13 +393,11 @@ Seven-step backup pipeline that runs at 9AM and 7PM under Task Scheduler and nee
 
 `PowerShell` `PHP` `SQL Server` `Posh-SSH` `robocopy`
 
-**[→ View repository](https://github.com/aniksarakash/SPSL_Backup_Scripts)**
-
 </td>
 <td width="50%" valign="top">
 
 ### 🖨️ &nbsp;MyQ Mono Job Redirect
-<img src="https://img.shields.io/badge/PHP_job_scripting-7C3AED?style=flat-square&labelColor=030014" /> <img src="https://img.shields.io/badge/Zero_client_side_change-10B981?style=flat-square&labelColor=030014" />
+<img src="https://img.shields.io/badge/PHP_job_scripting-7C3AED?style=flat-square&labelColor=030014" /> <img src="https://img.shields.io/badge/Zero_client_side_change-10B981?style=flat-square&labelColor=030014" /> <img src="https://img.shields.io/badge/Private_client_automation-F59E0B?style=flat-square&labelColor=030014" />
 
 A customer needed one colour device reserved for colour work. Too many users to touch a single PC, so the whole thing had to happen server side. A PHP parser script on the release queue inspects the job and moves mono work to a queue whose printer list simply does not include that device.
 
@@ -426,7 +423,7 @@ Internal systems built for enterprise clients. These live inside client infrastr
 <td width="50%" valign="top">
 
 ### 🎫 &nbsp;Custom CRM Ticketing System
-<img src="https://img.shields.io/badge/-67%25_delivery_time-10B981?style=flat-square&labelColor=030014" /> <img src="https://img.shields.io/badge/6_months_→_2-4F69E8?style=flat-square&labelColor=030014" />
+<img src="https://img.shields.io/badge/-67%25_delivery_time-10B981?style=flat-square&labelColor=030014" /> <img src="https://img.shields.io/badge/6_months_→_2-4F69E8?style=flat-square&labelColor=030014" /> <img src="https://img.shields.io/badge/Private_client_deployment-F59E0B?style=flat-square&labelColor=030014" />
 
 End-to-end CRM with integrated ticketing, automated workflow routing and real-time dashboards.
 
@@ -440,7 +437,7 @@ End-to-end CRM with integrated ticketing, automated workflow routing and real-ti
 <td width="50%" valign="top">
 
 ### 📄 &nbsp;Complex Report Generation App
-<img src="https://img.shields.io/badge/-90%25_delivery_time-10B981?style=flat-square&labelColor=030014" /> <img src="https://img.shields.io/badge/1_month_→_3_days-7C3AED?style=flat-square&labelColor=030014" />
+<img src="https://img.shields.io/badge/-90%25_delivery_time-10B981?style=flat-square&labelColor=030014" /> <img src="https://img.shields.io/badge/1_month_→_3_days-7C3AED?style=flat-square&labelColor=030014" /> <img src="https://img.shields.io/badge/Private_client_deployment-F59E0B?style=flat-square&labelColor=030014" />
 
 Multi-format report engine (PDF, Excel) with a web front end and parameterised templates.
 
@@ -456,7 +453,7 @@ Multi-format report engine (PDF, Excel) with a web front end and parameterised t
 <td width="50%" valign="top">
 
 ### ✅ &nbsp;Bill Approval System
-<img src="https://img.shields.io/badge/-50%25_delivery_time-10B981?style=flat-square&labelColor=030014" /> <img src="https://img.shields.io/badge/60%25_faster_approvals-06B6D4?style=flat-square&labelColor=030014" />
+<img src="https://img.shields.io/badge/-50%25_delivery_time-10B981?style=flat-square&labelColor=030014" /> <img src="https://img.shields.io/badge/60%25_faster_approvals-06B6D4?style=flat-square&labelColor=030014" /> <img src="https://img.shields.io/badge/Private_client_deployment-F59E0B?style=flat-square&labelColor=030014" />
 
 Bill and conveyance approval with rules-based routing, notifications and full workflow management.
 
@@ -501,7 +498,7 @@ High-capacity image steganography using Generative Adversarial Networks, wrapped
 
 ## 🎬 &nbsp;One domain, four builds
 
-The site at **[aniksarkerakash.com](https://aniksarkerakash.com/)** ships as one repository with four Vite entries. They share design tokens and almost nothing else: a scroll-driven portfolio, the engine that renders the writing, the CMS that publishes it, and a lab for the things that fit nowhere else. Each one is its own build, its own chunk, and its own set of rules about what it is allowed to load.
+The site at **[aniksarkerakash.com](https://aniksarkerakash.com/)** ships from one private repository with four Vite entries. They share design tokens and almost nothing else: a scroll-driven portfolio, the engine that renders the writing, the CMS that publishes it, and a lab for the things that fit nowhere else. Each one is its own build, its own chunk, and its own set of rules about what it is allowed to load.
 
 <img src="./assets/site-stack.svg" width="100%" alt="One repository, four builds. Portfolio at the site root: six sticky SVG stages scrubbed to scroll position, no canvas or WebGL, built with React 19, anime.js 4, GSAP, Lenis and Zustand, with zero React re-renders while scrolling. Writing engine at /blog/: first-party markdown, diagram and chart renderers with no runtime chart library, covering flowcharts, nine chart block languages and seeded generative covers. Publishing at /blog/admin: one dependency-free PHP file that deploys inside dist like any other asset, with drafts, scheduling, uploads and server-side feed regeneration, needing no database and no install. Lab at /lab/chimes: wind chimes that ring from pendulum physics rather than a schedule, using modal synthesis, a WebGL2 shader and seeded permalinks. The blog entry never loads GSAP, anime.js or Lenis." />
 
@@ -510,7 +507,7 @@ The site at **[aniksarkerakash.com](https://aniksarkerakash.com/)** ships as one
 <td width="50%" valign="top">
 
 ### 🎞️ &nbsp;Scroll-driven portfolio
-<img src="https://img.shields.io/badge/React_19-4F69E8?style=flat-square&labelColor=030014" /> <img src="https://img.shields.io/badge/~157KB_gzip-10B981?style=flat-square&labelColor=030014" /> <img src="https://img.shields.io/badge/60fps_desktop-06B6D4?style=flat-square&labelColor=030014" />
+<img src="https://img.shields.io/badge/React_19-4F69E8?style=flat-square&labelColor=030014" /> <img src="https://img.shields.io/badge/~157KB_gzip-10B981?style=flat-square&labelColor=030014" /> <img src="https://img.shields.io/badge/60fps_desktop-06B6D4?style=flat-square&labelColor=030014" /> <img src="https://img.shields.io/badge/Private_codebase-F59E0B?style=flat-square&labelColor=030014" />
 
 Six sticky sections. A hand-built SVG stage pins to the right half of the viewport while the narrative scrolls past on the left, and every timeline is scrubbed, so the animation position *is* the scroll position rather than a duration playing out on its own clock.
 
@@ -521,13 +518,13 @@ Six sticky sections. A hand-built SVG stage pins to the right half of the viewpo
 
 `React 19` `TypeScript` `anime.js 4` `GSAP` `Lenis` `Zustand`
 
-**[→ View live](https://aniksarkerakash.com/)** · **[→ Repository](https://github.com/aniksarakash/Portfolio_V2.0)**
+**[→ View live](https://aniksarkerakash.com/)**
 
 </td>
 <td width="50%" valign="top">
 
 ### ✍️ &nbsp;Zero-dependency writing engine
-<img src="https://img.shields.io/badge/9_chart_languages-7C3AED?style=flat-square&labelColor=030014" /> <img src="https://img.shields.io/badge/No_chart_library-10B981?style=flat-square&labelColor=030014" /> <img src="https://img.shields.io/badge/Open_source-EC4899?style=flat-square&labelColor=030014" />
+<img src="https://img.shields.io/badge/9_chart_languages-7C3AED?style=flat-square&labelColor=030014" /> <img src="https://img.shields.io/badge/No_chart_library-10B981?style=flat-square&labelColor=030014" /> <img src="https://img.shields.io/badge/Private_codebase-F59E0B?style=flat-square&labelColor=030014" />
 
 `/blog/` is a second entry that shares the design tokens and the React chunk and loads none of the animation stack. Markdown, diagrams, charts and covers are all parsed and drawn first-party, with no `dangerouslySetInnerHTML` anywhere in it.
 
@@ -546,7 +543,7 @@ Six sticky sections. A hand-built SVG stage pins to the right half of the viewpo
 <td width="50%" valign="top">
 
 ### 🗄️ &nbsp;Self-built CMS, no third-party software
-<img src="https://img.shields.io/badge/One_PHP_file-7C3AED?style=flat-square&labelColor=030014" /> <img src="https://img.shields.io/badge/No_database-F59E0B?style=flat-square&labelColor=030014" /> <img src="https://img.shields.io/badge/Instant_publish-10B981?style=flat-square&labelColor=030014" />
+<img src="https://img.shields.io/badge/One_PHP_file-7C3AED?style=flat-square&labelColor=030014" /> <img src="https://img.shields.io/badge/No_database-06B6D4?style=flat-square&labelColor=030014" /> <img src="https://img.shields.io/badge/Instant_publish-10B981?style=flat-square&labelColor=030014" /> <img src="https://img.shields.io/badge/Private_codebase-F59E0B?style=flat-square&labelColor=030014" />
 
 `/blog/admin` is backed by a single dependency-free PHP file that deploys inside `dist/` like any other asset. cPanel runs PHP natively, so there is nothing to install and nothing extra to keep patched.
 
@@ -561,7 +558,7 @@ Six sticky sections. A hand-built SVG stage pins to the right half of the viewpo
 <td width="50%" valign="top">
 
 ### 🎐 &nbsp;Lab: wind chimes that ring themselves
-<img src="https://img.shields.io/badge/Web_Audio-06B6D4?style=flat-square&labelColor=030014" /> <img src="https://img.shields.io/badge/WebGL2-7C3AED?style=flat-square&labelColor=030014" /> <img src="https://img.shields.io/badge/Seeded-F59E0B?style=flat-square&labelColor=030014" />
+<img src="https://img.shields.io/badge/Web_Audio-06B6D4?style=flat-square&labelColor=030014" /> <img src="https://img.shields.io/badge/WebGL2-7C3AED?style=flat-square&labelColor=030014" /> <img src="https://img.shields.io/badge/Seeded-10B981?style=flat-square&labelColor=030014" /> <img src="https://img.shields.io/badge/Private_codebase-F59E0B?style=flat-square&labelColor=030014" />
 
 A rack of tuned tubes hanging in wind you control. The clapper and the tubes are deliberately different pendulums, a light clapper on a long arm that lags and heavy tubes on short arms that follow, so strikes fall out of the phase difference between them rather than off a timer. Gentle wind reaches only the middle tubes. A gust reaches the whole rack.
 
@@ -572,7 +569,7 @@ A rack of tuned tubes hanging in wind you control. The clapper and the tubes are
 
 `Web Audio` `WebGL2` `GLSL` `TypeScript`
 
-**[→ Ring it](https://aniksarkerakash.com/lab/chimes)** · **[→ Source](https://github.com/aniksarakash/Portfolio_V2.0/tree/main/src/lab)**
+**[→ Ring it](https://aniksarkerakash.com/lab/chimes)**
 
 </td>
 </tr>
