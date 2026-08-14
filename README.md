@@ -142,7 +142,7 @@ The speed doesn't come from letting a model write the code and shipping it. It c
 <b>The gate is the whole point.</b> I don't merge code I can't explain line by line. Generated output is a first draft with a confident tone, not a decision. Every branch gets read, every assumption gets named, and anything I can't defend in review goes back.
 </blockquote>
 
-<details>
+<details open>
 <summary><b>🤖 &nbsp;Model Context Protocol · how I wire LLMs into real systems</b></summary>
 
 <br/>
@@ -160,7 +160,7 @@ MCP is an open standard for connecting LLM applications to external data and too
 
 </details>
 
-<details>
+<details open>
 <summary><b>⚖️ &nbsp;Responsible AI · the non-negotiables</b></summary>
 
 <br/>
@@ -575,7 +575,7 @@ A rack of tuned tubes hanging in wind you control. The clapper and the tubes are
 </tr>
 </table>
 
-<details>
+<details open>
 <summary><b>🔎 &nbsp;What the build does before any of it ships</b></summary>
 
 <br/>
