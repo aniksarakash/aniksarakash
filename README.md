@@ -43,29 +43,37 @@ By night it means shipping AI-powered tools that compress months of grunt work i
 
 <table>
 <tr>
-<td width="50%" valign="top">
-
-**📍 Based in** &nbsp;Dhaka, Bangladesh
-**🛠️ Currently** &nbsp;System Engineer @ Smart Printing Solutions
-**🔁 Also** &nbsp;L2 Backup DSS @ Reckitt Bangladesh
-**🚗 On the ground** &nbsp;client site visits + remote support
-**🎓 Foundation** &nbsp;B.Sc. Computer Science & Engineering
-
-</td>
-<td width="50%" valign="top">
-
-**🎯 Focused on** &nbsp;MCP · AI agents · RAG · Python automation
-**🛡️ Also hands-on** &nbsp;VM · Windows · M365 · XDR/EDR · network
-**✍️ Writing about** &nbsp;LLM debugging, context engineering, ITSM
-**📬 Reach me** &nbsp;`info@aniksarkerakash.com`
-**💬 Ask me about** &nbsp;shipping AI code you can actually defend
-
-</td>
+<td width="50%" valign="top"><b>📍 Based in</b>&nbsp;&nbsp;Dhaka, Bangladesh</td>
+<td width="50%" valign="top"><b>🎯 Focused on</b>&nbsp;&nbsp;MCP · AI agents · RAG · Python automation</td>
+</tr>
+<tr>
+<td width="50%" valign="top"><b>🛠️ Currently</b>&nbsp;&nbsp;System Engineer @ Smart Printing Solutions</td>
+<td width="50%" valign="top"><b>🛡️ Also hands-on</b>&nbsp;&nbsp;VM · Windows · M365 · XDR/EDR · network</td>
+</tr>
+<tr>
+<td width="50%" valign="top"><b>🔁 Also</b>&nbsp;&nbsp;L2 Backup DSS @ Reckitt Bangladesh</td>
+<td width="50%" valign="top"><b>✍️ Writing about</b>&nbsp;&nbsp;LLM debugging, context engineering, ITSM</td>
+</tr>
+<tr>
+<td width="50%" valign="top"><b>🚗 On the ground</b>&nbsp;&nbsp;client site visits + remote support</td>
+<td width="50%" valign="top"><b>📬 Reach me</b>&nbsp;&nbsp;<code>info@aniksarkerakash.com</code></td>
+</tr>
+<tr>
+<td width="50%" valign="top"><b>🎓 Foundation</b>&nbsp;&nbsp;B.Sc. Computer Science &amp; Engineering</td>
+<td width="50%" valign="top"><b>💬 Ask me about</b>&nbsp;&nbsp;shipping AI code you can actually defend</td>
 </tr>
 </table>
 
-<details>
-<summary><b>🎓 &nbsp;Certifications · Google Professional Certificates</b></summary>
+## 🎓 &nbsp;Google Professional Certificates
+
+<div align="center">
+
+<img src="https://img.shields.io/badge/Google-5_Professional_Certificates-4F69E8?style=for-the-badge&amp;logo=google&amp;logoColor=white&amp;labelColor=030014" alt="Five Google Professional Certificates" />
+
+</div>
+
+<details open>
+<summary><b>📜 &nbsp;Certificate details · and how I apply them</b></summary>
 
 <br/>
 
