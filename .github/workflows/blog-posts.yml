@@ -14,13 +14,16 @@ jobs:
       contents: write
 
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
 
       - name: Pull the five most recent posts into the README
         uses: gautamkrishnar/blog-post-workflow@v1
         with:
           feed_list: "https://aniksarkerakash.com/blog/feed.xml"
           max_post_count: 5
+          # The action otherwise joins the opening marker directly to the
+          # first list item, which breaks the marker's own line.
+          tag_post_pre_newline: true
           # $newline is the action's own variable. A literal "\n" here is
           # emitted verbatim, which is why every post used to land on one line.
           template: "- [$title]($url)$newline"

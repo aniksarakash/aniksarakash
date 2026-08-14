@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * Generates assets/github.svg — a branded, self-hosted GitHub stats card.
+ * Generates branded, self-hosted GitHub stats and contribution cards.
  *
  * Why self-hosted: the public github-readme-stats instance is paused
  * (503 DEPLOYMENT_PAUSED) and github-profile-trophy returns 402
@@ -71,7 +71,12 @@ query($login:String!, $after:String) {
     contributionsCollection {
       totalCommitContributions
       restrictedContributionsCount
-      contributionCalendar { totalContributions }
+      contributionCalendar {
+        totalContributions
+        weeks {
+          contributionDays { contributionCount date }
+        }
+      }
     }
     repositories(first:100, after:$after, ownerAffiliations:OWNER, isFork:false, privacy:PUBLIC) {
       totalCount
@@ -133,6 +138,7 @@ async function collect() {
     years: Math.max(1, Math.floor((Date.now() - since.getTime()) / (365.25 * 864e5))),
     since: since.getUTCFullYear(),
     langs: [...langs.entries()].map(([name, v]) => ({ name, ...v })).sort((a, b) => b.count - a.count),
+    activityDays: c.contributionCalendar.weeks.flatMap((week) => week.contributionDays),
   }
 }
 
@@ -151,7 +157,11 @@ async function reconcile(live) {
   const ageDays = cache?.generatedAt
     ? (Date.now() - new Date(cache.generatedAt).getTime()) / 864e5
     : Infinity
-  const cacheTrusted = cache && ageDays <= CACHE_TRUST_DAYS
+  // Older cache files predate the explicit subject field and belong to this
+  // profile. A fork must never reuse this account's private baseline.
+  const cacheLogin = cache?.login ?? 'aniksarakash'
+  const cacheMatchesLogin = cacheLogin.toLowerCase() === LOGIN.toLowerCase()
+  const cacheTrusted = cache && cacheMatchesLogin && ageDays <= CACHE_TRUST_DAYS
 
   const lostVisibility = Boolean(cacheTrusted && cache.restricted > 0 && live.restricted === 0)
 
@@ -164,7 +174,7 @@ async function reconcile(live) {
   // could confirm. The last public-scoped reading wins; a local preview never
   // overwrites it. Scope is derived from isOwner rather than stored
   // separately — two fields that can disagree is worse than one.
-  const publicBaseline = cache && cache.isOwner === false ? cache : null
+  const publicBaseline = cacheMatchesLogin && cache?.isOwner === false ? cache : null
   const prsInflated = Boolean(live.isOwner && publicBaseline && publicBaseline.prs < live.prs)
 
   const notes = []
@@ -337,12 +347,162 @@ ${legend}
 `
 }
 
+function activitySummary(days) {
+  let longestStreak = 0
+  let run = 0
+  let activeDays = 0
+  let busiest = { contributionCount: 0, date: days.at(-1)?.date ?? '' }
+
+  for (const day of days) {
+    if (day.contributionCount > 0) {
+      run += 1
+      activeDays += 1
+      longestStreak = Math.max(longestStreak, run)
+    } else {
+      run = 0
+    }
+    if (day.contributionCount > busiest.contributionCount) busiest = day
+  }
+
+  // Treat today as unfinished: a streak through yesterday is still current.
+  let cursor = days.length - 1
+  if (days[cursor]?.contributionCount === 0 && days[cursor - 1]?.contributionCount > 0) cursor -= 1
+  let currentStreak = 0
+  while (cursor >= 0 && days[cursor].contributionCount > 0) {
+    currentStreak += 1
+    cursor -= 1
+  }
+
+  return { activeDays, busiest, currentStreak, longestStreak }
+}
+
+function shortDate(iso) {
+  const [year, month, day] = iso.split('-').map(Number)
+  const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+  return `${months[month - 1]} ${day}, ${year}`
+}
+
+function renderContributions(days, asOf) {
+  const W = 1000, H = 300
+  const recent = days.slice(-35)
+  const { activeDays, busiest, currentStreak, longestStreak } = activitySummary(days)
+  const values = recent.map((day) => day.contributionCount)
+  const peak = Math.max(1, ...values)
+  const scaleMax = peak <= 5 ? 5 : peak <= 10 ? 10 : peak <= 20 ? 20 : Math.ceil(peak / 10) * 10
+
+  const X = 58, Y = 88, CW = 640, CH = 152
+  const bottom = Y + CH
+  const step = recent.length > 1 ? CW / (recent.length - 1) : 0
+  const points = recent.map((day, i) => ({
+    ...day,
+    x: X + i * step,
+    y: bottom - (day.contributionCount / scaleMax) * CH,
+  }))
+  const line = points.map((p, i) => `${i ? 'L' : 'M'}${p.x.toFixed(1)} ${p.y.toFixed(1)}`).join(' ')
+  const area = points.length
+    ? `M${points[0].x.toFixed(1)} ${bottom} L${points.map((p) => `${p.x.toFixed(1)} ${p.y.toFixed(1)}`).join(' L')} L${points.at(-1).x.toFixed(1)} ${bottom} Z`
+    : ''
+  const dots = points
+    .filter((p) => p.contributionCount > 0)
+    .map((p) => `  <circle cx="${p.x.toFixed(1)}" cy="${p.y.toFixed(1)}" r="3.2" fill="${A.cyan}" stroke="${INK}" stroke-width="1.5"/>`)
+    .join('\n')
+  const grid = [0, 0.5, 1].map((ratio) => {
+    const y = Y + ratio * CH
+    const label = Math.round(scaleMax * (1 - ratio))
+    return `  <path d="M${X} ${y.toFixed(1)} H${X + CW}" stroke="${BORDER}" stroke-dasharray="3 5"/>
+  <text class="fm" x="${X - 12}" y="${(y + 4).toFixed(1)}" font-size="10" fill="${TEXT_3}" text-anchor="end">${label}</text>`
+  }).join('\n')
+  const labels = [0, Math.floor((recent.length - 1) / 2), recent.length - 1]
+    .filter((i, pos, arr) => i >= 0 && arr.indexOf(i) === pos)
+    .map((i) => {
+      const anchor = i === 0 ? 'start' : i === recent.length - 1 ? 'end' : 'middle'
+      return `  <text class="fm" x="${points[i].x.toFixed(1)}" y="260" font-size="10" fill="${TEXT_3}" text-anchor="${anchor}">${esc(shortDate(recent[i].date).replace(`, ${recent[i].date.slice(0, 4)}`, ''))}</text>`
+    }).join('\n')
+
+  const stats = [
+    { value: `${currentStreak}d`, label: 'current streak', color: A.amber },
+    { value: `${longestStreak}d`, label: 'longest streak', color: A.purple },
+    { value: fmt(activeDays), label: 'active days, 12 mo', color: A.mint },
+  ].map((stat, i) => {
+    const y = 100 + i * 58
+    return `  <g>
+    <rect x="742" y="${y}" width="224" height="48" rx="8" fill="${BONE}" fill-opacity="0.04" stroke="${BORDER}"/>
+    <rect x="742" y="${y + 10}" width="3" height="28" rx="1.5" fill="${stat.color}"/>
+    <text class="fs" x="760" y="${y + 32}" font-size="22" font-weight="700" fill="${BONE}">${stat.value}</text>
+    <text class="fm" x="823" y="${y + 29}" font-size="10.5" fill="${TEXT_2}">${stat.label}</text>
+  </g>`
+  }).join('\n')
+
+  const stamp = asOf.slice(0, 10)
+  const recentTotal = values.reduce((sum, value) => sum + value, 0)
+  const busiestText = busiest.date
+    ? `Busiest day: ${busiest.contributionCount} contributions on ${shortDate(busiest.date)}`
+    : 'No contribution data available'
+
+  return `<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}" viewBox="0 0 ${W} ${H}" role="img"
+     aria-label="GitHub contribution activity for ${esc(LOGIN)}: ${recentTotal} contributions in the last 35 days, a current streak of ${currentStreak} days, a longest streak of ${longestStreak} days, and ${activeDays} active days in the last 12 months.">
+  <title>Contribution activity for ${esc(LOGIN)}</title>
+  <defs>
+    <linearGradient id="activity-surface" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="${INK}"/>
+      <stop offset="100%" stop-color="${INK_SOFT}"/>
+    </linearGradient>
+    <linearGradient id="activity-area" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="${A.purple}" stop-opacity="0.38"/>
+      <stop offset="100%" stop-color="${A.purple}" stop-opacity="0.02"/>
+    </linearGradient>
+    <linearGradient id="activity-rule" gradientUnits="userSpaceOnUse" x1="34" y1="0" x2="966" y2="0">
+      <stop offset="0%" stop-color="${A.blue}"/>
+      <stop offset="50%" stop-color="${A.purple}"/>
+      <stop offset="100%" stop-color="${A.cyan}"/>
+    </linearGradient>
+    <style>
+      .fs { font-family: 'Space Grotesk', 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; }
+      .fm { font-family: 'JetBrains Mono', ui-monospace, 'Cascadia Mono', Consolas, monospace; }
+    </style>
+  </defs>
+
+  <rect width="${W}" height="${H}" rx="16" fill="url(#activity-surface)"/>
+  <rect x="0.5" y="0.5" width="${W - 1}" height="${H - 1}" rx="16" fill="none" stroke="${BONE}" stroke-opacity="0.10"/>
+  <text class="fs" x="34" y="44" font-size="19" font-weight="700" fill="${BONE}">Contribution pulse</text>
+  <text class="fm" x="${W - 34}" y="44" font-size="11" fill="${TEXT_3}" text-anchor="end">updated ${stamp} · private activity included</text>
+  <path d="M34 62 H ${W - 34}" stroke="url(#activity-rule)" stroke-width="1.5" stroke-opacity="0.6"/>
+
+  <text class="fs" x="${X}" y="78" font-size="13" font-weight="600" fill="${BONE}">Last 35 days · ${recentTotal} contributions</text>
+${grid}
+  <path d="${area}" fill="url(#activity-area)"/>
+  <path d="${line}" fill="none" stroke="${A.blue}" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+${dots}
+${labels}
+
+  <text class="fs" x="742" y="82" font-size="13" font-weight="600" fill="${BONE}">Streaks and cadence</text>
+${stats}
+  <text class="fm" x="34" y="284" font-size="10" fill="${TEXT_3}" opacity="0.8">${esc(busiestText)} · includes profile-published private contributions</text>
+</svg>
+`
+}
+
+function assertValidSvg(name, svg) {
+  const invalidValue = svg.match(/\b(?:NaN|undefined|Infinity)\b/)
+  if (!svg.startsWith('<svg ') || !svg.endsWith('</svg>\n') || invalidValue) {
+    throw new Error(`${name} failed SVG validation${invalidValue ? `: found ${invalidValue[0]}` : ''}`)
+  }
+  return svg
+}
+
 // ── main ────────────────────────────────────────────────────────────────────
 const live = await collect()
 const { resolved, degraded, notes, scope, authoritativeBaseline, asOf } = await reconcile(live)
 
 await mkdir('assets', { recursive: true })
-await writeFile('assets/github.svg', render(resolved, { degraded, asOf }), 'utf8')
+await writeFile('assets/github.svg', assertValidSvg('assets/github.svg', render(resolved, { degraded, asOf })), 'utf8')
+if (!degraded) {
+  await writeFile(
+    'assets/contributions.svg',
+    assertValidSvg('assets/contributions.svg', renderContributions(live.activityDays, asOf)),
+    'utf8'
+  )
+}
 
 // Provenance record — this is what the next run reconciles against.
 // viewerScope names whose view produced it. A local owner run is a preview:
@@ -357,6 +517,7 @@ if (degraded || preview) {
     JSON.stringify(
       {
         generatedAt: new Date().toISOString(),
+        login: LOGIN,
         viewer: live.viewer,
         isOwner: live.isOwner,
         viewerScope: scope,
@@ -377,6 +538,7 @@ if (degraded || preview) {
 
 const privatePct = resolved.contributions > 0 ? Math.round((resolved.restricted / resolved.contributions) * 100) : 0
 console.log(`assets/github.svg written`)
+console.log(`assets/contributions.svg ${degraded ? 'preserved at last verified reading' : 'written'}`)
 console.log(`  viewer            @${live.viewer} (${scope} scope${live.isOwner ? ', local preview' : ', authoritative'})`)
 console.log(`  contributions     ${resolved.contributions}  (public ${resolved.publicContribs} + private ${resolved.restricted} = ${privatePct}% private)`)
 console.log(`  repos/stars/prs   ${resolved.repos} / ${resolved.stars} / ${resolved.prs}`)

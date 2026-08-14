@@ -24,15 +24,15 @@ jobs:
       contents: write
 
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
 
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v7
         with:
           node-version: 22
 
-      - name: Render assets/github.svg
+      - name: Render self-hosted GitHub assets
         env:
-          # The headline number is ~100% restrictedContributionsCount (private
+          # The headline number is almost all restrictedContributionsCount (private
           # enterprise repos). Third parties — including this workflow's
           # GITHUB_TOKEN — can read that only while
           #   Settings → Profile → "Include private contributions on my profile"
@@ -59,6 +59,6 @@ jobs:
           # against — it has to be committed alongside the card, or the
           # regression guard has no baseline and every run looks like a
           # first run.
-          git add assets/github.svg assets/stats.json
+          git add assets/github.svg assets/contributions.svg assets/stats.json
           git diff --staged --quiet || git commit -m "chore: refresh stats card"
           git push

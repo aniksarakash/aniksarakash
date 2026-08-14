@@ -45,7 +45,7 @@ By night it means shipping AI-powered tools that compress months of grunt work i
 <tr>
 <td width="50%" valign="top">
 
-**📍 Based in** &nbsp;Badda, Dhaka, Bangladesh
+**📍 Based in** &nbsp;Dhaka, Bangladesh
 **🛠️ Currently** &nbsp;System Engineer @ Smart Printing Solutions
 **🔁 Also** &nbsp;L2 Backup DSS @ Reckitt Bangladesh
 **🚗 On the ground** &nbsp;client site visits + remote support
@@ -577,7 +577,8 @@ A rack of tuned tubes hanging in wind you control. The clapper and the tubes are
 
 I write about AI-assisted development, debugging LLM output, and troubleshooting methodology at **[aniksarkerakash.com/blog](https://aniksarkerakash.com/blog/)**, rendered and published by the two builds above.
 
-<!-- BLOG-POST-LIST:START -->- [The bottleneck was never the model: what Anthropic's 21% to 95% actually measured](https://aniksarkerakash.com/blog/semantic-layer-was-the-bottleneck)
+<!-- BLOG-POST-LIST:START -->
+- [The bottleneck was never the model: what Anthropic's 21% to 95% actually measured](https://aniksarkerakash.com/blog/semantic-layer-was-the-bottleneck)
 - [Did they nerf it? What actually happens when a model gets worse](https://aniksarkerakash.com/blog/did-they-nerf-it)
 - [The receipts: auditing the Claude Opus 5 optimization ecosystem](https://aniksarkerakash.com/blog/opus-5-ecosystem-audit)
 - [Quantum will not hand you AGI: the arrow points the other way](https://aniksarkerakash.com/blog/quantum-will-not-hand-you-agi)
@@ -599,16 +600,12 @@ I write about AI-assisted development, debugging LLM output, and troubleshooting
 
 <br/><br/>
 
-<img src="https://github-readme-activity-graph.vercel.app/graph?username=aniksarakash&bg_color=030014&color=F3EEE4&line=4F69E8&point=06B6D4&area_color=7C3AED&title_color=06B6D4&area=true&hide_border=true&custom_title=Contribution%20rhythm" alt="Contribution graph" width="100%" />
-
-<br/><br/>
-
-<img src="https://streak-stats.demolab.com?user=aniksarakash&hide_border=true&background=030014&stroke=2A2A3A&ring=7C3AED&fire=F59E0B&currStreakNum=F3EEE4&sideNums=F3EEE4&currStreakLabel=06B6D4&sideLabels=A9A3BD&dates=6F6A85" alt="Contribution streak" width="70%" />
+<img src="./assets/contributions.svg" alt="GitHub contribution activity and streaks" width="100%" />
 
 </div>
 
 > [!NOTE]
-> **100% of the last 12 months is private enterprise work.** The CRM, the report engine and the approval system all ship inside client infrastructure, so the public contribution graph shows the visible slice, not the job. The card above counts the private volume because my profile publishes it, and the [generator](./scripts/generate-stats.mjs) keeps a signed-off baseline in [`assets/stats.json`](./assets/stats.json), so if that visibility ever changes the number degrades loudly instead of silently reading zero.
+> **Most of the last 12 months is private enterprise work.** The CRM, the report engine and the approval system all ship inside client infrastructure, so public repositories show the visible slice, not the job. The self-hosted cards above count the private activity my profile publishes, and the [generator](./scripts/generate-stats.mjs) keeps a verified baseline in [`assets/stats.json`](./assets/stats.json), so if that visibility ever changes the number degrades loudly instead of silently reading zero.
 
 ### 🐍 &nbsp;Contribution snake
 
