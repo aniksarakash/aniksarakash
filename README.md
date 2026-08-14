@@ -77,13 +77,40 @@ By night it means shipping AI-powered tools that compress months of grunt work i
 
 <br/>
 
-| Certificate | Where it shows up in my work |
-| :--- | :--- |
-| **Project Management** | Scoping AI builds so a 6-month estimate becomes a 2-month delivery |
-| **IT Automation with Python** | The automation layer under every report generator and approval flow |
-| **UX Design** | Why the internal tools people actually *use* look the way they do |
-| **Data Analytics** | SLA dashboards, ticket-ageing signals, operational reporting |
-| **IT Support** | The L2/L3 discipline behind 86% SLA compliance on cover |
+<div align="center">
+
+<table align="center" width="90%">
+<thead>
+<tr>
+<th align="left">Certificate</th>
+<th align="left">Where it shows up in my work</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><b>Project Management</b></td>
+<td>Scoping AI builds so a 6-month estimate becomes a 2-month delivery</td>
+</tr>
+<tr>
+<td><b>IT Automation with Python</b></td>
+<td>The automation layer under every report generator and approval flow</td>
+</tr>
+<tr>
+<td><b>UX Design</b></td>
+<td>Why the internal tools people actually <i>use</i> look the way they do</td>
+</tr>
+<tr>
+<td><b>Data Analytics</b></td>
+<td>SLA dashboards, ticket-ageing signals, operational reporting</td>
+</tr>
+<tr>
+<td><b>IT Support</b></td>
+<td>The L2/L3 discipline behind 86% SLA compliance on cover</td>
+</tr>
+</tbody>
+</table>
+
+</div>
 
 </details>
 
