@@ -68,7 +68,7 @@ By night it means shipping AI-powered tools that compress months of grunt work i
 
 <div align="center">
 
-<img src="https://img.shields.io/badge/Google-5_Professional_Certificates-4F69E8?style=for-the-badge&amp;logo=google&amp;logoColor=white&amp;labelColor=030014" alt="Five Google Professional Certificates" />
+<img src="./assets/google-certificates.svg" alt="Five Google Professional Certificates" width="430" />
 
 </div>
 
@@ -79,7 +79,7 @@ By night it means shipping AI-powered tools that compress months of grunt work i
 
 <div align="center">
 
-<table align="center" width="90%">
+<table width="100%">
 <thead>
 <tr>
 <th align="left">Certificate</th>
