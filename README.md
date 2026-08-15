@@ -647,11 +647,11 @@ The console separates **what an agent says** from **what it decides**. Drag a ve
 I write about AI-assisted development, debugging LLM output, and troubleshooting methodology at **[aniksarkerakash.com/blog](https://aniksarkerakash.com/blog/)**, rendered and published by the two builds above.
 
 <!-- BLOG-POST-LIST:START -->
+- [The AI race split in four: what changed by August 14, 2026](https://aniksarkerakash.com/blog/ai-breakthroughs-august-2026)
+- [The dial nobody can see: what Anthropic actually found inside Claude](https://aniksarkerakash.com/blog/claude-emotion-vectors-what-anthropic-found)
 - [The bottleneck was never the model: what Anthropic's 21% to 95% actually measured](https://aniksarkerakash.com/blog/semantic-layer-was-the-bottleneck)
 - [Did they nerf it? What actually happens when a model gets worse](https://aniksarkerakash.com/blog/did-they-nerf-it)
 - [The receipts: auditing the Claude Opus 5 optimization ecosystem](https://aniksarkerakash.com/blog/opus-5-ecosystem-audit)
-- [Quantum will not hand you AGI: the arrow points the other way](https://aniksarkerakash.com/blog/quantum-will-not-hand-you-agi)
-- [The microscope we built for the thing we grew: mechanistic interpretability at the halfway mark](https://aniksarkerakash.com/blog/the-microscope-we-built-for-the-thing-we-grew)
 
 <!-- BLOG-POST-LIST:END -->
 
