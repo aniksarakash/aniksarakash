@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1000" height="310" viewBox="0 0 1000 310" role="img"
-     aria-label="GitHub activity for aniksarakash: 408 contributions in the last 12 months, of which 98 percent are in private repositories; 71 public repositories, 57 pull requests, 44 stars, 19 followers, building since 2019. Languages by repository: JavaScript 21 percent, Python 17 percent, HTML 15 percent, C 9 percent, CSS 9 percent, PHP 6 percent.">
+     aria-label="GitHub activity for aniksarakash: 419 contributions in the last 12 months, of which 96 percent are in private repositories; 71 public repositories, 57 pull requests, 44 stars, 19 followers, building since 2019. Languages by repository: JavaScript 21 percent, Python 17 percent, HTML 15 percent, C 9 percent, CSS 9 percent, PHP 6 percent.">
   <title>GitHub activity for aniksarakash</title>
   <defs>
     <linearGradient id="surface" x1="0" y1="0" x2="1" y2="1">
@@ -33,13 +33,13 @@
   <rect x="0.5" y="0.5" width="999" height="309" rx="16" fill="none" stroke="#f3eee4" stroke-opacity="0.10"/>
 
   <text class="fs" x="34" y="44" font-size="19" font-weight="700" fill="#f3eee4">Activity overview</text>
-  <text class="fm" x="966" y="44" font-size="11" fill="#6f6a85" text-anchor="end">updated 2026-08-14 · @aniksarakash</text>
+  <text class="fm" x="966" y="44" font-size="11" fill="#6f6a85" text-anchor="end">updated 2026-08-15 · @aniksarakash</text>
   <path d="M34 62 H 966" stroke="url(#rule)" stroke-width="1.5" stroke-opacity="0.6"/>
 
   <g class="rise" style="animation-delay:0.08s">
     <rect x="34" y="96" width="148" height="78" rx="10" fill="#f3eee4" fill-opacity="0.04" stroke="#2a2a3a"/>
     <rect x="34" y="110" width="3" height="50" rx="1.5" fill="#4f69e8"/>
-    <text class="fs" x="52" y="134" font-size="25" font-weight="700" fill="#f3eee4">408</text>
+    <text class="fs" x="52" y="134" font-size="25" font-weight="700" fill="#f3eee4">419</text>
     <text class="fm" x="52" y="156" font-size="10" fill="#6f6a85">contributions, 12 mo</text>
   </g>
   <g class="rise" style="animation-delay:0.15s">
@@ -75,19 +75,19 @@
 
   <text class="fs" x="548" y="82" font-size="15" font-weight="600" fill="#f3eee4">Where the work happens</text>
   <rect x="548" y="96" width="418" height="12" rx="4" fill="#f3eee4" fill-opacity="0.05"/>
-  <rect x="548" y="96" width="410" height="12" rx="4" fill="#7c3aed">
-    <animate attributeName="width" from="0" to="410" dur="0.9s" begin="0.25s" calcMode="spline" keySplines="0.22 0.61 0.36 1" fill="freeze"/>
+  <rect x="548" y="96" width="401" height="12" rx="4" fill="#7c3aed">
+    <animate attributeName="width" from="0" to="401" dur="0.9s" begin="0.25s" calcMode="spline" keySplines="0.22 0.61 0.36 1" fill="freeze"/>
   </rect>
-  <rect x="960" y="96" width="6" height="12" rx="4" fill="#10b981">
-    <animate attributeName="width" from="0" to="6" dur="0.9s" begin="0.32s" calcMode="spline" keySplines="0.22 0.61 0.36 1" fill="freeze"/>
+  <rect x="951" y="96" width="15" height="12" rx="4" fill="#10b981">
+    <animate attributeName="width" from="0" to="15" dur="0.9s" begin="0.32s" calcMode="spline" keySplines="0.22 0.61 0.36 1" fill="freeze"/>
   </rect>
   <g class="rise" style="animation-delay:.45s">
     <circle cx="553" cy="126" r="5" fill="#7c3aed"/>
     <text class="fm" x="566" y="130" font-size="11.5" fill="#a9a3bd">private repos</text>
-    <text class="fm" x="698" y="130" font-size="11.5" font-weight="700" fill="#f3eee4" text-anchor="end">98%</text>
+    <text class="fm" x="698" y="130" font-size="11.5" font-weight="700" fill="#f3eee4" text-anchor="end">96%</text>
     <circle cx="772" cy="126" r="5" fill="#10b981"/>
     <text class="fm" x="785" y="130" font-size="11.5" fill="#a9a3bd">public repos</text>
-    <text class="fm" x="966" y="130" font-size="11.5" font-weight="700" fill="#f3eee4" text-anchor="end">2%</text>
+    <text class="fm" x="966" y="130" font-size="11.5" font-weight="700" fill="#f3eee4" text-anchor="end">4%</text>
   </g>
 
   <text class="fs" x="548" y="176" font-size="15" font-weight="600" fill="#f3eee4">Languages by repository</text>
@@ -141,5 +141,5 @@
     <text class="fm" x="956" y="270" font-size="11" font-weight="700" fill="#f3eee4" text-anchor="end">6%</text>
   </g>
 
-  <text class="fm" x="34" y="294" font-size="10" fill="#6f6a85" opacity="0.8">98% of the last 12 months is private enterprise work · primary language per repo across 53 repositories</text>
+  <text class="fm" x="34" y="294" font-size="10" fill="#6f6a85" opacity="0.8">96% of the last 12 months is private enterprise work · primary language per repo across 53 repositories</text>
 </svg>
