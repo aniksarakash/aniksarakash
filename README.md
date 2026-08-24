@@ -464,7 +464,7 @@ A customer needed one colour device reserved for colour work. Too many users to 
 
 ## 🚀 &nbsp;Delivery work
 
-Internal systems built for enterprise clients. These live inside client infrastructure, so there is no repository to link, but the numbers are the ones the business signed off on.
+Internal systems built for enterprise clients, plus two builds whose source is public. The client systems run inside client infrastructure, so there is no repository to open, and the numbers on them are the ones the business signed off on.
 
 <table>
 <tr>

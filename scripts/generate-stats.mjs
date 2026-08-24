@@ -27,7 +27,7 @@
  * The card is a visitor's view, so every figure on it must be one a visitor
  * can verify. GraphQL counts are filtered by whoever holds the token: run
  * locally as the owner, `repositories.totalCount` includes private repos and
- * the tile labelled "public repositories" reads high. Repos are therefore
+ * the tile labelled "owned public repos" reads high. Repos are therefore
  * pinned to privacy:PUBLIC, and pullRequests — the one count with no privacy
  * argument — defers to the last public-scoped reading. A local run previews;
  * the scheduled third-party run is the source of truth.
@@ -218,7 +218,7 @@ function render(d, { degraded, asOf }) {
 
   const tiles = [
     { v: fmt(d.contributions), label: 'contributions, 12 mo', color: A.blue },
-    { v: fmt(d.repos), label: 'public repositories', color: A.cyan },
+    { v: fmt(d.repos), label: 'owned public repos', color: A.cyan },
     { v: fmt(d.prs), label: 'pull requests opened', color: A.purple },
     { v: fmt(d.stars), label: 'stars earned', color: A.amber },
     { v: fmt(d.followers), label: 'followers', color: A.pink },
@@ -295,7 +295,7 @@ function render(d, { degraded, asOf }) {
     : `${privatePct}% of the last 12 months is private enterprise work · primary language per repo across ${totalRepos} repositories`
 
   return `<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}" viewBox="0 0 ${W} ${H}" role="img"
-     aria-label="GitHub activity for ${esc(LOGIN)}: ${d.contributions} contributions in the last 12 months, of which ${privatePct} percent are in private repositories; ${d.repos} public repositories, ${d.prs} pull requests, ${d.stars} stars, ${d.followers} followers, building since ${d.since}. Languages by repository: ${esc(langList)}.">
+     aria-label="GitHub activity for ${esc(LOGIN)}: ${d.contributions} contributions in the last 12 months, of which ${privatePct} percent are in private repositories; ${d.repos} owned public repositories excluding forks, ${d.prs} pull requests, ${d.stars} stars, ${d.followers} followers, building since ${d.since}. Languages by repository: ${esc(langList)}.">
   <title>GitHub activity for ${esc(LOGIN)}</title>
   <defs>
     <linearGradient id="surface" x1="0" y1="0" x2="1" y2="1">
