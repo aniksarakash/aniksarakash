@@ -64,6 +64,38 @@ By night it means shipping AI-powered tools that compress months of grunt work i
 </tr>
 </table>
 
+## 📈 &nbsp;GitHub, live
+
+<div align="center">
+
+<!-- Self-hosted: regenerated daily by .github/workflows/stats.yml.
+     The public github-readme-stats instance is paused (503) and
+     github-profile-trophy returns 402, so we render our own. -->
+<img src="./assets/github.svg" alt="GitHub activity overview" width="100%" />
+
+<br/><br/>
+
+<img src="./assets/contributions.svg" alt="GitHub contribution activity and streaks" width="100%" />
+
+</div>
+
+> [!NOTE]
+> **Most of the last 12 months is private enterprise work.** The CRM, the report engine and the approval system all ship inside client infrastructure, so public repositories show the visible slice, not the job. The self-hosted cards above count the private activity my profile publishes, and the [generator](./scripts/generate-stats.mjs) keeps a verified baseline in [`assets/stats.json`](./assets/stats.json), so if that visibility ever changes the number degrades loudly instead of silently reading zero.
+
+### 🐍 &nbsp;Contribution snake
+
+<div align="center">
+
+<picture>
+  <source media="(prefers-color-scheme: dark)"  srcset="https://raw.githubusercontent.com/aniksarakash/aniksarakash/output/github-snake-dark.svg" />
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/aniksarakash/aniksarakash/output/github-snake.svg" />
+  <img alt="Snake eating my contribution graph" src="https://raw.githubusercontent.com/aniksarakash/aniksarakash/output/github-snake.svg" width="100%" />
+</picture>
+
+</div>
+
+<img src="./assets/divider.svg" width="100%" alt="" />
+
 ## 🎓 &nbsp;Google Professional Certificates
 
 <div align="center">
@@ -216,6 +248,20 @@ Across that queue I close **96%** of what comes in, whether it starts as a remot
 </tr>
 </table>
 
+#### 💾 &nbsp;VMFS Recovery
+<img src="https://img.shields.io/badge/Open_source-F59E0B?style=flat-square&labelColor=030014" /> <img src="https://img.shields.io/badge/Field_tested-10B981?style=flat-square&labelColor=030014" /> <img src="https://img.shields.io/badge/Windows_can't_read_VMFS-06B6D4?style=flat-square&labelColor=030014" />
+
+The fault behind this one: a datastore disk pulled out of a dead ESXi host, sitting in a USB enclosure, on a Windows machine with no driver for the filesystem. Disk Management offers to format it. This is the way back instead. The enclosure is handed to WSL2 with `usbipd`, `vmfs6-fuse` mounts the VMFS6 volume, and each virtual machine is copied out with the right tool per file.
+
+- 🧲 `ddrescue` for the flat disk images, so bad sectors are retried and an interrupted run resumes from its mapfile
+- 📄 `rsync` for the descriptors and the small files, with progress reported per folder
+- 🔒 Reads the source and nothing else, and the copy registers on a fresh ESXi 8 host with `vim-cmd solo/registervm`
+- 🧯 Every failure mode in the runbook is one that actually happened during the recovery
+
+`PowerShell` `Bash` `WSL2` `VMFS6` `ddrescue` `ESXi 8`
+
+**[→ View repository](https://github.com/aniksarakash/VFMS_Recovery)**
+
 > **On-site is a diagnostic tool, not a fallback.** Plenty of faults only reveal themselves in front of the rack: a link that renegotiates when the room warms up, a finisher that jams on one paper weight. I go when the evidence is physical, and solve it remotely when it isn't.
 
 <img src="./assets/divider.svg" width="100%" alt="" />
@@ -343,7 +389,7 @@ Models are useful to me in three places: reading things faster than I can, writi
 <img src="./assets/ai-stack.svg" width="100%" alt="Four bands describing where models sit in this work. Model access: Gemini, OpenAI-compatible endpoints, Groq, Cerebras and OpenRouter, with server-side keys only, schema-constrained output, rate-limit failover and keys encrypted at rest. Retrieval: dense vectors and BM25 run in parallel and are fused with reciprocal rank fusion, and every answer deep-links to the quote it came from. Automation: scheduled PowerShell and PHP pipelines, log parsing and vendor job scripting, running twice daily, logged, and loud when a step fails. Promotion: once a model's output is verified it becomes a deterministic rule, so the next run costs nothing and AI stays out of the hot path." />
 
 > [!NOTE]
-> **Private codebases.** Architecture, safeguards, and outcomes are shown here; the source repositories are not publicly accessible.
+> **Mostly private codebases.** Architecture, safeguards, and outcomes are shown here. Linkora, SCRAPLY and the backup pipeline ship inside private infrastructure, so there is no repository to open. The MyQ rule is the exception: it is published in full, runbook included.
 
 <table>
 <tr>
@@ -397,7 +443,7 @@ Seven-step backup pipeline that runs at 9AM and 7PM under Task Scheduler and nee
 <td width="50%" valign="top">
 
 ### 🖨️ &nbsp;MyQ Mono Job Redirect
-<img src="https://img.shields.io/badge/PHP_job_scripting-7C3AED?style=flat-square&labelColor=030014" /> <img src="https://img.shields.io/badge/Zero_client_side_change-10B981?style=flat-square&labelColor=030014" /> <img src="https://img.shields.io/badge/Private_client_automation-F59E0B?style=flat-square&labelColor=030014" />
+<img src="https://img.shields.io/badge/PHP_job_scripting-7C3AED?style=flat-square&labelColor=030014" /> <img src="https://img.shields.io/badge/Zero_client_side_change-10B981?style=flat-square&labelColor=030014" /> <img src="https://img.shields.io/badge/Open_source-F59E0B?style=flat-square&labelColor=030014" />
 
 A customer needed one colour device reserved for colour work. Too many users to touch a single PC, so the whole thing had to happen server side. A PHP parser script on the release queue inspects the job and moves mono work to a queue whose printer list simply does not include that device.
 
@@ -407,6 +453,8 @@ A customer needed one colour device reserved for colour work. Too many users to 
 - ↩️ Rollback is one text field, not a re-deployment
 
 `PHP` `MyQ X 10.2` `Print job parsing` `Runbook`
+
+**[→ View repository](https://github.com/aniksarakash/MyQ-Mono-Job-Redirect)**
 
 </td>
 </tr>
@@ -656,38 +704,6 @@ I write about AI-assisted development, debugging LLM output, and troubleshooting
 <!-- BLOG-POST-LIST:END -->
 
 <div align="right"><a href="https://aniksarkerakash.com/blog/"><b>Read everything →</b></a></div>
-
-<img src="./assets/divider.svg" width="100%" alt="" />
-
-## 📈 &nbsp;GitHub, live
-
-<div align="center">
-
-<!-- Self-hosted: regenerated daily by .github/workflows/stats.yml.
-     The public github-readme-stats instance is paused (503) and
-     github-profile-trophy returns 402, so we render our own. -->
-<img src="./assets/github.svg" alt="GitHub activity overview" width="100%" />
-
-<br/><br/>
-
-<img src="./assets/contributions.svg" alt="GitHub contribution activity and streaks" width="100%" />
-
-</div>
-
-> [!NOTE]
-> **Most of the last 12 months is private enterprise work.** The CRM, the report engine and the approval system all ship inside client infrastructure, so public repositories show the visible slice, not the job. The self-hosted cards above count the private activity my profile publishes, and the [generator](./scripts/generate-stats.mjs) keeps a verified baseline in [`assets/stats.json`](./assets/stats.json), so if that visibility ever changes the number degrades loudly instead of silently reading zero.
-
-### 🐍 &nbsp;Contribution snake
-
-<div align="center">
-
-<picture>
-  <source media="(prefers-color-scheme: dark)"  srcset="https://raw.githubusercontent.com/aniksarakash/aniksarakash/output/github-snake-dark.svg" />
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/aniksarakash/aniksarakash/output/github-snake.svg" />
-  <img alt="Snake eating my contribution graph" src="https://raw.githubusercontent.com/aniksarakash/aniksarakash/output/github-snake.svg" width="100%" />
-</picture>
-
-</div>
 
 <img src="./assets/divider.svg" width="100%" alt="" />
 
