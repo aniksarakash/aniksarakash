@@ -24,7 +24,7 @@
   <rect width="1000" height="300" rx="16" fill="url(#activity-surface)"/>
   <rect x="0.5" y="0.5" width="999" height="299" rx="16" fill="none" stroke="#f3eee4" stroke-opacity="0.10"/>
   <text class="fs" x="34" y="44" font-size="19" font-weight="700" fill="#f3eee4">Contribution pulse</text>
-  <text class="fm" x="966" y="44" font-size="11" fill="#6f6a85" text-anchor="end">updated 2026-09-04 · private activity included</text>
+  <text class="fm" x="966" y="44" font-size="11" fill="#6f6a85" text-anchor="end">updated 2026-09-05 · private activity included</text>
   <path d="M34 62 H 966" stroke="url(#activity-rule)" stroke-width="1.5" stroke-opacity="0.6"/>
 
   <text class="fs" x="58" y="78" font-size="13" font-weight="600" fill="#f3eee4">Last 35 days · 319 contributions</text>
@@ -34,33 +34,33 @@
   <text class="fm" x="46" y="168.0" font-size="10" fill="#6f6a85" text-anchor="end">25</text>
   <path d="M58 240.0 H698" stroke="#2a2a3a" stroke-dasharray="3 5"/>
   <text class="fm" x="46" y="244.0" font-size="10" fill="#6f6a85" text-anchor="end">0</text>
-  <path d="M58.0 240 L58.0 240.0 L76.8 240.0 L95.6 240.0 L114.5 240.0 L133.3 194.4 L152.1 215.7 L170.9 224.8 L189.8 218.7 L208.6 230.9 L227.4 240.0 L246.2 240.0 L265.1 240.0 L283.9 240.0 L302.7 203.5 L321.5 191.4 L340.4 227.8 L359.2 240.0 L378.0 240.0 L396.8 240.0 L415.6 230.9 L434.5 179.2 L453.3 188.3 L472.1 118.4 L490.9 191.4 L509.8 176.2 L528.6 230.9 L547.4 240.0 L566.2 240.0 L585.1 230.9 L603.9 164.0 L622.7 112.3 L641.5 157.9 L660.4 227.8 L679.2 164.0 L698.0 230.9 L698.0 240 Z" fill="url(#activity-area)"/>
-  <path d="M58.0 240.0 L76.8 240.0 L95.6 240.0 L114.5 240.0 L133.3 194.4 L152.1 215.7 L170.9 224.8 L189.8 218.7 L208.6 230.9 L227.4 240.0 L246.2 240.0 L265.1 240.0 L283.9 240.0 L302.7 203.5 L321.5 191.4 L340.4 227.8 L359.2 240.0 L378.0 240.0 L396.8 240.0 L415.6 230.9 L434.5 179.2 L453.3 188.3 L472.1 118.4 L490.9 191.4 L509.8 176.2 L528.6 230.9 L547.4 240.0 L566.2 240.0 L585.1 230.9 L603.9 164.0 L622.7 112.3 L641.5 157.9 L660.4 227.8 L679.2 164.0 L698.0 230.9" fill="none" stroke="#4f69e8" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-  <circle cx="133.3" cy="194.4" r="3.2" fill="#06b6d4" stroke="#030014" stroke-width="1.5"/>
-  <circle cx="152.1" cy="215.7" r="3.2" fill="#06b6d4" stroke="#030014" stroke-width="1.5"/>
-  <circle cx="170.9" cy="224.8" r="3.2" fill="#06b6d4" stroke="#030014" stroke-width="1.5"/>
-  <circle cx="189.8" cy="218.7" r="3.2" fill="#06b6d4" stroke="#030014" stroke-width="1.5"/>
-  <circle cx="208.6" cy="230.9" r="3.2" fill="#06b6d4" stroke="#030014" stroke-width="1.5"/>
-  <circle cx="302.7" cy="203.5" r="3.2" fill="#06b6d4" stroke="#030014" stroke-width="1.5"/>
-  <circle cx="321.5" cy="191.4" r="3.2" fill="#06b6d4" stroke="#030014" stroke-width="1.5"/>
-  <circle cx="340.4" cy="227.8" r="3.2" fill="#06b6d4" stroke="#030014" stroke-width="1.5"/>
-  <circle cx="415.6" cy="230.9" r="3.2" fill="#06b6d4" stroke="#030014" stroke-width="1.5"/>
-  <circle cx="434.5" cy="179.2" r="3.2" fill="#06b6d4" stroke="#030014" stroke-width="1.5"/>
-  <circle cx="453.3" cy="188.3" r="3.2" fill="#06b6d4" stroke="#030014" stroke-width="1.5"/>
-  <circle cx="472.1" cy="118.4" r="3.2" fill="#06b6d4" stroke="#030014" stroke-width="1.5"/>
-  <circle cx="490.9" cy="191.4" r="3.2" fill="#06b6d4" stroke="#030014" stroke-width="1.5"/>
-  <circle cx="509.8" cy="176.2" r="3.2" fill="#06b6d4" stroke="#030014" stroke-width="1.5"/>
-  <circle cx="528.6" cy="230.9" r="3.2" fill="#06b6d4" stroke="#030014" stroke-width="1.5"/>
-  <circle cx="585.1" cy="230.9" r="3.2" fill="#06b6d4" stroke="#030014" stroke-width="1.5"/>
-  <circle cx="603.9" cy="164.0" r="3.2" fill="#06b6d4" stroke="#030014" stroke-width="1.5"/>
-  <circle cx="622.7" cy="112.3" r="3.2" fill="#06b6d4" stroke="#030014" stroke-width="1.5"/>
-  <circle cx="641.5" cy="157.9" r="3.2" fill="#06b6d4" stroke="#030014" stroke-width="1.5"/>
-  <circle cx="660.4" cy="227.8" r="3.2" fill="#06b6d4" stroke="#030014" stroke-width="1.5"/>
-  <circle cx="679.2" cy="164.0" r="3.2" fill="#06b6d4" stroke="#030014" stroke-width="1.5"/>
-  <circle cx="698.0" cy="230.9" r="3.2" fill="#06b6d4" stroke="#030014" stroke-width="1.5"/>
-  <text class="fm" x="58.0" y="260" font-size="10" fill="#6f6a85" text-anchor="start">Aug 1</text>
-  <text class="fm" x="378.0" y="260" font-size="10" fill="#6f6a85" text-anchor="middle">Aug 18</text>
-  <text class="fm" x="698.0" y="260" font-size="10" fill="#6f6a85" text-anchor="end">Sep 4</text>
+  <path d="M58.0 240 L58.0 240.0 L76.8 240.0 L95.6 240.0 L114.5 194.4 L133.3 215.7 L152.1 224.8 L170.9 218.7 L189.8 230.9 L208.6 240.0 L227.4 240.0 L246.2 240.0 L265.1 240.0 L283.9 203.5 L302.7 191.4 L321.5 227.8 L340.4 240.0 L359.2 240.0 L378.0 240.0 L396.8 230.9 L415.6 179.2 L434.5 188.3 L453.3 118.4 L472.1 191.4 L490.9 176.2 L509.8 230.9 L528.6 240.0 L547.4 240.0 L566.2 230.9 L585.1 164.0 L603.9 112.3 L622.7 157.9 L641.5 227.8 L660.4 164.0 L679.2 230.9 L698.0 240.0 L698.0 240 Z" fill="url(#activity-area)"/>
+  <path d="M58.0 240.0 L76.8 240.0 L95.6 240.0 L114.5 194.4 L133.3 215.7 L152.1 224.8 L170.9 218.7 L189.8 230.9 L208.6 240.0 L227.4 240.0 L246.2 240.0 L265.1 240.0 L283.9 203.5 L302.7 191.4 L321.5 227.8 L340.4 240.0 L359.2 240.0 L378.0 240.0 L396.8 230.9 L415.6 179.2 L434.5 188.3 L453.3 118.4 L472.1 191.4 L490.9 176.2 L509.8 230.9 L528.6 240.0 L547.4 240.0 L566.2 230.9 L585.1 164.0 L603.9 112.3 L622.7 157.9 L641.5 227.8 L660.4 164.0 L679.2 230.9 L698.0 240.0" fill="none" stroke="#4f69e8" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="114.5" cy="194.4" r="3.2" fill="#06b6d4" stroke="#030014" stroke-width="1.5"/>
+  <circle cx="133.3" cy="215.7" r="3.2" fill="#06b6d4" stroke="#030014" stroke-width="1.5"/>
+  <circle cx="152.1" cy="224.8" r="3.2" fill="#06b6d4" stroke="#030014" stroke-width="1.5"/>
+  <circle cx="170.9" cy="218.7" r="3.2" fill="#06b6d4" stroke="#030014" stroke-width="1.5"/>
+  <circle cx="189.8" cy="230.9" r="3.2" fill="#06b6d4" stroke="#030014" stroke-width="1.5"/>
+  <circle cx="283.9" cy="203.5" r="3.2" fill="#06b6d4" stroke="#030014" stroke-width="1.5"/>
+  <circle cx="302.7" cy="191.4" r="3.2" fill="#06b6d4" stroke="#030014" stroke-width="1.5"/>
+  <circle cx="321.5" cy="227.8" r="3.2" fill="#06b6d4" stroke="#030014" stroke-width="1.5"/>
+  <circle cx="396.8" cy="230.9" r="3.2" fill="#06b6d4" stroke="#030014" stroke-width="1.5"/>
+  <circle cx="415.6" cy="179.2" r="3.2" fill="#06b6d4" stroke="#030014" stroke-width="1.5"/>
+  <circle cx="434.5" cy="188.3" r="3.2" fill="#06b6d4" stroke="#030014" stroke-width="1.5"/>
+  <circle cx="453.3" cy="118.4" r="3.2" fill="#06b6d4" stroke="#030014" stroke-width="1.5"/>
+  <circle cx="472.1" cy="191.4" r="3.2" fill="#06b6d4" stroke="#030014" stroke-width="1.5"/>
+  <circle cx="490.9" cy="176.2" r="3.2" fill="#06b6d4" stroke="#030014" stroke-width="1.5"/>
+  <circle cx="509.8" cy="230.9" r="3.2" fill="#06b6d4" stroke="#030014" stroke-width="1.5"/>
+  <circle cx="566.2" cy="230.9" r="3.2" fill="#06b6d4" stroke="#030014" stroke-width="1.5"/>
+  <circle cx="585.1" cy="164.0" r="3.2" fill="#06b6d4" stroke="#030014" stroke-width="1.5"/>
+  <circle cx="603.9" cy="112.3" r="3.2" fill="#06b6d4" stroke="#030014" stroke-width="1.5"/>
+  <circle cx="622.7" cy="157.9" r="3.2" fill="#06b6d4" stroke="#030014" stroke-width="1.5"/>
+  <circle cx="641.5" cy="227.8" r="3.2" fill="#06b6d4" stroke="#030014" stroke-width="1.5"/>
+  <circle cx="660.4" cy="164.0" r="3.2" fill="#06b6d4" stroke="#030014" stroke-width="1.5"/>
+  <circle cx="679.2" cy="230.9" r="3.2" fill="#06b6d4" stroke="#030014" stroke-width="1.5"/>
+  <text class="fm" x="58.0" y="260" font-size="10" fill="#6f6a85" text-anchor="start">Aug 2</text>
+  <text class="fm" x="378.0" y="260" font-size="10" fill="#6f6a85" text-anchor="middle">Aug 19</text>
+  <text class="fm" x="698.0" y="260" font-size="10" fill="#6f6a85" text-anchor="end">Sep 5</text>
 
   <text class="fs" x="742" y="82" font-size="13" font-weight="600" fill="#f3eee4">Streaks and cadence</text>
   <g>
