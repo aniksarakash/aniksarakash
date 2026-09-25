@@ -59,7 +59,7 @@ By night it means shipping AI-powered tools that compress months of grunt work i
 <td width="50%" valign="top"><b>📬 Reach me</b>&nbsp;&nbsp;<code>info@aniksarkerakash.com</code></td>
 </tr>
 <tr>
-<td width="50%" valign="top"><b>🎓 Foundation</b>&nbsp;&nbsp;B.Sc. Computer Science &amp; Engineering</td>
+<td width="50%" valign="top"><b>🎓 Foundation</b>&nbsp;&nbsp;B.Tech Computer Science &amp; Engineering</td>
 <td width="50%" valign="top"><b>💬 Ask me about</b>&nbsp;&nbsp;shipping AI code you can actually defend</td>
 </tr>
 </table>
@@ -686,7 +686,7 @@ The console separates **what an agent says** from **what it decides**. Drag a ve
 
 ## 🗓️ &nbsp;The path here
 
-<img src="./assets/timeline-path.svg" width="100%" alt="Career path. Foundation: B.Sc. in Computer Science and Engineering, covering Python, databases and systems thinking. Certified: Google Professional Certificates in IT Support, IT Automation with Python, Data Analytics, UX Design and Project Management. August 2024: System Engineer at Smart Printing Solutions, building custom applications and Managed Print Services. January 2025: backup L2 IT and Desktop Support for Reckitt Bangladesh, working in ServiceNow against ITIL with 86 percent SLA compliance on cover. Now: MCP, agents and RAG in production." />
+<img src="./assets/timeline-path.svg" width="100%" alt="Career path. Foundation: B.Tech in Computer Science and Engineering, covering Python, databases and systems thinking. Certified: Google Professional Certificates in IT Support, IT Automation with Python, Data Analytics, UX Design and Project Management. August 2024: System Engineer at Smart Printing Solutions, building custom applications and Managed Print Services. January 2025: backup L2 IT and Desktop Support for Reckitt Bangladesh, working in ServiceNow against ITIL with 86 percent SLA compliance on cover. Now: MCP, agents and RAG in production." />
 
 <img src="./assets/divider.svg" width="100%" alt="" />
 

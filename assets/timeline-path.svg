@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1000" height="262" viewBox="0 0 1000 262" role="img"
      fill="#f3eee4"
-     aria-label="Career path. Foundation: B.Sc. in Computer Science and Engineering, covering Python, databases and systems thinking. Certified: Google Professional Certificates in IT Support, IT Automation with Python, Data Analytics, UX Design and Project Management. August 2024: System Engineer at Smart Printing Solutions, building custom applications and Managed Print Services. January 2025: backup L2 IT and Desktop Support for Reckitt Bangladesh, working in ServiceNow against ITIL with 86 percent SLA compliance on cover. Now: MCP, agents and RAG in production.">
+     aria-label="Career path. Foundation: B.Tech in Computer Science and Engineering, covering Python, databases and systems thinking. Certified: Google Professional Certificates in IT Support, IT Automation with Python, Data Analytics, UX Design and Project Management. August 2024: System Engineer at Smart Printing Solutions, building custom applications and Managed Print Services. January 2025: backup L2 IT and Desktop Support for Reckitt Bangladesh, working in ServiceNow against ITIL with 86 percent SLA compliance on cover. Now: MCP, agents and RAG in production.">
   <title>From CSE fundamentals to AI-assisted delivery</title>
 
   <!-- Root fill is the inherited fallback for text; .ink-* classes carry the hierarchy. -->
@@ -50,7 +50,7 @@
   </g>
 
   <!-- ── 1 · Foundation ─────────────────────────────────────────────────── -->
-  <text class="fs nm ink-1" x="70" y="112" text-anchor="middle">B.Sc. in CSE</text>
+  <text class="fs nm ink-1" x="70" y="112" text-anchor="middle">B.Tech in CSE</text>
   <rect x="18" y="137" width="104" height="26" rx="13" fill="#0a0a0f" stroke="#4f69e8" stroke-width="1.6"/>
   <text class="fm cp" x="70" y="154" text-anchor="middle" fill="#4f69e8">FOUNDATION</text>
   <text class="fm sb ink-2" x="70" y="192" text-anchor="middle">Python · databases</text>
