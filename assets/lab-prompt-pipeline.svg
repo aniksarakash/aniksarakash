@@ -1,73 +1,116 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="360" viewBox="0 0 1000 360" role="img" aria-labelledby="title desc">
-  <title id="title">Prompt Compiler architecture</title>
-  <desc id="desc">Structured intent and evidence compile into a typed semantic intermediate representation, then into a deterministic local prompt and hash. Optional server refinement is isolated behind validation, quotas, allowlisted providers, and hash verification.</desc>
-  <rect width="1000" height="360" fill="#030014"/>
-  <g stroke="#202035" stroke-width="1" opacity=".8">
-    <path d="M0 60H1000M0 120H1000M0 180H1000M0 240H1000M0 300H1000"/>
-    <path d="M100 0V360M200 0V360M300 0V360M400 0V360M500 0V360M600 0V360M700 0V360M800 0V360M900 0V360"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="364" viewBox="0 0 1000 364" role="img"
+     fill="#f3eee4"
+     aria-label="Prompt Compiler pipeline in four stages. One, structured draft: intent and authorization, evidence and assumptions, scope and invariants, output and quality contract. Two, semantic IR: stable evidence IDs, named entities and aliases, explicit trust boundaries, versioned provenance. Three, local artifact: deterministic compile, inspectable Markdown, SHA-256 fingerprint, copy and download. Four, an optional refinement gate: same-origin token, quota and size limits, allowlisted adapters, response hash verified. Properties: local-first, semantic not stringly, hashed artifacts, raw content not audited, server keys only. If refinement is unavailable or fails, the local artifact stays usable and unchanged.">
+  <title>Prompt Compiler: the prompt underneath the prompt</title>
+
+  <!-- House card system, shared with ai-stack.svg and site-stack.svg. -->
+
+  <defs>
+    <linearGradient id="pc-surface" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0a0a0f"/>
+      <stop offset="100%" stop-color="#12121a"/>
+    </linearGradient>
+    <style>
+      .fs { font-family: 'Space Grotesk', 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; }
+      .fm { font-family: 'JetBrains Mono', ui-monospace, 'Cascadia Mono', Consolas, monospace; }
+      .ink-1 { fill: #f3eee4 }
+      .ink-2 { fill: #a9a3bd }
+      .ink-3 { fill: #6f6a85 }
+      .hd  { font-size: 17px; font-weight: 600 }
+      .nm  { font-size: 15px; font-weight: 600 }
+      .sb  { font-size: 11px }
+      .it  { font-size: 11.5px }
+      .no  { font-size: 10.5px; font-weight: 700; letter-spacing: 1px }
+      .pill { font-size: 10px; font-weight: 700; letter-spacing: .7px }
+
+      @keyframes rise { from { transform: translateY(7px) } to { transform: translateY(0) } }
+      .band { animation: rise .5s cubic-bezier(.2,.7,.3,1) both }
+      .b1 { animation-delay: .06s } .b2 { animation-delay: .13s }
+      .b3 { animation-delay: .20s } .b4 { animation-delay: .27s } .b5 { animation-delay: .34s }
+      @media (prefers-reduced-motion: reduce) { .band { animation: none } }
+    </style>
+  </defs>
+
+  <rect width="1000" height="364" rx="14" fill="#030014"/>
+  <rect x="1" y="1" width="998" height="362" rx="13" fill="url(#pc-surface)" stroke="#1c1c2b"/>
+
+  <text class="fs hd ink-1" x="34" y="42">Prompt Compiler · the prompt underneath the prompt</text>
+  <text class="fm sb ink-3" x="966" y="42" text-anchor="end">prompt-ir/1.0</text>
+  <text class="fm sb ink-3" x="34" y="63">compiled from meaning, not assembled from string fragments · no account, no key</text>
+
+  <!-- ── 01 · structured draft ─────────────────────────────────────────── -->
+  <g class="band b1">
+    <rect x="34" y="86" width="200" height="176" rx="10" fill="#0a0a0f" stroke="#1c1c2b"/>
+    <rect x="34" y="86" width="3" height="176" rx="1.5" fill="#4f69e8"/>
+    <text class="fm no" x="52" y="112" fill="#4f69e8">01</text>
+    <text class="fs nm ink-1" x="52" y="134">Structured draft</text>
+    <text class="fm it ink-2" x="52" y="164">intent + authorization</text>
+    <text class="fm it ink-2" x="52" y="186">evidence + assumptions</text>
+    <text class="fm it ink-2" x="52" y="208">scope + invariants</text>
+    <text class="fm it ink-2" x="52" y="230">output + quality gates</text>
   </g>
 
-  <text x="40" y="38" fill="#F3EEE4" font-family="Arial,Helvetica,sans-serif" font-size="21" font-weight="700">PROMPT COMPILER / ARTIFACT PIPELINE</text>
-  <text x="960" y="36" text-anchor="end" fill="#A9A3BD" font-family="Consolas,monospace" font-size="12">prompt-ir/1.0</text>
+  <path d="M240 174H268" stroke="#4f69e8" stroke-width="2"/>
+  <path d="M263 168l7 6-7 6" fill="none" stroke="#4f69e8" stroke-width="2" stroke-linejoin="round"/>
 
-  <g font-family="Arial,Helvetica,sans-serif">
-    <rect x="40" y="78" width="200" height="168" rx="6" fill="#101020" stroke="#4F69E8" stroke-width="2"/>
-    <circle cx="65" cy="104" r="12" fill="#4F69E8"/>
-    <text x="65" y="109" text-anchor="middle" fill="#FFFFFF" font-size="12" font-weight="700">1</text>
-    <text x="86" y="110" fill="#F3EEE4" font-size="17" font-weight="700">Structured draft</text>
-    <text x="60" y="140" fill="#A9A3BD" font-size="13">Intent + authorization</text>
-    <text x="60" y="164" fill="#A9A3BD" font-size="13">Evidence + assumptions</text>
-    <text x="60" y="188" fill="#A9A3BD" font-size="13">Scope + invariants</text>
-    <text x="60" y="212" fill="#A9A3BD" font-size="13">Output + quality contract</text>
-
-    <path d="M240 162H278" stroke="#4F69E8" stroke-width="3"/>
-    <path d="m272 155 10 7-10 7" fill="none" stroke="#4F69E8" stroke-width="3"/>
-
-    <rect x="282" y="78" width="200" height="168" rx="6" fill="#101020" stroke="#7C3AED" stroke-width="2"/>
-    <circle cx="307" cy="104" r="12" fill="#7C3AED"/>
-    <text x="307" y="109" text-anchor="middle" fill="#FFFFFF" font-size="12" font-weight="700">2</text>
-    <text x="328" y="110" fill="#F3EEE4" font-size="17" font-weight="700">Semantic IR</text>
-    <text x="302" y="140" fill="#A9A3BD" font-size="13">Stable evidence IDs</text>
-    <text x="302" y="164" fill="#A9A3BD" font-size="13">Named entities + aliases</text>
-    <text x="302" y="188" fill="#A9A3BD" font-size="13">Explicit trust boundaries</text>
-    <text x="302" y="212" fill="#A9A3BD" font-size="13">Versioned provenance</text>
-
-    <path d="M482 162H520" stroke="#7C3AED" stroke-width="3"/>
-    <path d="m514 155 10 7-10 7" fill="none" stroke="#7C3AED" stroke-width="3"/>
-
-    <rect x="524" y="78" width="200" height="168" rx="6" fill="#101020" stroke="#06B6D4" stroke-width="2"/>
-    <circle cx="549" cy="104" r="12" fill="#06B6D4"/>
-    <text x="549" y="109" text-anchor="middle" fill="#030014" font-size="12" font-weight="700">3</text>
-    <text x="570" y="110" fill="#F3EEE4" font-size="17" font-weight="700">Local artifact</text>
-    <text x="544" y="140" fill="#A9A3BD" font-size="13">Deterministic compile</text>
-    <text x="544" y="164" fill="#A9A3BD" font-size="13">Inspectable Markdown</text>
-    <text x="544" y="188" fill="#A9A3BD" font-size="13">SHA-256 fingerprint</text>
-    <text x="544" y="212" fill="#A9A3BD" font-size="13">Copy + download ready</text>
-
-    <path d="M724 162H762" stroke="#06B6D4" stroke-width="3"/>
-    <path d="m756 155 10 7-10 7" fill="none" stroke="#06B6D4" stroke-width="3"/>
-    <text x="744" y="145" text-anchor="middle" fill="#F59E0B" font-family="Consolas,monospace" font-size="10">OPTIONAL</text>
-
-    <rect x="766" y="78" width="194" height="168" rx="6" fill="#101020" stroke="#F59E0B" stroke-width="2"/>
-    <circle cx="791" cy="104" r="12" fill="#F59E0B"/>
-    <text x="791" y="109" text-anchor="middle" fill="#030014" font-size="12" font-weight="700">4</text>
-    <text x="812" y="110" fill="#F3EEE4" font-size="17" font-weight="700">Refinement gate</text>
-    <text x="786" y="140" fill="#A9A3BD" font-size="13">Same-origin token</text>
-    <text x="786" y="164" fill="#A9A3BD" font-size="13">Quota + size limits</text>
-    <text x="786" y="188" fill="#A9A3BD" font-size="13">Allowlisted adapters</text>
-    <text x="786" y="212" fill="#A9A3BD" font-size="13">Response hash verified</text>
+  <!-- ── 02 · semantic IR ──────────────────────────────────────────────── -->
+  <g class="band b2">
+    <rect x="278" y="86" width="200" height="176" rx="10" fill="#0a0a0f" stroke="#1c1c2b"/>
+    <rect x="278" y="86" width="3" height="176" rx="1.5" fill="#7c3aed"/>
+    <text class="fm no" x="296" y="112" fill="#7c3aed">02</text>
+    <text class="fs nm ink-1" x="296" y="134">Semantic IR</text>
+    <text class="fm it ink-2" x="296" y="164">stable evidence IDs</text>
+    <text class="fm it ink-2" x="296" y="186">named entities + aliases</text>
+    <text class="fm it ink-2" x="296" y="208">trust boundaries</text>
+    <text class="fm it ink-2" x="296" y="230">versioned provenance</text>
   </g>
 
-  <g font-family="Consolas,monospace" font-size="11" font-weight="700">
-    <rect x="40" y="282" width="176" height="38" rx="19" fill="#4F69E8"/>
-    <text x="128" y="306" text-anchor="middle" fill="#FFFFFF">LOCAL-FIRST</text>
-    <rect x="230" y="282" width="176" height="38" rx="19" fill="#7C3AED"/>
-    <text x="318" y="306" text-anchor="middle" fill="#FFFFFF">SEMANTIC, NOT STRINGLY</text>
-    <rect x="420" y="282" width="176" height="38" rx="19" fill="#06B6D4"/>
-    <text x="508" y="306" text-anchor="middle" fill="#030014">HASHED ARTIFACTS</text>
-    <rect x="610" y="282" width="176" height="38" rx="19" fill="#10B981"/>
-    <text x="698" y="306" text-anchor="middle" fill="#030014">RAW CONTENT NOT AUDITED</text>
-    <rect x="800" y="282" width="160" height="38" rx="19" fill="#F59E0B"/>
-    <text x="880" y="306" text-anchor="middle" fill="#030014">SERVER KEYS ONLY</text>
+  <path d="M484 174H512" stroke="#7c3aed" stroke-width="2"/>
+  <path d="M507 168l7 6-7 6" fill="none" stroke="#7c3aed" stroke-width="2" stroke-linejoin="round"/>
+
+  <!-- ── 03 · local artifact, the complete product ─────────────────────── -->
+  <g class="band b3">
+    <rect x="522" y="86" width="200" height="176" rx="10" fill="#0a0a0f" stroke="#1c1c2b"/>
+    <rect x="522" y="86" width="3" height="176" rx="1.5" fill="#06b6d4"/>
+    <text class="fm no" x="540" y="112" fill="#06b6d4">03</text>
+    <text class="fs nm ink-1" x="540" y="134">Local artifact</text>
+    <text class="fm it ink-2" x="540" y="164">deterministic compile</text>
+    <text class="fm it ink-2" x="540" y="186">inspectable Markdown</text>
+    <text class="fm it ink-2" x="540" y="208">SHA-256 fingerprint</text>
+    <text class="fm it ink-2" x="540" y="230">copy + download ready</text>
   </g>
+
+  <!-- Optional hop: dashed, because the artifact is already finished without it. -->
+  <path d="M728 174H756" stroke="#f59e0b" stroke-width="2" stroke-dasharray="3 4"/>
+  <path d="M751 168l7 6-7 6" fill="none" stroke="#f59e0b" stroke-width="2" stroke-linejoin="round"/>
+  <text class="fm sb" x="744" y="160" text-anchor="middle" fill="#f59e0b">opt.</text>
+
+  <!-- ── 04 · refinement gate ──────────────────────────────────────────── -->
+  <g class="band b4">
+    <rect x="766" y="86" width="200" height="176" rx="10" fill="#0a0a0f" stroke="#1c1c2b" stroke-dasharray="4 4"/>
+    <rect x="766" y="86" width="3" height="176" rx="1.5" fill="#f59e0b"/>
+    <text class="fm no" x="784" y="112" fill="#f59e0b">04 · OPTIONAL</text>
+    <text class="fs nm ink-1" x="784" y="134">Refinement gate</text>
+    <text class="fm it ink-2" x="784" y="164">same-origin token</text>
+    <text class="fm it ink-2" x="784" y="186">quota + size limits</text>
+    <text class="fm it ink-2" x="784" y="208">allowlisted adapters</text>
+    <text class="fm it ink-2" x="784" y="230">response hash verified</text>
+  </g>
+
+  <!-- ── properties ────────────────────────────────────────────────────── -->
+  <g class="band b5">
+    <rect x="34" y="284" width="176" height="24" rx="12" fill="#0a0a0f" stroke="#4f69e8" stroke-width="1.3"/>
+    <text class="fm pill" x="122" y="300" text-anchor="middle" fill="#4f69e8">LOCAL-FIRST</text>
+    <rect x="223" y="284" width="176" height="24" rx="12" fill="#0a0a0f" stroke="#7c3aed" stroke-width="1.3"/>
+    <text class="fm pill" x="311" y="300" text-anchor="middle" fill="#7c3aed">SEMANTIC, NOT STRINGLY</text>
+    <rect x="412" y="284" width="176" height="24" rx="12" fill="#0a0a0f" stroke="#06b6d4" stroke-width="1.3"/>
+    <text class="fm pill" x="500" y="300" text-anchor="middle" fill="#06b6d4">HASHED ARTIFACTS</text>
+    <rect x="601" y="284" width="176" height="24" rx="12" fill="#0a0a0f" stroke="#10b981" stroke-width="1.3"/>
+    <text class="fm pill" x="689" y="300" text-anchor="middle" fill="#10b981">RAW CONTENT NOT AUDITED</text>
+    <rect x="790" y="284" width="176" height="24" rx="12" fill="#0a0a0f" stroke="#f59e0b" stroke-width="1.3"/>
+    <text class="fm pill" x="878" y="300" text-anchor="middle" fill="#f59e0b">SERVER KEYS ONLY</text>
+  </g>
+
+  <line x1="34" y1="326" x2="966" y2="326" stroke="#1c1c2b" stroke-width="1"/>
+  <text class="fm sb ink-3" x="34" y="346">If refinement is unavailable or fails, the local artifact stays usable and unchanged.</text>
 </svg>

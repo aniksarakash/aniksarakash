@@ -1,68 +1,117 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="430" viewBox="0 0 1000 430" role="img" aria-labelledby="title desc">
-  <title id="title">Steering Console calibration and decision split</title>
-  <desc id="desc">A valence and arousal field projects positions onto a calm-to-desperate axis. Calm at coefficient 0.05 maps to zero percent harmful behavior, the unsteered baseline is 22 percent, and desperate at coefficient 0.05 maps to 72 percent. The visible response remains identical while a seeded threshold controls the hidden decision.</desc>
-  <rect width="1000" height="430" fill="#030014"/>
-  <text x="40" y="38" fill="#F3EEE4" font-family="Arial,Helvetica,sans-serif" font-size="21" font-weight="700">STEERING CONSOLE / SAME WORDS, DIFFERENT DECISION</text>
-  <text x="960" y="36" text-anchor="end" fill="#A9A3BD" font-family="Consolas,monospace" font-size="12">seeded + reproducible</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="440" viewBox="0 0 1000 440" role="img"
+     fill="#f3eee4"
+     aria-label="Steering Console. A circular valence and arousal field with one axis running from desperate, at negative valence and high arousal, through the unsteered centre to calm, at positive valence and low arousal. Measured anchors: desperate at plus 0.05 reads 72 percent, unsteered reads 22 percent, calm at plus 0.05 reads 0 percent. Between the anchors the line is interpolated; beyond them it is dashed and flagged as extrapolation. On the right, the visible reply is the same sentence at every point on the field, compared character for character, while a seeded threshold decides whether the hidden action holds and reports the truth or flips to the harmful branch.">
+  <title>Steering Console: same words, different decision</title>
 
-  <rect x="40" y="68" width="500" height="310" rx="6" fill="#101020" stroke="#2A2A3A"/>
-  <g stroke="#2A2A3A" stroke-width="1">
-    <path d="M90 120H500M90 170H500M90 220H500M90 270H500M90 320H500"/>
-    <path d="M140 92V350M210 92V350M280 92V350M350 92V350M420 92V350"/>
+  <!-- House card system, shared with ai-stack.svg and site-stack.svg. Every label
+       sits in a zone nothing else draws through: corner blocks with leader lines
+       for the two outer anchors, the empty upper-right quadrant for the centre. -->
+
+  <defs>
+    <linearGradient id="sc-surface" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0a0a0f"/>
+      <stop offset="100%" stop-color="#12121a"/>
+    </linearGradient>
+    <style>
+      .fs { font-family: 'Space Grotesk', 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; }
+      .fm { font-family: 'JetBrains Mono', ui-monospace, 'Cascadia Mono', Consolas, monospace; }
+      .ink-1 { fill: #f3eee4 }
+      .ink-2 { fill: #a9a3bd }
+      .ink-3 { fill: #6f6a85 }
+      .hd  { font-size: 17px; font-weight: 600 }
+      .nm  { font-size: 14px; font-weight: 600 }
+      .sb  { font-size: 11px }
+      .cap { font-size: 10.5px; font-weight: 700; letter-spacing: 1.2px }
+      .big { font-size: 24px; font-weight: 700 }
+      .pill { font-size: 10px; font-weight: 700; letter-spacing: .7px }
+
+      @keyframes rise { from { transform: translateY(7px) } to { transform: translateY(0) } }
+      .band { animation: rise .5s cubic-bezier(.2,.7,.3,1) both }
+      .b1 { animation-delay: .06s } .b2 { animation-delay: .16s } .b3 { animation-delay: .26s }
+      @media (prefers-reduced-motion: reduce) { .band { animation: none } }
+    </style>
+  </defs>
+
+  <rect width="1000" height="440" rx="14" fill="#030014"/>
+  <rect x="1" y="1" width="998" height="438" rx="13" fill="url(#sc-surface)" stroke="#1c1c2b"/>
+
+  <text class="fs hd ink-1" x="34" y="42">Steering Console · same words, different decision</text>
+  <text class="fm sb ink-3" x="966" y="42" text-anchor="end">seeded · reproducible · no model call</text>
+  <text class="fm sb ink-3" x="34" y="63">drag a vector through the field: the reply never changes, the decision underneath can</text>
+
+  <!-- ── field ─────────────────────────────────────────────────────────── -->
+  <g class="band b1">
+    <rect x="34" y="88" width="500" height="292" rx="10" fill="#0a0a0f" stroke="#1c1c2b"/>
+
+    <circle cx="284" cy="236" r="118" fill="#12121a" stroke="#2a2a3a"/>
+    <circle cx="284" cy="236" r="59" fill="none" stroke="#2a2a3a" stroke-dasharray="2 4"/>
+    <path d="M166 236H402M284 118V354" stroke="#2a2a3a"/>
+
+    <text class="fm sb ink-3" x="284" y="109" text-anchor="middle">high arousal</text>
+    <text class="fm sb ink-3" x="284" y="373" text-anchor="middle">low arousal</text>
+    <text class="fm sb ink-3" x="156" y="240" text-anchor="end">negative valence</text>
+    <text class="fm sb ink-3" x="412" y="240">positive valence</text>
+
+    <!-- Measured and interpolated between the anchors; dashed past them. -->
+    <path d="M212 186L356 286" stroke="#ec4899" stroke-width="3" stroke-linecap="round"/>
+    <path d="M212 186L187 168M356 286L381 304" stroke="#ec4899" stroke-width="3" stroke-linecap="round" stroke-dasharray="1 6" opacity=".7"/>
+
+    <!-- leaders -->
+    <path d="M110 150L204 181" stroke="#6f6a85" stroke-width="1"/>
+    <path d="M364 291L436 330" stroke="#6f6a85" stroke-width="1"/>
+
+    <circle cx="212" cy="186" r="8" fill="#ec4899" stroke="#f3eee4" stroke-width="2"/>
+    <circle cx="284" cy="236" r="7" fill="#f59e0b" stroke="#0a0a0f" stroke-width="3"/>
+    <circle cx="356" cy="286" r="8" fill="#06b6d4" stroke="#f3eee4" stroke-width="2"/>
+
+    <text class="fm sb ink-2" x="52" y="118">desperate · +0.05</text>
+    <text class="fs big" x="52" y="146" fill="#ec4899">72%</text>
+
+    <text class="fm sb ink-2" x="298" y="207">unsteered</text>
+    <text class="fs nm" x="298" y="225" fill="#f59e0b" style="font-size:18px">22%</text>
+
+    <text class="fm sb ink-2" x="516" y="332" text-anchor="end">calm · +0.05</text>
+    <text class="fs big" x="516" y="360" fill="#06b6d4" text-anchor="end">0%</text>
   </g>
-  <path d="M90 220H500M295 92V350" stroke="#6F6A85" stroke-width="2"/>
-  <text x="295" y="84" text-anchor="middle" fill="#A9A3BD" font-family="Consolas,monospace" font-size="11">HIGH AROUSAL</text>
-  <text x="295" y="369" text-anchor="middle" fill="#A9A3BD" font-family="Consolas,monospace" font-size="11">LOW AROUSAL</text>
-  <text x="52" y="224" fill="#A9A3BD" font-family="Consolas,monospace" font-size="11">NEGATIVE</text>
-  <text x="505" y="224" text-anchor="end" fill="#A9A3BD" font-family="Consolas,monospace" font-size="11">POSITIVE</text>
 
-  <path d="M138 112 452 332" stroke="#EC4899" stroke-width="5" opacity=".8"/>
-  <circle cx="295" cy="220" r="12" fill="#F59E0B" stroke="#030014" stroke-width="4"/>
-  <circle cx="150" cy="118" r="14" fill="#EC4899" stroke="#F3EEE4" stroke-width="3"/>
-  <circle cx="440" cy="324" r="14" fill="#06B6D4" stroke="#F3EEE4" stroke-width="3"/>
+  <!-- ── what the reader sees vs what the agent does ───────────────────── -->
+  <g class="band b2">
+    <rect x="556" y="88" width="410" height="292" rx="10" fill="#0a0a0f" stroke="#1c1c2b"/>
 
-  <g font-family="Arial,Helvetica,sans-serif">
-    <text x="115" y="104" fill="#F3EEE4" font-size="16" font-weight="700">DESPERATE +0.05</text>
-    <text x="115" y="138" fill="#EC4899" font-size="22" font-weight="700">72%</text>
-    <text x="312" y="213" fill="#F3EEE4" font-size="14" font-weight="700">UNSTEERED</text>
-    <text x="312" y="235" fill="#F59E0B" font-size="20" font-weight="700">22%</text>
-    <text x="362" y="348" fill="#F3EEE4" font-size="16" font-weight="700">CALM +0.05</text>
-    <text x="420" y="371" fill="#06B6D4" font-size="22" font-weight="700">0%</text>
+    <text class="fm cap" x="580" y="116" fill="#06b6d4">VISIBLE REPLY</text>
+    <rect x="580" y="128" width="362" height="66" rx="8" fill="#12121a" stroke="#4f69e8" stroke-opacity=".55"/>
+    <text class="fs nm ink-1" x="598" y="157" style="font-weight:500">The same sentence at every point on the field.</text>
+    <text class="fm sb ink-3" x="598" y="179">probed character for character</text>
+
+    <path d="M761 194V230" stroke="#7c3aed" stroke-width="2"/>
+    <path d="M755 224l6 8 6-8" fill="none" stroke="#7c3aed" stroke-width="2" stroke-linejoin="round"/>
+    <text class="fm sb ink-3" x="775" y="216">seeded threshold, 12–82%</text>
+
+    <rect x="580" y="242" width="172" height="112" rx="8" fill="#12121a" stroke="#1c1c2b"/>
+    <rect x="580" y="242" width="3" height="112" rx="1.5" fill="#10b981"/>
+    <text class="fm cap" x="598" y="268" fill="#10b981">HOLDS</text>
+    <text class="fs nm ink-1" x="598" y="294">Reports the truth</text>
+    <text class="fm sb ink-3" x="598" y="336">rate ≤ threshold</text>
+
+    <rect x="770" y="242" width="172" height="112" rx="8" fill="#12121a" stroke="#1c1c2b"/>
+    <rect x="770" y="242" width="3" height="112" rx="1.5" fill="#ec4899"/>
+    <text class="fm cap" x="788" y="268" fill="#ec4899">FLIPS</text>
+    <text class="fs nm ink-1" x="788" y="294">Takes the harmful</text>
+    <text class="fs nm ink-1" x="788" y="313">branch instead</text>
+    <text class="fm sb ink-3" x="788" y="336">rate &gt; threshold</text>
   </g>
 
-  <rect x="580" y="68" width="380" height="310" rx="6" fill="#101020" stroke="#2A2A3A"/>
-  <g font-family="Arial,Helvetica,sans-serif">
-    <text x="610" y="104" fill="#06B6D4" font-size="13" font-weight="700">VISIBLE RESPONSE</text>
-    <rect x="610" y="122" width="320" height="82" rx="4" fill="#181827" stroke="#4F69E8"/>
-    <text x="630" y="151" fill="#F3EEE4" font-size="14">The reply is byte-identical</text>
-    <text x="630" y="175" fill="#F3EEE4" font-size="14">at every point on the field.</text>
-    <text x="630" y="193" fill="#A9A3BD" font-family="Consolas,monospace" font-size="10">PROBED CHARACTER FOR CHARACTER</text>
-
-    <path d="M770 204V238" stroke="#7C3AED" stroke-width="3"/>
-    <path d="m763 232 7 10 7-10" fill="none" stroke="#7C3AED" stroke-width="3"/>
-    <text x="786" y="226" fill="#A9A3BD" font-family="Consolas,monospace" font-size="10">SEEDED THRESHOLD</text>
-
-    <rect x="610" y="248" width="150" height="92" rx="4" fill="#0D211B" stroke="#10B981" stroke-width="2"/>
-    <text x="630" y="278" fill="#10B981" font-size="13" font-weight="700">HOLDS</text>
-    <text x="630" y="304" fill="#F3EEE4" font-size="13">Reports the truth</text>
-    <text x="630" y="324" fill="#A9A3BD" font-size="12">rate &lt;= threshold</text>
-
-    <rect x="780" y="248" width="150" height="92" rx="4" fill="#2B111D" stroke="#EC4899" stroke-width="2"/>
-    <text x="800" y="278" fill="#EC4899" font-size="13" font-weight="700">HARMFUL BRANCH</text>
-    <text x="800" y="304" fill="#F3EEE4" font-size="13">Action flips</text>
-    <text x="800" y="324" fill="#A9A3BD" font-size="12">rate &gt; threshold</text>
-  </g>
-
-  <g font-family="Consolas,monospace" font-size="11" font-weight="700">
-    <rect x="40" y="394" width="190" height="26" rx="13" fill="#4F69E8"/>
-    <text x="135" y="412" text-anchor="middle" fill="#FFFFFF">POINTER + KEYBOARD</text>
-    <rect x="242" y="394" width="170" height="26" rx="13" fill="#7C3AED"/>
-    <text x="327" y="412" text-anchor="middle" fill="#FFFFFF">SEEDED SCENARIOS</text>
-    <rect x="424" y="394" width="176" height="26" rx="13" fill="#06B6D4"/>
-    <text x="512" y="412" text-anchor="middle" fill="#030014">MEASURED ANCHORS</text>
-    <rect x="612" y="394" width="160" height="26" rx="13" fill="#10B981"/>
-    <text x="692" y="412" text-anchor="middle" fill="#030014">HONEST INTERPOLATION</text>
-    <rect x="784" y="394" width="176" height="26" rx="13" fill="#F59E0B"/>
-    <text x="872" y="412" text-anchor="middle" fill="#030014">EXTRAPOLATION FLAGGED</text>
+  <!-- ── properties ────────────────────────────────────────────────────── -->
+  <g class="band b3">
+    <rect x="34" y="398" width="176" height="24" rx="12" fill="#0a0a0f" stroke="#4f69e8" stroke-width="1.3"/>
+    <text class="fm pill" x="122" y="414" text-anchor="middle" fill="#4f69e8">POINTER + KEYBOARD</text>
+    <rect x="223" y="398" width="176" height="24" rx="12" fill="#0a0a0f" stroke="#7c3aed" stroke-width="1.3"/>
+    <text class="fm pill" x="311" y="414" text-anchor="middle" fill="#7c3aed">SEEDED SCENARIOS</text>
+    <rect x="412" y="398" width="176" height="24" rx="12" fill="#0a0a0f" stroke="#06b6d4" stroke-width="1.3"/>
+    <text class="fm pill" x="500" y="414" text-anchor="middle" fill="#06b6d4">MEASURED ANCHORS</text>
+    <rect x="601" y="398" width="176" height="24" rx="12" fill="#0a0a0f" stroke="#10b981" stroke-width="1.3"/>
+    <text class="fm pill" x="689" y="414" text-anchor="middle" fill="#10b981">HONEST INTERPOLATION</text>
+    <rect x="790" y="398" width="176" height="24" rx="12" fill="#0a0a0f" stroke="#f59e0b" stroke-width="1.3"/>
+    <text class="fm pill" x="878" y="414" text-anchor="middle" fill="#f59e0b">EXTRAPOLATION FLAGGED</text>
   </g>
 </svg>
