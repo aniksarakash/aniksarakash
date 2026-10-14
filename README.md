@@ -22,6 +22,12 @@
 
 <br/>
 
+<a href="https://aniksarkerakash.com/">
+  <img src="./assets/typing.svg" alt="Three legacy systems, two spreadsheets, one person clicking. I replace that with something that runs itself. Frontier models + enterprise IT + ruthless code review." />
+</a>
+
+<br/>
+
 <a href="https://aniksarkerakash.com/"><img src="https://img.shields.io/badge/Portfolio-030014?style=for-the-badge&logo=safari&logoColor=06B6D4&labelColor=030014" alt="Portfolio" /></a>
 <a href="https://aniksarkerakash.com/blog/"><img src="https://img.shields.io/badge/Blog-030014?style=for-the-badge&logo=hashnode&logoColor=7C3AED&labelColor=030014" alt="Blog" /></a>
 <a href="https://linkedin.com/in/aniksarkerakash"><img src="https://img.shields.io/badge/LinkedIn-030014?style=for-the-badge&logo=linkedin&logoColor=4F69E8&labelColor=030014" alt="LinkedIn" /></a>
