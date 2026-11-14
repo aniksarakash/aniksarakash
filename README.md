@@ -779,11 +779,11 @@ L2/L3 incident response
 I write about AI-assisted development, debugging LLM output, and troubleshooting methodology at **[aniksarkerakash.com/blog](https://aniksarkerakash.com/blog/)**, rendered and published by the writing engine and the CMS from *One domain, four builds*.
 
 <!-- BLOG-POST-LIST:START -->
+- [One stock ledger, built twice](https://aniksarkerakash.com/blog/one-stock-ledger-built-twice)
+- [Proving a fix without the printer](https://aniksarkerakash.com/blog/proving-a-fix-without-the-printer)
 - [Nobody nerfed the model. Somebody else answered](https://aniksarkerakash.com/blog/somebody-else-answered)
 - [Claude Opus 5.5 is 40% cheaper, if you stop prompting it like Opus 5](https://aniksarkerakash.com/blog/prompting-claude-opus-5-5)
 - [The evaluator gets a desk, not a veto](https://aniksarkerakash.com/blog/the-evaluator-gets-a-desk-not-a-veto)
-- [The model was never the vulnerability](https://aniksarkerakash.com/blog/the-model-was-never-the-vulnerability)
-- [I closed port 3389 for good](https://aniksarkerakash.com/blog/closing-port-3389)
 
 <!-- BLOG-POST-LIST:END -->
 
